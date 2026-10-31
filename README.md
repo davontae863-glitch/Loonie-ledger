@@ -3,7 +3,7 @@
 Spreadsheet tools for Canadians, sold online with as little manual work as possible.
 This repository holds the store, the operations worker (orders, finances, health), and every guide.
 
-**Status:** LIVE since 2026-10-31. https://shop.loonieledger.workers.dev — Bookkeeping & GST/HST Tracker and Invoice Generator on sale; Room Tracker, Household Budget and Complete Bundle built and waiting for owner approval.
+**Status:** LIVE since 2026-10-31. https://shop.loonieledger.workers.dev — Bookkeeping & GST/HST Tracker and Invoice Generator on sale; Room Tracker, Household Budget and Complete Bundle also on sale (all five products live).
 
 ## How it fits together
 
