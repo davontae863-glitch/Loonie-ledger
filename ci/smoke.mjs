@@ -21,6 +21,10 @@ for (const x of products.filter((x) => x.status !== 'live')) {
   const body = await (await get(`/products/${x.slug}/`)).text();
   check(!body.includes('payhip.com') && body.includes('Coming soon'), `not on sale yet: ${x.slug}`);
 }
+for (const x of products) {
+  const r = await get(`/img/${x.slug}.jpg`, { headers: { accept: 'image/*', 'sec-fetch-dest': 'image', 'sec-fetch-mode': 'no-cors' } });
+  check(r.status === 200 && /image\/jpeg/.test(r.headers.get('content-type') || ''), `cover image: ${x.slug}`);
+}
 check((await get('/this-page-does-not-exist')).status === 404, 'unknown page returns 404');
 
 const h = await (await get('/api/health')).json();

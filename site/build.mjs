@@ -1,6 +1,6 @@
 // Static site builder. No dependencies: `node build.mjs` writes ./dist
 // Products and settings come from src/products.json and src/site.json.
-import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -172,6 +172,7 @@ for (const p of products) {
 <p class="small"><a href="/products/">All tools</a></p>
 <h1>${esc(p.name)}</h1>
 <p class="lede">${esc(p.short)}</p>
+${existsSync(join(root, `src/img/${p.slug}.jpg`)) ? `<img class="cover" src="/img/${p.slug}.jpg" width="1200" height="900" alt="${esc(p.name)}: preview of the spreadsheet with example data">` : ''}
 <div class="product">
   <div>
     <h2>Who it's for</h2><p>${esc(p.for)}</p>
@@ -310,6 +311,8 @@ write('/404.html', page({ path: '/404.html', title: 'Page not found', descriptio
 
 // ---------- Assets, sitemap, robots ----------
 copyFileSync(join(root, 'src/style.css'), join(out, 'style.css'));
+mkdirSync(join(out, 'img'), { recursive: true });
+for (const f of readdirSync(join(root, 'src/img'))) copyFileSync(join(root, 'src/img', f), join(out, 'img', f));
 writeFileSync(join(out, 'favicon.svg'), coin.replace('class="brand-coin" ', 'xmlns="http://www.w3.org/2000/svg" '));
 const paths = ['/', '/products/', '/gst-threshold-checker/', '/faq/', '/about/', '/contact/', '/delivery/', '/refunds/', '/privacy/', '/terms/', ...products.map((p) => `/products/${p.slug}/`)];
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((p) => `<url><loc>${site.baseUrl}${p}</loc></url>`).join('')}</urlset>\n`);

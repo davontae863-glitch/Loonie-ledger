@@ -147,3 +147,6 @@ dl.faq dd { margin: 0.3em 0 0; color: var(--ink-soft); max-width: 38em; }
 .contact-form textarea { resize: vertical; }
 .contact-form .btn { justify-self: start; margin-top: 8px; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Product cover image */
+.cover { width: 100%; max-width: 880px; height: auto; border-radius: var(--radius-sheet); border: 1px solid var(--rule); margin: 8px 0 28px; background: var(--sheet); }

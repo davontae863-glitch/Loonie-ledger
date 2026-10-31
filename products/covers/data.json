@@ -1,0 +1,200 @@
+{
+ "bookkeeping": {
+  "rows": [
+   [
+    "2026-01-12",
+    "Northern Lights Co.",
+    "ON",
+    2400,
+    0.13,
+    312
+   ],
+   [
+    "2026-02-03",
+    "Prairie Bakery",
+    "AB",
+    850,
+    0.05,
+    42.5
+   ],
+   [
+    "2026-03-18",
+    "Atelier Fleuve",
+    "QC",
+    1600,
+    0.05,
+    80
+   ],
+   [
+    "2026-04-09",
+    "Harbourview Dental",
+    "NS",
+    1200,
+    0.14,
+    168
+   ],
+   [
+    "2026-05-22",
+    "Rocky Mtn Outfitters",
+    "AB",
+    3100,
+    0.05,
+    155
+   ],
+   [
+    "2026-06-30",
+    "Northern Lights Co.",
+    "ON",
+    2750,
+    0.13,
+    357.5
+   ]
+  ],
+  "threshold": [
+   [
+    "2025 Q1",
+    0
+   ],
+   [
+    "2025 Q2",
+    0
+   ],
+   [
+    "2025 Q3",
+    0
+   ],
+   [
+    "2025 Q4",
+    0
+   ],
+   [
+    "2026 Q1",
+    4850
+   ],
+   [
+    "2026 Q2",
+    7050
+   ],
+   [
+    "2026 Q3",
+    0
+   ],
+   [
+    "2026 Q4",
+    0
+   ]
+  ]
+ },
+ "invoice": {
+  "from": [
+   "Maple Studio",
+   "100 Example Ave",
+   "Calgary, AB  T2P 0A0"
+  ],
+  "gst": "GST/HST no. 123456789RT0001",
+  "bill_to": "Example Client Inc.",
+  "number": 1042,
+  "date": "2026-11-01",
+  "due": "2026-12-01",
+  "lines": [
+   [
+    "Brand identity design",
+    1,
+    1800,
+    1800
+   ],
+   [
+    "Website pages",
+    6,
+    225,
+    1350
+   ],
+   [
+    "Hosting setup",
+    1,
+    150,
+    150
+   ]
+  ],
+  "subtotal": 3300,
+  "tax": [
+   "HST (13%)",
+   429
+  ],
+  "total": 3729
+ },
+ "room": {
+  "rows": [
+   [
+    "TFSA",
+    21000,
+    11500,
+    "OK"
+   ],
+   [
+    "RRSP",
+    12400,
+    6400,
+    "OK"
+   ],
+   [
+    "FHSA",
+    8000,
+    0,
+    "Almost full"
+   ]
+  ]
+ },
+ "budget": {
+  "rows": [
+   [
+    "Rent or mortgage",
+    2100,
+    2100,
+    0
+   ],
+   [
+    "Groceries",
+    900,
+    962.35,
+    -62.35
+   ],
+   [
+    "Eating out",
+    200,
+    146.2,
+    53.8
+   ],
+   [
+    "Kids",
+    150,
+    121.5,
+    28.5
+   ],
+   [
+    "TFSA",
+    400,
+    400,
+    0
+   ],
+   [
+    "RESP",
+    210,
+    210,
+    0
+   ],
+   [
+    "Total income",
+    7420,
+    7420,
+    0
+   ],
+   [
+    "Left over",
+    2740,
+    2766.55,
+    null
+   ]
+  ]
+ }
+}
