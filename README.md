@@ -3,12 +3,12 @@
 Spreadsheet tools for Canadians, sold online with as little manual work as possible.
 This repository holds the store, the operations worker (orders, finances, health), and every guide.
 
-**Status:** Phase 3 (infrastructure) built and tested locally. Not deployed. Store mode: `test`.
+**Status:** Phase 4 — storefront and owner dashboard built. Live at https://shop.loonieledger.workers.dev in test mode; products not on sale yet.
 
 ## How it fits together
 
 ```
-Customer ──> Storefront (Cloudflare Pages, /site) ──> Payhip checkout (payment + file delivery)
+Customer ──> Storefront (static pages from /site, served by the worker) ──> Payhip checkout (payment + file delivery)
                                                           │
                                                           │ webhook: paid / refunded
                                                           ▼
@@ -16,13 +16,13 @@ Customer ──> Storefront (Cloudflare Pages, /site) ──> Payhip checkout (p
                                     │  • records orders once (idempotent)
                                     │  • hourly health check, daily financial report (cron)
                                     ▼
-                         Owner API / dashboard (Phase 4) — protected by Cloudflare Access or a token
+                         Owner dashboard at /owner + owner API — protected by Cloudflare Access or a token
 GitHub Actions: runs tests and deploys on every push to main; weekly database backup.
 ```
 
 | Piece | Service | Cost | Free-tier limit that matters |
 |---|---|---|---|
-| Storefront | Cloudflare Pages | $0 | Static requests unlimited |
+| Storefront | Cloudflare Workers static assets | $0 | Static asset requests are free and unlimited |
 | Checkout, delivery, receipts | Payhip Free | 5% per sale + Stripe fees | — |
 | Ops worker + cron | Cloudflare Workers Free | $0 | 100k requests/day, 10 ms CPU per run, 5 cron triggers |
 | Database | Cloudflare D1 Free | $0 | 5 GB, 5M rows read/day, 100k rows written/day |
@@ -32,7 +32,7 @@ Why D1 instead of Supabase: Supabase's free tier pauses after 7 days of low acti
 
 ## Folders
 
-- `site/` — storefront (placeholder page now; built in Phase 4)
+- `site/` — storefront: `src/products.json` (catalog), `src/site.json` (settings), `build.mjs` builds `dist/`
 - `worker/` — operations worker, database migrations, tests
 - `docs/` — architecture, deployment, security, accounts, decision log
 - `.github/workflows/` — test + deploy, weekly backup
@@ -44,7 +44,7 @@ cd worker
 npm test
 ```
 
-14 tests cover signature checks, duplicate webhooks, refunds, test-mode exclusion, owner auth,
+15 tests cover signature checks, duplicate webhooks, refunds, test-mode exclusion, owner auth,
 the cash-vs-pending split, and the scheduled jobs. They use Node's built-in SQLite, so no accounts are needed.
 
 ## Rules built into the code

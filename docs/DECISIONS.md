@@ -9,3 +9,5 @@
 | 2026-10-31 | Store starts in test mode | Live payments need owner approval (Phase 7) | Brief requirement |
 | 2026-10-31 | Payhip webhook + URL token | Payhip signature alone is a fixed value | Claude |
 | 2026-10-31 | TikTok Shop deferred | Not open to Canadian sellers | Claude |
+| 2026-10-31 | Storefront served by the worker (static assets), not Cloudflare Pages | Same token and deploy, no extra setup; dashboard shares the API's origin | Claude |
+| 2026-10-31 | Products show "Coming soon" until built and approved | Never list or sell a product that doesn't exist yet | Brief requirement |

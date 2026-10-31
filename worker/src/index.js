@@ -4,6 +4,7 @@
 import { verifyPayhipSignature, parsePaid, parseRefund, readBody, safeEqual } from './lib/payhip.js';
 import { summarize, formatCad } from './lib/money.js';
 import { ownerIdentity } from './lib/auth.js';
+import { DASHBOARD_HTML } from './dashboard.js';
 
 const JSON_HEADERS = {
   'content-type': 'application/json; charset=utf-8',
@@ -218,6 +219,13 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     try {
+      if (url.pathname === '/owner' || url.pathname === '/owner/') {
+        return new Response(DASHBOARD_HTML, { headers: {
+          'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-frame-options': 'DENY',
+          'x-content-type-options': 'nosniff', 'referrer-policy': 'no-referrer',
+          'content-security-policy': "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'",
+        } });
+      }
       if (url.pathname === '/api/health') {
         const h = await healthReport(env);
         return json({ ok: h.db === 'ok', mode: h.mode }); // public: no business data
@@ -230,6 +238,8 @@ export default {
         if (!owner) return json({ error: 'unauthorized' }, 401);
         return handleOwner(request, env, url, owner);
       }
+      // Everything else is the storefront (static files built from /site).
+      if (!url.pathname.startsWith('/api/') && env.ASSETS) return env.ASSETS.fetch(request);
       return json({ error: 'not found' }, 404);
     } catch (e) {
       console.error('unhandled', e);

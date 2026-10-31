@@ -98,6 +98,15 @@ test('test-mode orders are excluded from finances', async () => {
   env.STORE_MODE = 'live';
 });
 
+test('owner dashboard page is served without data and with a strict CSP', async () => {
+  const r = await worker.fetch(new Request('https://x/owner'), env);
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('content-security-policy'), /connect-src 'self'/);
+  const html = await r.text();
+  assert.match(html, /Owner dashboard/);
+  assert.doesNotMatch(html, /buyer@example\.com|T1|T2/);
+});
+
 test('scheduled jobs log runs', async () => {
   const waits = [];
   await worker.scheduled({ cron: '0 * * * *' }, env, { waitUntil: (p) => waits.push(p) });

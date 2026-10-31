@@ -17,23 +17,23 @@ Written so most steps work from a phone browser. Steps marked 💻 are easier on
 2. Push to `main` (Claude does this). The "Test and deploy" workflow runs tests, creates the tables, and deploys the worker.
 
 ## 4. Worker secrets
-Cloudflare → Workers & Pages → `loonie-ledger-ops` → Settings → Variables and Secrets → add as **Secret** (encrypted):
+Cloudflare → Workers & Pages → `shop` → Settings → Variables and Secrets → add as **Secret** (encrypted):
 `PAYHIP_API_KEY`, `WEBHOOK_PATH_TOKEN`, `OWNER_API_TOKEN`, `OWNER_EMAIL`.
 Generate the two tokens with a password manager's generator (32+ characters, letters and numbers).
 
 ## 5. Storefront
-Cloudflare → Workers & Pages → Create → Pages → Connect to Git → pick the repo.
-Build command: *(none)*. Output directory: `site`. Deploy.
+Nothing to set up. The store pages are built from `site/` and served by the same worker at **https://shop.loonieledger.workers.dev**; the owner dashboard is at **/owner**.
+After the first deploy of the `shop` worker, delete the old `loonie-ledger-ops` worker in Cloudflare (Workers & Pages → it → Settings → Delete) so its hourly job doesn't run twice.
 
 ## 6. Payhip
 1. Create the Payhip account, connect Stripe (and PayPal if wanted). Keep products **unpublished** until Phase 7 approval.
 2. Settings → Developer → Webhooks → add
-   `https://loonie-ledger-ops.<your-subdomain>.workers.dev/api/webhooks/payhip/<WEBHOOK_PATH_TOKEN>`
+   `https://shop.loonieledger.workers.dev/api/webhooks/payhip/<WEBHOOK_PATH_TOKEN>`
    for **paid** and **refunded**.
 3. Make one test purchase with a 100%-off coupon; check `/api/owner/health` shows no webhook errors.
 
 ## 7. Lock down the owner area (free)
-Cloudflare Zero Trust → Access → Applications → add a self-hosted app for `/api/owner/*` (and the dashboard in Phase 4) with a policy allowing only `OWNER_EMAIL`. You'll sign in with a one-time code sent to your email.
+Cloudflare Zero Trust → Access → Applications → add a self-hosted app for `shop.loonieledger.workers.dev/owner` and `/api/owner/*` with a policy allowing only `OWNER_EMAIL`. You'll sign in with a one-time code sent to your email.
 
 ## 8. Go live (Phase 7 only, after your approval)
 Change `STORE_MODE` in `worker/wrangler.toml` from `test` to `live`, push, and publish products in Payhip.

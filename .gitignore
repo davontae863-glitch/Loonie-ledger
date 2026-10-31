@@ -4,3 +4,4 @@ node_modules/
 *.local
 .wrangler/
 backups/
+site/dist/

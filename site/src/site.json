@@ -1,0 +1,10 @@
+{
+  "name": "Loonie Ledger",
+  "tagline": "Money tools made for Canada.",
+  "baseUrl": "https://shop.loonieledger.workers.dev",
+  "contactEmail": "",
+  "ownerName": "",
+  "province": "Alberta",
+  "policiesUpdated": "2026-10-31",
+  "_note": "contactEmail and ownerName must be filled in by the owner before launch. The build warns while they are empty."
+}
