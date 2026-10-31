@@ -149,6 +149,7 @@ write('/gst-threshold-checker/', page({
 <div class="prose">
 <h2>How the threshold works</h2>
 <p>You're a small supplier, and don't have to register, while your worldwide taxable sales stay at $30,000 or less in any single calendar quarter and over the last four consecutive calendar quarters. Once you pass it, you have to register and start charging GST/HST.</p>
+<p>One big exception: if you drive a taxi or for a rideshare app, you have to register from your first fare, even under $30,000.</p>
 <p>The rules have details this checker doesn't cover, such as which sales count as taxable and when registration takes effect. Read the CRA's "When to register for and start charging the GST/HST" page, or ask an accountant, before you decide.</p>
 <p>Want this tracked automatically every month? The <a href="/products/sole-proprietor-bookkeeping-tracker/">Bookkeeping &amp; GST/HST Tracker</a> keeps a running four-quarter total as you log income.</p>
 </div>
