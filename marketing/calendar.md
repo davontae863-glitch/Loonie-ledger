@@ -1,6 +1,6 @@
-# Content calendar — first 30 days (pre-launch, Nov 2026)
+# Content calendar — first 30 days (Nov 2026)
 
-While products are "Coming soon", content builds an audience around the free GST/HST checker and year-end bookkeeping. Each day: one Pinterest pin (P) and one short video (V). Facts marked † must be verified on canada.ca before posting.
+Updated 2026-10-31 after launch: the Bookkeeping Tracker and Invoice Generator are on sale, so their days can say "link in bio" and show the real product. Room Tracker, Household Budget and the Bundle stay "coming soon" until the owner approves them; days 17–19 and 29 only link to their pages. The free GST/HST checker remains the main entry point. Each day: one Pinterest pin (P) and one short video (V). Facts marked † must be verified on canada.ca before posting.
 
 | # | Theme | Pin headline (P) | Video hook (V) | Link to |
 |---|---|---|---|---|
@@ -33,6 +33,6 @@ While products are "Coming soon", content builds an audience around the free GST
 | 27 | Records | Digital receipts: what to save | "Photograph it the day you get it" † | /products/sole-proprietor-bookkeeping-tracker/ |
 | 28 | Weekly review | — | — | — |
 | 29 | New year | What changes in January for sole proprietors | "New limits and rates — where to check" † | /products/tfsa-rrsp-fhsa-room-tracker/ |
-| 30 | Launch prep | Coming soon: Loonie Ledger tools | "Built for Canada from the first row" | /products/ |
+| 30 | Wave 2 | New: Room Tracker, Household Budget, Bundle (only if approved and live) | "Built for Canada from the first row" | /products/ |
 
 Weekly review days: compare clicks per campaign in the dashboard, note the best and worst post, and adjust the next week's hooks. Record anything tested in the experiments log.

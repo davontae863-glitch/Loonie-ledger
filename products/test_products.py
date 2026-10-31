@@ -91,18 +91,97 @@ def inv(preset, items, gst_number=""):
 def total(v):
     for r in range(25, 40):
         if v.cell(r, 3).value == "Total (CAD)": return v.cell(r, 4).value, [(v.cell(rr, 3).value, v.cell(rr, 4).value) for rr in range(r - 2, r)]
-for preset, exp_total, exp_lines in [
-    ("Small supplier: no GST/HST", 1033.37, []),
-    ("GST 5% (AB, BC, MB, SK, NT, NU, YT)", 1085.04, [("GST (5%)", 51.67)]),
-    ("HST 13% (ON)", 1167.71, [("HST (13%)", 134.34)]),
-    ("HST 14% (NS)", 1178.04, [("HST (14%)", 144.67)]),
-    ("HST 15% (NB, NL, PE)", 1188.38, [("HST (15%)", 155.01)]),
-    ("GST 5% + QST 9.975% (QC)", 1188.12, [("GST (5%)", 51.67), ("QST (9.975%)", 103.08)]),
+SUB = 12.5 * 75 + 3 * 32.29   # 1034.37
+r2 = lambda x: round(x + 1e-9, 2)
+for preset, exp_lines in [
+    ("Small supplier: no GST/HST", []),
+    ("GST 5% (AB, BC, MB, SK, NT, NU, YT)", [("GST (5%)", r2(SUB * 0.05))]),
+    ("HST 13% (ON)", [("HST (13%)", r2(SUB * 0.13))]),
+    ("HST 14% (NS)", [("HST (14%)", r2(SUB * 0.14))]),
+    ("HST 15% (NB, NL, PE)", [("HST (15%)", r2(SUB * 0.15))]),
+    ("GST 5% + QST 9.975% (QC)", [("GST (5%)", r2(SUB * 0.05)), ("QST (9.975%)", r2(SUB * 0.09975))]),
 ]:
+    exp_total = r2(SUB + sum(b for _, b in exp_lines))
     v = inv(preset, [("Design", 12.5, 75), ("Hosting", 3, 32.29)], gst_number="123456789RT0001")
     t_, lines = total(v)
     got = [(a, b) for a, b in lines if a]
-    check(abs(t_ - exp_total) < 0.005 and got == exp_lines, f"Invoice: {preset} → {t_}")
+    check(abs(t_ - exp_total) < 0.005 and [(a, r2(b)) for a, b in got] == exp_lines, f"Invoice: {preset} → {t_}")
+
+# ---------- Room tracker ----------
+def room(inputs, logs):
+    wb = load_workbook(os.path.join(HERE, "dist/Loonie-Ledger-TFSA-RRSP-FHSA-Room-Tracker.xlsx"))
+    m = wb["My Room"]
+    labels = {m.cell(r, 1).value: r for r in range(1, m.max_row + 1)}
+    for label, v in inputs.items(): m.cell(labels[label], 2, v)
+    g = wb["Log"]
+    for c in range(1, 7): g.cell(6, c).value = None
+    for k, row in enumerate(logs):
+        for c, v in enumerate(row, start=1): g.cell(6 + k, c, v)
+    path = os.path.join(tmp, "room.xlsx"); wb.save(path)
+    out = recalc(path)["My Room"]
+    vals = {}
+    for r in range(1, out.max_row + 1):
+        if out.cell(r, 1).value: vals.setdefault(out.cell(r, 1).value, out.cell(r, 2).value)  # first = TFSA section
+    return vals, out
+vals, sheet = room({
+    "TFSA contribution room on January 1 (from CRA My Account)": 7000,
+    "Next year's TFSA limit (type it once CRA announces it)": 7000,
+    "RRSP deduction limit for this year (from your Notice of Assessment)": 10000,
+    "Year you opened your first FHSA": 2025,
+    "FHSA participation room this year (from CRA My Account)": 16000,
+    "Contributions and RRSP transfers in all earlier years": 8000,
+}, [
+    (date(2026, 1, 5), "TFSA", "Contribution", 5000), (date(2026, 3, 1), "TFSA", "Withdrawal", 2000),
+    (date(2026, 4, 1), "TFSA", "Contribution", 3000), (date(2026, 5, 1), "TFSA", "Direct transfer between my own accounts", 4000),
+    (date(2025, 12, 1), "TFSA", "Contribution", 999),
+    (date(2026, 2, 1), "RRSP", "Contribution", 900, "", 2025), (date(2027, 2, 10), "RRSP", "Contribution", 11000, "", 2026),
+    (date(2026, 6, 1), "FHSA", "Contribution", 8000), (date(2026, 7, 1), "FHSA", "Transfer in from my RRSP", 9000),
+])
+check(vals["Contributions this year"] == 8000, "Room: TFSA counts only this year's contributions, not transfers")
+check(vals["Room left this year"] == -1000, "Room: re-contributing a same-year TFSA withdrawal puts you over")
+glance = {sheet.cell(r, 1).value: sheet.cell(r, 3).value for r in range(1, sheet.max_row + 1)}
+check(str(glance["TFSA"]).startswith("OVER"), "Room: TFSA status says over")
+check(vals["Rough estimate of next year's room"] == 8000, "Room: next year = -1000 + 2000 withdrawn + 7000")
+check(str(glance["RRSP"]).startswith("OVER") and vals["Over-contribution beyond the $2,000 cushion"] == 0, "Room: RRSP Feb-2027 claim counts for 2026; $1,000 over is inside the cushion")
+check(vals["Lifetime limit left"] == 15000 and str(glance["FHSA"]).startswith("OVER"), "Room: FHSA counts RRSP transfers against annual and lifetime room")
+
+# ---------- Household budget ----------
+wb = load_workbook(os.path.join(HERE, "dist/Loonie-Ledger-Canadian-Household-Budget.xlsx"))
+p = wb["Plan"]; rows_ = {p.cell(r, 2).value: r for r in range(6, p.max_row + 1)}
+p.cell(rows_["Property tax"], 3, 300); p.cell(rows_["Property tax"], 9, 1200)   # June override
+lg = wb["Log"]
+for r in (6, 7):
+    for c in range(1, 6): lg.cell(r, c).value = None
+for k, row in enumerate([(date(2026, 6, 3), "Property tax", 1200), (date(2026, 6, 5), "Pay — person 1", 4200), (date(2026, 6, 9), "Groceries", 800),
+                         (date(2026, 6, 20), "TFSA", 250), (date(2025, 6, 9), "Groceries", 999), (date(2026, 6, 10), "Not a category", 5)]):
+    for c, v in enumerate(row, start=1): lg.cell(6 + k, c, v)
+wb["Month View"]["B3"] = "June"
+path = os.path.join(tmp, "budget.xlsx"); wb.save(path); wb = recalc(path)
+mv = wb["Month View"]; m = {mv.cell(r, 2).value: [mv.cell(r, c).value for c in (3, 4, 5)] for r in range(6, mv.max_row + 1) if mv.cell(r, 2).value}
+check(m["Property tax"] == [1200, 1200, 0], "Budget: a typed-over month replaces the usual amount")
+check(m["Groceries"] == [700, 800, -100], "Budget: only this year's spending counts; over plan is negative")
+check(m["Left over"][1] == 4200 - 1200 - 800 - 250, "Budget: left over = income − bills − spending − savings")
+yv = wb["Year View"]
+yrow_ = {yv.cell(r, 2).value: r for r in range(6, yv.max_row + 1)}
+check(yv.cell(yrow_["Property tax"], 16).value == 300 * 11 + 1200, "Budget: year plan adds the override month")
+check(abs(yv.cell(yrow_["Savings rate (savings ÷ income)"], 8).value - 250 / 4200) < 1e-9, "Budget: June savings rate")
+check(yv.cell(yrow_["Log rows with a category not on your Plan"], 3).value == 1, "Budget: flags log rows with an unknown category")
+
+# ---------- Vehicle & home office ----------
+wb = load_workbook(os.path.join(HERE, "dist/Loonie-Ledger-Vehicle-and-Home-Office-Log.xlsx"))
+v = wb["Vehicle Log"]; v["G7"], v["G8"] = 10000, 30000
+v["A7"], v["D7"], v["A8"], v["D8"] = date(2026, 3, 1), 4976, date(2025, 12, 1), 500
+c = wb["Vehicle Costs"]; c["B4"], c["B6"], c["B14"] = 3000, 1000, 120
+h = wb["Home Office"]; h["B3"], h["B4"], h["B8"], h["B9"] = 150, 1500, 24000, 1200
+hl = {h.cell(r, 1).value: r for r in range(1, h.max_row + 1)}
+h.cell(hl["Office-only repairs"], 2, 100); h.cell(hl["Your business income before home-office costs"], 2, 1500); h.cell(hl["Amount carried forward from last year"], 2, 200)
+path = os.path.join(tmp, "veh.xlsx"); wb.save(path); wb = recalc(path)
+v = wb["Vehicle Log"]
+check(v["G10"].value == 5000 and v["G11"].value == 0.25, "Vehicle: counts only this year's trips; 5,000 of 20,000 km = 25%")
+cc = wb["Vehicle Costs"]; ct = {cc.cell(r, 1).value: cc.cell(r, 3).value for r in range(4, 25)}
+check(ct["Vehicle costs to claim (before CCA)"] == 1120, "Vehicle: 25% of costs + parking in full")
+h = wb["Home Office"]; ht = {h.cell(r, 1).value: h.cell(r, 3).value for r in range(1, h.max_row + 1)}
+check(ht["You can claim this year"] == 1500 and ht["Carry forward to next year"] == 1320, "Home office: limited to business income, rest carried forward")
 
 print(f"\n{fails} failure(s)" if fails else "\nAll product scenarios passed")
 sys.exit(1 if fails else 0)

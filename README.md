@@ -3,7 +3,7 @@
 Spreadsheet tools for Canadians, sold online with as little manual work as possible.
 This repository holds the store, the operations worker (orders, finances, health), and every guide.
 
-**Status:** LIVE since 2026-10-31. https://shop.loonieledger.workers.dev — Bookkeeping & GST/HST Tracker and Invoice Generator on sale; three more tools coming soon.
+**Status:** LIVE since 2026-10-31. https://shop.loonieledger.workers.dev — Bookkeeping & GST/HST Tracker and Invoice Generator on sale; Room Tracker, Household Budget and Complete Bundle built and waiting for owner approval.
 
 ## How it fits together
 
@@ -44,7 +44,7 @@ cd worker
 npm test
 ```
 
-15 tests cover signature checks, duplicate webhooks, refunds, test-mode exclusion, owner auth,
+34 worker tests cover signature checks, duplicate webhooks, refunds, test-mode exclusion, owner auth,
 the cash-vs-pending split, and the scheduled jobs. They use Node's built-in SQLite, so no accounts are needed.
 
 ## Rules built into the code
