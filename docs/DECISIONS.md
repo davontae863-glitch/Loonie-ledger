@@ -11,3 +11,4 @@
 | 2026-10-31 | TikTok Shop deferred | Not open to Canadian sellers | Claude |
 | 2026-10-31 | Storefront served by the worker (static assets), not Cloudflare Pages | Same token and deploy, no extra setup; dashboard shares the API's origin | Claude |
 | 2026-10-31 | Products show "Coming soon" until built and approved | Never list or sell a product that doesn't exist yet | Brief requirement |
+| 2026-10-31 | Launch products built: Bookkeeping & GST/HST Tracker, Invoice Generator (v2026.1) | Rates checked against CRA (NS HST 14% since 2025-04-01); tested with sample data | Claude; awaiting owner review |

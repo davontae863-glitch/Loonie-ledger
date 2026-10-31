@@ -242,7 +242,7 @@ if(q.get('error')){var e=document.getElementById('err');e.textContent=q.get('err
 </script>`);
 
 prose('/faq/', 'FAQ', 'Answers to common questions about Loonie Ledger tools.', `<dl class="faq">
-<dt>What do I actually get?</dt><dd>A Google Sheets copy link and an Excel (.xlsx) file, plus a one-page setup guide. They arrive by email right after payment.</dd>
+<dt>What do I actually get?</dt><dd>A Google Sheets copy link and an Excel (.xlsx) file. Each one opens on a Start Here tab that walks you through setup in about five minutes. They arrive by email right after payment.</dd>
 <dt>Do I need Excel?</dt><dd>No. A free Google account is enough to use the Google Sheets version, on a computer or phone.</dd>
 <dt>Is this tax advice?</dt><dd>No. The tools organize your records using CRA categories. For advice about your situation, talk to an accountant or the CRA.</dd>
 <dt>Are you affiliated with the CRA?</dt><dd>No.</dd>

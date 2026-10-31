@@ -35,7 +35,7 @@ export function draftReply({ category, name, escalate = false }) {
   const drafts = {
     download: `${hi}\n\nSorry the download hasn't reached you. Payhip sends the link by email right after payment, so please check your spam or promotions folder for a message from Payhip first.\n\nIf it isn't there, reply with the email address you used at checkout and the tool's name, and I'll resend it.`,
     refund: `${hi}\n\nThanks for letting us know. Under our refund policy, we refund in full if a file doesn't work and we can't fix it within 7 days, and we refund or swap a duplicate or mistaken purchase made in the last 14 days.\n\nPlease reply with the email address you used at checkout and the tool's name so I can find your order.`,
-    product: `${hi}\n\nThanks for your question. [Answer from the setup guide.]\n\nA reminder that the tools organize your records; they aren't tax advice. For your specific situation, the CRA or an accountant can confirm.`,
+    product: `${hi}\n\nThanks for your question. [Answer from the file's Start Here tab.]\n\nA reminder that the tools organize your records; they aren't tax advice. For your specific situation, the CRA or an accountant can confirm.`,
     other: `${hi}\n\nThanks for getting in touch. [Reply here.]`,
   };
   if (!drafts[category]) return null; // escalated categories get no template: the owner writes these personally

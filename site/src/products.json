@@ -4,23 +4,47 @@
     "name": "Sole-Proprietor Bookkeeping & GST/HST Tracker",
     "short": "Log income and expenses the way the T2125 asks for them, with your province's sales tax built in.",
     "price_cents": 2400,
-    "status": "in_development",
+    "status": "pending_approval",
     "payhip_url": "",
     "launch_wave": 1,
     "for": "Freelancers, contractors, gig workers and side-hustlers who file a T2125 with their personal return.",
     "problem": "Most bookkeeping templates are American. They don't use CRA expense categories, they don't know HST from PST, and they won't tell you when you're getting close to the $30,000 GST/HST registration threshold.",
     "inside": [
-      ["Income log", "Date, client, amount, GST/HST charged, payment received"],
-      ["Expense log", "Every row tagged with the matching T2125 expense line"],
-      ["Province selector", "GST, HST, PST and QST rates for all provinces and territories"],
-      ["Small-supplier tracker", "Running total of the last four calendar quarters against $30,000"],
-      ["Year-end summary", "Totals by T2125 line, ready to copy into your return or hand to an accountant"],
-      ["Home office and vehicle", "Business-use percentage worksheets"]
+      [
+        "Income log",
+        "Date, client, amount, GST/HST charged, payment received"
+      ],
+      [
+        "Expense log",
+        "Every row tagged with the matching T2125 expense line"
+      ],
+      [
+        "Province selector",
+        "GST, HST, PST and QST rates for all provinces and territories"
+      ],
+      [
+        "Small-supplier tracker",
+        "Running total of the last four calendar quarters against $30,000"
+      ],
+      [
+        "Year-end summary",
+        "Totals by T2125 line, ready to copy into your return or hand to an accountant"
+      ],
+      [
+        "Home office and vehicle",
+        "Business-use percentage worksheets"
+      ]
     ],
     "formats": "Google Sheets copy link and an Excel (.xlsx) file",
     "faq": [
-      ["Do I need to be registered for GST/HST to use it?", "No. It works for small suppliers who don't charge GST/HST and for registrants who do."],
-      ["Does it file my taxes?", "No. It organizes your records so filing is faster. It isn't tax software or tax advice."]
+      [
+        "Do I need to be registered for GST/HST to use it?",
+        "No. It works for small suppliers who don't charge GST/HST and for registrants who do."
+      ],
+      [
+        "Does it file my taxes?",
+        "No. It organizes your records so filing is faster. It isn't tax software or tax advice."
+      ]
     ]
   },
   {
@@ -28,21 +52,39 @@
     "name": "Freelancer Invoice Generator with GST/HST",
     "short": "Numbered, professional invoices with the right tax line for your province, or none if you're a small supplier.",
     "price_cents": 1500,
-    "status": "in_development",
+    "status": "pending_approval",
     "payhip_url": "",
     "launch_wave": 1,
     "for": "Anyone in Canada who bills clients and wants invoices that look professional without an invoicing subscription.",
     "problem": "Free invoice templates rarely handle Canadian sales tax properly: HST in some provinces, GST plus QST in Quebec, and no tax at all for small suppliers.",
     "inside": [
-      ["Invoice template", "Your details, client details, line items, automatic numbering"],
-      ["Tax presets", "GST, HST and GST + QST, plus a small-supplier mode with no tax line"],
-      ["Invoice register", "Every invoice listed with paid or unpaid status"],
-      ["Overdue view", "Which invoices are past due and by how many days"]
+      [
+        "Invoice template",
+        "Your details, client details, line items, automatic numbering"
+      ],
+      [
+        "Tax presets",
+        "GST, HST and GST + QST, plus a small-supplier mode with no tax line"
+      ],
+      [
+        "Invoice register",
+        "Every invoice listed with paid or unpaid status"
+      ],
+      [
+        "Overdue view",
+        "Which invoices are past due and by how many days"
+      ]
     ],
     "formats": "Google Sheets copy link and an Excel (.xlsx) file",
     "faq": [
-      ["Can I add my logo?", "Yes. There's an image cell at the top of the invoice."],
-      ["Can I print to PDF?", "Yes. The invoice sheet is set up to fit one letter-size page."]
+      [
+        "Can I add my logo?",
+        "Yes. There's an image cell at the top of the invoice."
+      ],
+      [
+        "Can I print to PDF?",
+        "Yes. The invoice sheet is set up to fit one letter-size page."
+      ]
     ]
   },
   {
@@ -56,13 +98,25 @@
     "for": "Canadians saving in more than one registered account who want one place to see what they've used.",
     "problem": "Budget apps built for the US don't understand registered accounts, and over-contributing can mean CRA penalties.",
     "inside": [
-      ["Room tracker", "Enter the room shown in CRA My Account, log each contribution and withdrawal"],
-      ["Account view", "TFSA, RRSP and FHSA side by side"],
-      ["Over-contribution warning", "Flags when logged contributions pass the room you entered"]
+      [
+        "Room tracker",
+        "Enter the room shown in CRA My Account, log each contribution and withdrawal"
+      ],
+      [
+        "Account view",
+        "TFSA, RRSP and FHSA side by side"
+      ],
+      [
+        "Over-contribution warning",
+        "Flags when logged contributions pass the room you entered"
+      ]
     ],
     "formats": "Google Sheets copy link and an Excel (.xlsx) file",
     "faq": [
-      ["Does it calculate my room for me?", "No. Your room depends on your history, so you enter the figure from CRA My Account. The tracker never guesses it."]
+      [
+        "Does it calculate my room for me?",
+        "No. Your room depends on your history, so you enter the figure from CRA My Account. The tracker never guesses it."
+      ]
     ]
   },
   {
@@ -76,13 +130,25 @@
     "for": "Households who want a simple monthly plan that fits Canadian accounts and bills.",
     "problem": "Most budget templates assume US accounts and categories.",
     "inside": [
-      ["Monthly plan", "Income, bills, spending categories and savings in CAD"],
-      ["Savings lines", "TFSA, RRSP, FHSA, RESP and emergency fund"],
-      ["Year view", "Twelve months side by side"]
+      [
+        "Monthly plan",
+        "Income, bills, spending categories and savings in CAD"
+      ],
+      [
+        "Savings lines",
+        "TFSA, RRSP, FHSA, RESP and emergency fund"
+      ],
+      [
+        "Year view",
+        "Twelve months side by side"
+      ]
     ],
     "formats": "Google Sheets copy link and an Excel (.xlsx) file",
     "faq": [
-      ["Can two people use it?", "Yes. Share the Google Sheets copy with your partner."]
+      [
+        "Can two people use it?",
+        "Yes. Share the Google Sheets copy with your partner."
+      ]
     ]
   },
   {
@@ -96,13 +162,25 @@
     "for": "Self-employed Canadians who want their business and household money in order at once.",
     "problem": "Buying each tool separately costs $65.",
     "inside": [
-      ["Everything above", "Bookkeeping tracker, invoice generator, room tracker, household budget"],
-      ["Vehicle log", "Business kilometres by trip with a running business-use percentage"],
-      ["Home-office log", "Workspace and expense worksheet"]
+      [
+        "Everything above",
+        "Bookkeeping tracker, invoice generator, room tracker, household budget"
+      ],
+      [
+        "Vehicle log",
+        "Business kilometres by trip with a running business-use percentage"
+      ],
+      [
+        "Home-office log",
+        "Workspace and expense worksheet"
+      ]
     ],
     "formats": "Google Sheets copy links and Excel (.xlsx) files",
     "faq": [
-      ["Do I get future updates?", "Yes. Each January's update to rates and limits is free for buyers."]
+      [
+        "Do I get future updates?",
+        "Yes. Each January's update to rates and limits is free for buyers."
+      ]
     ]
   }
 ]
