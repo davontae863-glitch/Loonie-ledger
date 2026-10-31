@@ -6,8 +6,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const site = JSON.parse(readFileSync(join(root, 'src/site.json'), 'utf8'));
-const products = JSON.parse(readFileSync(join(root, 'src/products.json'), 'utf8'));
-const out = join(root, 'dist');
+const products = JSON.parse(readFileSync(process.env.PRODUCTS_FILE || join(root, 'src/products.json'), 'utf8'));
+const out = process.env.OUT_DIR || join(root, 'dist');
 
 const warnings = [];
 if (!site.contactEmail) warnings.push('site.json: contactEmail is empty (required before launch)');

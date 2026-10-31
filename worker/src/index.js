@@ -83,18 +83,23 @@ async function handlePayhipWebhook(request, env, pathToken) {
 
     if (type === 'refunded') {
       const r = parseRefund(payload);
-      const existing = await env.DB.prepare('SELECT gross_cents FROM orders WHERE id = ?').bind(r.id).first();
+      const existing = await env.DB.prepare('SELECT gross_cents, refunded_cents FROM orders WHERE id = ?').bind(r.id).first();
       if (!existing) {
         await logWebhook(env, type, externalId, 'error', 'refund for unknown order');
         // 200 so Payhip doesn't retry forever; flagged for the owner via the health check.
         return json({ ok: false, error: 'unknown order' });
       }
-      const status = r.amount_refunded_cents >= existing.gross_cents ? 'refunded' : 'partially_refunded';
-      await env.DB.prepare('UPDATE orders SET refunded_cents = ?, status = ? WHERE id = ?')
-        .bind(Math.min(r.amount_refunded_cents, existing.gross_cents), status, r.id).run();
+      // Payhip reports the total refunded so far; never record more than the sale amount.
+      const refunded = Math.min(Math.max(0, r.amount_refunded_cents), existing.gross_cents);
+      if (refunded <= existing.refunded_cents) {
+        await logWebhook(env, type, externalId, 'duplicate', 'refund amount unchanged');
+        return json({ ok: true, duplicate: true });
+      }
+      const status = refunded >= existing.gross_cents ? 'refunded' : 'partially_refunded';
+      await env.DB.prepare('UPDATE orders SET refunded_cents = ?, status = ? WHERE id = ?').bind(refunded, status, r.id).run();
       await logWebhook(env, type, externalId, 'stored', status);
-      await raiseAlert(env, { key: `refund:${r.id}:${r.amount_refunded_cents}`, level: 'warning',
-        title: `Refund recorded: ${formatCad(r.amount_refunded_cents)}`, detail: `Order ${r.id}. Note the reason in the experiments log if it points to a product problem.` });
+      await raiseAlert(env, { key: `refund:${r.id}:${refunded}`, level: 'warning',
+        title: `Refund recorded: ${formatCad(refunded - existing.refunded_cents)} (order total refunded ${formatCad(refunded)})`, detail: `Order ${r.id}. Note the reason in the experiments log if it points to a product problem.` });
       return json({ ok: true });
     }
 
@@ -212,7 +217,7 @@ async function handleOwner(request, env, url, owner) {
 
   if (request.method === 'GET' && path === '/clicks') {
     const rows = (await env.DB.prepare(
-      "SELECT campaign, target, COUNT(*) AS clicks FROM link_clicks WHERE clicked_on >= date('now','-30 days') GROUP BY campaign, target ORDER BY clicks DESC LIMIT 50"
+      "SELECT campaign, target, COUNT(*) AS clicks FROM link_clicks WHERE clicked_on >= date('now','-30 days') AND campaign NOT LIKE 'ci-%' GROUP BY campaign, target ORDER BY clicks DESC LIMIT 50"
     ).all()).results;
     return json({ clicks: rows });
   }
