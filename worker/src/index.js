@@ -38,7 +38,7 @@ async function logJob(env, job, ok, detail) {
 
 // ---------- Payhip webhook ----------
 async function handlePayhipWebhook(request, env, pathToken) {
-  if (!env.WEBHOOK_PATH_TOKEN || !safeEqual(pathToken, env.WEBHOOK_PATH_TOKEN)) {
+  if (!env.WEBHOOK_PATH_TOKEN || !safeEqual(pathToken, env.WEBHOOK_PATH_TOKEN.trim())) {
     // Logged (without the token) so a mistyped webhook address shows up on the dashboard.
     if (!pathToken.startsWith('not-the-real-token')) { // the live smoke test's probe isn't a real problem
       await logWebhook(env, 'unknown', null, 'rejected', env.WEBHOOK_PATH_TOKEN ? 'wrong webhook address' : 'WEBHOOK_PATH_TOKEN secret missing');
@@ -353,9 +353,15 @@ export default {
       if (whRaw) { try { wh = [whRaw[0], decodeURIComponent(whRaw[1]).trim()]; } catch { wh = null; } }
       if (wh && request.method === 'POST') return handlePayhipWebhook(request, env, wh[1]);
       // Owner self-check: opening the exact webhook address in a browser confirms it's right.
-      if (wh && request.method === 'GET' && env.WEBHOOK_PATH_TOKEN && safeEqual(wh[1], env.WEBHOOK_PATH_TOKEN)) {
+      if (wh && request.method === 'GET' && env.WEBHOOK_PATH_TOKEN && safeEqual(wh[1], env.WEBHOOK_PATH_TOKEN.trim())) {
         return new Response('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font:18px system-ui;padding:24px"><h1 style="color:#1f7a4d">This webhook address is correct.</h1><p>Paste this exact address into Payhip → Settings → Developer → Webhook Endpoint, then tap Submit.</p></body>',
           { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer' } });
+      }
+      if (wh && request.method === 'GET' && !wh[1].startsWith('not-the-real-token')) {
+        // Wrong token typed into the browser check: record lengths only (never the token) to help spot copy mistakes.
+        const exp = env.WEBHOOK_PATH_TOKEN ? env.WEBHOOK_PATH_TOKEN.length : 0;
+        await logWebhook(env, 'address-check', null, 'rejected', `address check failed: you sent ${wh[1].length} characters, Cloudflare has ${exp}${exp && env.WEBHOOK_PATH_TOKEN.trim().length !== exp ? ' (saved value has spaces at the start or end)' : ''}`);
+        return json({ error: 'not found' }, 404);
       }
       if (url.pathname.startsWith('/api/webhooks/') && request.method === 'POST' && !wh) {
         await logWebhook(env, 'unknown', null, 'rejected', 'webhook address malformed (extra text, spaces or symbols after /payhip/)');
