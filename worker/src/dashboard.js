@@ -158,7 +158,9 @@ form{display:grid;gap:8px;padding:14px}label{font-size:.9rem;color:var(--soft)}
       $('health').innerHTML = '<tr><th>Database</th><td>'+(h.db==='ok'?'Working':'<span class="neg">Not reachable</span>')+'</td></tr>'
         + '<tr><th>Store mode</th><td>'+(h.mode==='live'?'Live':'Test')+'</td></tr>'
         + '<tr><th>Last background job</th><td>'+(last?esc(last.job)+' '+(last.ok?'ok':'<span class="neg">failed</span>')+'<br><span class="small muted">'+esc(last.ran_at)+' UTC</span>':'None yet')+'</td></tr>'
-        + '<tr><th>Order problems, last 24 h</th><td class="'+(h.webhook_errors_24h?'neg':'')+'">'+h.webhook_errors_24h+'</td></tr>';
+        + '<tr><th>Order problems, last 24 h</th><td class="'+(h.webhook_errors_24h?'neg':'')+'">'+h.webhook_errors_24h+'</td></tr>'
+        + '<tr><th>Last message from Payhip</th><td>'+(h.last_webhook?esc(h.last_webhook.event_type)+': '+esc(h.last_webhook.outcome)+(h.last_webhook.detail?'<br><span class="small muted">'+esc(h.last_webhook.detail)+'</span>':'')+'<br><span class="small muted">'+esc(h.last_webhook.received_at)+' UTC</span>':'None received yet')+'</td></tr>'
+        + (h.secrets?'<tr><th>Secrets set</th><td class="small">'+['payhip_api_key','webhook_path_token','owner_api_token'].map(function(k){return k.replace(/_/g,' ')+': '+(h.secrets[k]?'yes':'<span class="neg">missing</span>');}).join('<br>')+'</td></tr>':'');
     }).catch(function(e){
       if (e.message==='unauthorized'){
         var tried = !!token; token=''; sessionStorage.removeItem('ll_owner_token'); $('app').hidden=true; $('login').hidden=false;

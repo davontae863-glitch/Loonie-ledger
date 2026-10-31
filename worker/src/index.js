@@ -39,6 +39,10 @@ async function logJob(env, job, ok, detail) {
 // ---------- Payhip webhook ----------
 async function handlePayhipWebhook(request, env, pathToken) {
   if (!env.WEBHOOK_PATH_TOKEN || !safeEqual(pathToken, env.WEBHOOK_PATH_TOKEN)) {
+    // Logged (without the token) so a mistyped webhook address shows up on the dashboard.
+    if (!pathToken.startsWith('not-the-real-token')) { // the live smoke test's probe isn't a real problem
+      await logWebhook(env, 'unknown', null, 'rejected', env.WEBHOOK_PATH_TOKEN ? 'wrong webhook address' : 'WEBHOOK_PATH_TOKEN secret missing');
+    }
     return json({ error: 'not found' }, 404); // don't reveal the endpoint exists
   }
   let payload;
@@ -242,6 +246,8 @@ async function healthReport(env) {
       "SELECT COUNT(*) AS n FROM webhook_events WHERE outcome IN ('error','rejected') AND received_at >= datetime('now','-1 day')"
     ).first();
     report.webhook_errors_24h = errs ? errs.n : 0;
+    report.last_webhook = await env.DB.prepare('SELECT event_type, outcome, detail, received_at FROM webhook_events ORDER BY id DESC LIMIT 1').first();
+    report.secrets = { payhip_api_key: !!env.PAYHIP_API_KEY, webhook_path_token: !!env.WEBHOOK_PATH_TOKEN, owner_api_token: !!env.OWNER_API_TOKEN };
   } catch (e) {
     report.db = 'error';
   }
