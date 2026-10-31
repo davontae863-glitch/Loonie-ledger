@@ -350,6 +350,15 @@ export default {
       if (go && request.method === 'GET') return handleGo(request, env, url, go[1]);
       const wh = url.pathname.match(/^\/api\/webhooks\/payhip\/([A-Za-z0-9_-]{16,128})$/);
       if (wh && request.method === 'POST') return handlePayhipWebhook(request, env, wh[1]);
+      // Owner self-check: opening the exact webhook address in a browser confirms it's right.
+      if (wh && request.method === 'GET' && env.WEBHOOK_PATH_TOKEN && safeEqual(wh[1], env.WEBHOOK_PATH_TOKEN)) {
+        return new Response('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font:18px system-ui;padding:24px"><h1 style="color:#1f7a4d">This webhook address is correct.</h1><p>Paste this exact address into Payhip → Settings → Developer → Webhook Endpoint, then tap Submit.</p></body>',
+          { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer' } });
+      }
+      if (url.pathname.startsWith('/api/webhooks/') && request.method === 'POST' && !wh) {
+        await logWebhook(env, 'unknown', null, 'rejected', 'webhook address malformed (extra text, spaces or symbols after /payhip/)');
+        return json({ error: 'not found' }, 404);
+      }
 
       if (url.pathname.startsWith('/api/owner/')) {
         const owner = ownerIdentity(request, env);

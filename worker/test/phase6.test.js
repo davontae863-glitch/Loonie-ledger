@@ -138,3 +138,13 @@ test('support message matrix: 16 realistic messages sorted and escalated correct
   ];
   for (const [msg, cat, esc] of cases) assert.deepEqual(classify(msg), { category: cat, escalate: esc }, msg);
 });
+
+test('owner can verify the webhook address in a browser; wrong or malformed ones are logged', async () => {
+  const ok = await worker.fetch(new Request(`https://x/api/webhooks/payhip/${TOKEN}`), env);
+  assert.equal(ok.status, 200);
+  assert.match(await ok.text(), /address is correct/);
+  assert.equal((await worker.fetch(new Request('https://x/api/webhooks/payhip/wrongtoken_abcdefghijk'), env)).status, 404);
+  const bad = await worker.fetch(new Request('https://x/api/webhooks/payhip/YOUR%20WEBHOOK%20PASSWORD!' + TOKEN, { method: 'POST', body: '{}' }), env);
+  assert.equal(bad.status, 404);
+  assert.match(db.prepare('SELECT detail FROM webhook_events ORDER BY id DESC').get().detail, /malformed/);
+});
