@@ -42,7 +42,8 @@ form{display:grid;gap:8px;padding:14px}label{font-size:.9rem;color:var(--soft)}
 
 <div id="login" hidden class="sheet" style="padding:14px">
   <p>Sign in with your owner token. It's kept in this browser tab only and cleared when you close it.</p>
-  <form id="loginForm" style="padding:0"><label for="tok">Owner token</label><input id="tok" type="password" autocomplete="off" required minlength="32"><button>Sign in</button></form>
+  <form id="loginForm" style="padding:0"><label for="tok">Owner token</label><input id="tok" type="password" autocomplete="off" required><button>Sign in</button></form>
+  <p id="loginMsg" role="alert" class="small" style="color:var(--warn);margin:10px 0 0"></p>
 </div>
 
 <div id="app" hidden>
@@ -159,12 +160,16 @@ form{display:grid;gap:8px;padding:14px}label{font-size:.9rem;color:var(--soft)}
         + '<tr><th>Last background job</th><td>'+(last?esc(last.job)+' '+(last.ok?'ok':'<span class="neg">failed</span>')+'<br><span class="small muted">'+esc(last.ran_at)+' UTC</span>':'None yet')+'</td></tr>'
         + '<tr><th>Order problems, last 24 h</th><td class="'+(h.webhook_errors_24h?'neg':'')+'">'+h.webhook_errors_24h+'</td></tr>';
     }).catch(function(e){
-      if (e.message==='unauthorized'){ token=''; sessionStorage.removeItem('ll_owner_token'); $('app').hidden=true; $('login').hidden=false; }
+      if (e.message==='unauthorized'){
+        var tried = !!token; token=''; sessionStorage.removeItem('ll_owner_token'); $('app').hidden=true; $('login').hidden=false;
+        $('loginMsg').textContent = tried ? 'That token was not accepted. It must match OWNER_API_TOKEN in Cloudflare exactly (saved as a Secret, at least 32 characters).' : '';
+      }
       else { $('msg').textContent='Couldn\\'t load the dashboard. Check your connection and tap Refresh.'; }
     });
   }
   function cents(v){ var n=parseFloat(String(v).replace(/[$,\\s]/g,'')); return isFinite(n)&&n>0?Math.round(n*100):0; }
-  $('loginForm').addEventListener('submit', function(e){ e.preventDefault(); token=$('tok').value.trim(); sessionStorage.setItem('ll_owner_token', token); load(); });
+  $('loginForm').addEventListener('submit', function(e){ e.preventDefault(); $('loginMsg').textContent='Checking…'; token=$('tok').value.trim();
+    if (token.length < 32) { $('loginMsg').textContent='The owner token is at least 32 characters. This one is '+token.length+'.'; token=''; return; } sessionStorage.setItem('ll_owner_token', token); load(); });
   $('period').addEventListener('change', load); $('rkind').addEventListener('change', load);
   $('alerts').addEventListener('click', function(e){ var b=e.target.closest('button[data-dismiss]'); if(!b) return; api('/api/owner/alerts/'+b.dataset.dismiss+'/dismiss',{method:'POST'}).then(load); });
   $('tickets').addEventListener('click', function(e){ var b=e.target.closest('button[data-ticket]'); if(!b) return; api('/api/owner/tickets/'+b.dataset.ticket,{method:'POST',body:JSON.stringify({status:b.dataset.s})}).then(function(){ $('msg').textContent=b.dataset.s==='closed'?'Message closed.':'Marked as replied.'; load(); }); }); $('refresh').addEventListener('click', load);
