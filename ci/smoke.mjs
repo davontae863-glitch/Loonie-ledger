@@ -4,7 +4,9 @@ const BASE = process.env.BASE_URL || 'https://shop.loonieledger.workers.dev';
 const products = JSON.parse((await import('node:fs')).readFileSync(new URL('../site/src/products.json', import.meta.url), 'utf8'));
 let failed = 0;
 const check = (ok, name) => { console.log(`${ok ? "PASS" : "FAIL"}  ${name}`); if (!ok) { failed++; console.log(`::error title=Live check failed::${name}`); } };
-const get = (p, init = {}) => fetch(BASE + p, { redirect: 'manual', ...init });
+// Send the same headers a real browser sends when you tap a link, so routing bugs show up here too.
+const NAV = { 'sec-fetch-mode': 'navigate', 'sec-fetch-dest': 'document', accept: 'text/html,application/xhtml+xml', 'user-agent': 'Mozilla/5.0 (iPhone) LoonieLedgerSmoke' };
+const get = (p, init = {}) => fetch(BASE + p, { redirect: 'manual', ...init, headers: { ...NAV, ...(init.headers || {}) } });
 
 for (const p of ['/', '/products/', '/gst-threshold-checker/', '/faq/', '/about/', '/contact/', '/delivery/', '/refunds/', '/privacy/', '/terms/', ...products.map((x) => `/products/${x.slug}/`)]) {
   const r = await get(p);
