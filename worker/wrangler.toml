@@ -14,6 +14,7 @@ html_handling = "auto-trailing-slash"
 # Only the owner switches this to "live" (Phase 7), after approving launch.
 [vars]
 STORE_MODE = "test"
+OWNER_EMAIL = "loonieledgerservices@gmail.com"   # not a secret; kept here so deploys never wipe it
 DAILY_CRON = "0 13 * * *"   # 13:00 UTC = 6-7 AM Edmonton time
 
 [triggers]
@@ -29,4 +30,4 @@ migrations_dir = "migrations"
 #   PAYHIP_API_KEY       Payhip > Settings > Developer
 #   WEBHOOK_PATH_TOKEN   random 32+ chars, part of the webhook URL
 #   OWNER_API_TOKEN      random 32+ chars, for the owner dashboard API
-#   OWNER_EMAIL          owner's email (also used by Cloudflare Access)
+
