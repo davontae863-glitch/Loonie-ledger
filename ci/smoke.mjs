@@ -13,6 +13,10 @@ for (const p of ['/', '/products/', '/gst-threshold-checker/', '/faq/', '/about/
   const body = r.status === 200 ? await r.text() : '';
   check(r.status === 200 && body.includes('Loonie Ledger'), `page ${p}`);
 }
+for (const x of products.filter((x) => x.status === 'live')) {
+  const body = await (await get(`/products/${x.slug}/`)).text();
+  check(body.includes(`href="${x.payhip_url}"`), `on sale with checkout link: ${x.slug}`);
+}
 for (const x of products.filter((x) => x.status !== 'live')) {
   const body = await (await get(`/products/${x.slug}/`)).text();
   check(!body.includes('payhip.com') && body.includes('Coming soon'), `not on sale yet: ${x.slug}`);

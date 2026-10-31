@@ -260,7 +260,7 @@ prose('/delivery/', 'Delivery', 'How Loonie Ledger tools are delivered.', `
 <li>Google Sheets versions open as "Make a copy", so the copy is yours to edit.</li>
 </ul>`);
 
-const draftNote = `<div class="note"><p>Draft for the owner's review, last updated ${esc(site.policiesUpdated)}. This is a plain-language policy, not legal advice; it should be reviewed before the store takes payments.</p></div>`;
+const draftNote = `<p class="small muted">Last updated ${esc(site.policiesUpdated)}.</p>`;
 
 prose('/refunds/', 'Refund policy', 'Refund policy for Loonie Ledger digital products.', `${draftNote}
 <p>Because our tools are digital files you keep as soon as they're delivered, here's how refunds work:</p>

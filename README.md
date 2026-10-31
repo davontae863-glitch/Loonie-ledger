@@ -3,7 +3,7 @@
 Spreadsheet tools for Canadians, sold online with as little manual work as possible.
 This repository holds the store, the operations worker (orders, finances, health), and every guide.
 
-**Status:** Phase 4 — storefront and owner dashboard built. Live at https://shop.loonieledger.workers.dev in test mode; products not on sale yet.
+**Status:** LIVE since 2026-10-31. https://shop.loonieledger.workers.dev — Bookkeeping & GST/HST Tracker and Invoice Generator on sale; three more tools coming soon.
 
 ## How it fits together
 

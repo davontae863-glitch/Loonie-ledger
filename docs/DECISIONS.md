@@ -13,3 +13,4 @@
 | 2026-10-31 | Products show "Coming soon" until built and approved | Never list or sell a product that doesn't exist yet | Brief requirement |
 | 2026-10-31 | Launch products built: Bookkeeping & GST/HST Tracker, Invoice Generator (v2026.1) | Rates checked against CRA (NS HST 14% since 2025-04-01); tested with sample data | Claude; awaiting owner review |
 | 2026-10-31 | Leave Payhip's automatic Canadian sales tax on | Payhip collects and remits GST/HST as a digital platform operator; it isn't us charging tax. Earlier advice to turn it off was wrong. | Claude (corrected) |
+| 2026-10-31 | LAUNCH: store set to live mode; Bookkeeping Tracker ($24) and Invoice Generator ($15) on sale | Owner approved products and policies | Owner (Davontae Williams) |

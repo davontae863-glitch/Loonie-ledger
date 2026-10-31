@@ -16,12 +16,18 @@ function build(products) {
   return (p) => readFileSync(join(dir, 'dist', p), 'utf8');
 }
 
-test('current catalog: every product is "Coming soon" with no checkout link', () => {
+test('current catalog: live products link to payhip.com; everything else is "Coming soon" with no checkout link', () => {
   const read = build(base);
   for (const p of base) {
     const html = read(`products/${p.slug}/index.html`);
-    assert.match(html, /Coming soon/);
-    assert.doesNotMatch(html, /payhip\.com/);
+    if (p.status === 'live') {
+      assert.match(p.payhip_url, /^https:\/\/payhip\.com\//);
+      assert.ok(html.includes(`href="${p.payhip_url}"`), p.slug);
+      assert.doesNotMatch(html, /Coming soon/);
+    } else {
+      assert.match(html, /Coming soon/);
+      assert.doesNotMatch(html, /payhip\.com/);
+    }
   }
 });
 
