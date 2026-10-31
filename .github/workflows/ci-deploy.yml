@@ -3,6 +3,7 @@ name: Test and deploy
 on:
   push:
     branches: [main]
+    paths-ignore: ['marketing/**', 'docs/**', '**.md']
   pull_request:
 
 jobs:
