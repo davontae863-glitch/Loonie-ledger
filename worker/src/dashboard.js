@@ -23,6 +23,10 @@ tr.key th,tr.key td{font-weight:700;font-size:1.05rem}
 .big div{background:var(--sheet);border:1px solid var(--strong);border-radius:10px;padding:14px}
 .big b{display:block;font-size:1.5rem;letter-spacing:-.01em}
 .neg{color:var(--warn)}
+.ticket{background:var(--sheet);border:1px solid var(--strong);border-radius:10px;padding:14px;margin:0 0 10px}
+.ticket.urgent{border-left:4px solid var(--warn)}
+.ticket pre{white-space:pre-wrap;font:inherit;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:10px;margin:8px 0}
+.lvl{font-size:.8rem;font-weight:700}.lvl.urgent{color:var(--warn)}.lvl.warning{color:var(--bronze)}.lvl.info{color:var(--soft)}
 select,input,button{font:inherit;padding:9px 12px;border-radius:6px;border:1px solid var(--strong);background:#fff;color:var(--ink)}
 button{background:var(--spruce);border-color:var(--spruce);color:#fff;font-weight:600;cursor:pointer}
 button.secondary{background:#fff;color:var(--spruce)}
@@ -47,6 +51,9 @@ form{display:grid;gap:8px;padding:14px}label{font-size:.9rem;color:var(--soft)}
     <select id="period"><option value="today">Today</option><option value="month" selected>This month</option><option value="lastmonth">Last month</option><option value="all">All time</option></select>
     <button class="secondary" id="refresh" type="button">Refresh</button></div>
 
+  <h2>Needs your attention</h2>
+  <div class="sheet" id="alerts"><p style="padding:14px;margin:0" class="muted">Loading…</p></div>
+
   <h2>Money</h2>
   <div class="big">
     <div><span class="muted small">Net operating profit</span><b id="k_net">–</b></div>
@@ -58,6 +65,16 @@ form{display:grid;gap:8px;padding:14px}label{font-size:.9rem;color:var(--soft)}
 
   <h2>Profit breakdown</h2>
   <div class="sheet"><table><tbody id="breakdown"></tbody></table></div>
+
+  <h2>Customer messages</h2>
+  <div id="tickets"><p class="muted">Loading…</p></div>
+
+  <h2>Reports</h2>
+  <div class="row"><select id="rkind"><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select></div>
+  <div class="sheet" style="margin-top:8px"><table><tbody id="reports"></tbody></table></div>
+
+  <h2>Marketing links, last 30 days</h2>
+  <div class="sheet"><table><tbody id="clicks"></tbody></table></div>
 
   <h2>Approvals waiting for you</h2>
   <div class="sheet" id="approvals"><p style="padding:14px;margin:0" class="muted">Loading…</p></div>
@@ -107,8 +124,23 @@ form{display:grid;gap:8px;padding:14px}label{font-size:.9rem;color:var(--soft)}
   function setBig(id, c){ var el=$(id); el.textContent=cad(c); el.classList.toggle('neg', c<0); }
   function load(){
     $('msg').textContent='';
-    Promise.all([api('/api/owner/summary'+range()), api('/api/owner/health'), api('/api/owner/approvals')]).then(function(res){
-      var s=res[0], h=res[1], a=res[2];
+    Promise.all([api('/api/owner/summary'+range()), api('/api/owner/health'), api('/api/owner/approvals'), api('/api/owner/alerts'), api('/api/owner/tickets'), api('/api/owner/reports?kind='+$('rkind').value), api('/api/owner/clicks')]).then(function(res){
+      var s=res[0], h=res[1], a=res[2], al=res[3].alerts||[], tk=res[4].tickets||[], rp=res[5].reports||[], ck=res[6].clicks||[];
+      $('alerts').innerHTML = al.length ? '<table><tbody>'+al.map(function(x){ return '<tr><th><span class="lvl '+esc(x.level)+'">'+esc(x.level)+'</span><br>'+esc(x.title)+(x.detail?'<br><span class="small muted">'+esc(x.detail)+'</span>':'')+'</th><td><button class="secondary" data-dismiss="'+x.id+'">Dismiss</button></td></tr>'; }).join('')+'</tbody></table>'
+        : '<p style="padding:14px;margin:0" class="muted">Nothing needs your attention.</p>';
+      $('tickets').innerHTML = tk.length ? tk.map(function(t){
+        var subj='Re: your message to Loonie Ledger', body=t.draft_reply||'';
+        var mail='mailto:'+encodeURIComponent(t.customer_email)+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+        return '<div class="ticket'+(t.escalate?' urgent':'')+'"><div class="row" style="justify-content:space-between"><strong>'+esc(t.customer_name||t.customer_email)+'</strong><span class="small muted">'+esc(t.category)+' · '+esc(t.created_at)+'</span></div>'
+          +(t.escalate?'<p class="small neg" style="margin:6px 0">Reply personally. No draft is written for this kind of message.</p>':'')
+          +'<pre>'+esc(t.message)+'</pre>'
+          +(t.draft_reply?'<p class="small muted" style="margin:0">Suggested reply (check it, fill in anything in [brackets]):</p><pre>'+esc(t.draft_reply)+'</pre>':'')
+          +'<div class="row"><a class="secondary" style="padding:9px 12px;border:1px solid var(--strong);border-radius:6px;text-decoration:none;color:var(--spruce);font-weight:600" href="'+mail+'">Reply by email</a><button class="secondary" data-ticket="'+t.id+'" data-s="waiting">Mark replied</button><button data-ticket="'+t.id+'" data-s="closed">Close</button></div></div>';
+      }).join('') : '<p class="muted">No open messages.</p>';
+      $('reports').innerHTML = rp.length ? rp.map(function(r){ var j=r.json; return '<tr><th>'+esc(r.period_start)+' to '+esc(r.period_end)+'<br><span class="small muted">'+j.order_count+' orders · revenue '+cad(j.gross_revenue_cents)+'</span></th><td class="'+(j.net_operating_profit_cents<0?'neg':'')+'">'+cad(j.net_operating_profit_cents)+'</td></tr>'; }).join('')
+        : '<tr><th class="muted">No reports yet. The first daily report is written at about 7 AM.</th><td></td></tr>';
+      $('clicks').innerHTML = ck.length ? ck.map(function(c){ return '<tr><th>'+esc(c.campaign)+'<br><span class="small muted">'+esc(c.target)+'</span></th><td>'+c.clicks+'</td></tr>'; }).join('')
+        : '<tr><th class="muted">No clicks yet. Use the tracked links in your posts.</th><td></td></tr>';
       $('login').hidden=true; $('app').hidden=false;
       $('modeBanner').hidden = h.mode === 'live';
       setBig('k_net', s.net_operating_profit_cents); setBig('k_cash', s.available_cash_cents); setBig('k_pending', s.pending_payouts_cents);
@@ -133,7 +165,9 @@ form{display:grid;gap:8px;padding:14px}label{font-size:.9rem;color:var(--soft)}
   }
   function cents(v){ var n=parseFloat(String(v).replace(/[$,\\s]/g,'')); return isFinite(n)&&n>0?Math.round(n*100):0; }
   $('loginForm').addEventListener('submit', function(e){ e.preventDefault(); token=$('tok').value.trim(); sessionStorage.setItem('ll_owner_token', token); load(); });
-  $('period').addEventListener('change', load); $('refresh').addEventListener('click', load);
+  $('period').addEventListener('change', load); $('rkind').addEventListener('change', load);
+  $('alerts').addEventListener('click', function(e){ var b=e.target.closest('button[data-dismiss]'); if(!b) return; api('/api/owner/alerts/'+b.dataset.dismiss+'/dismiss',{method:'POST'}).then(load); });
+  $('tickets').addEventListener('click', function(e){ var b=e.target.closest('button[data-ticket]'); if(!b) return; api('/api/owner/tickets/'+b.dataset.ticket,{method:'POST',body:JSON.stringify({status:b.dataset.s})}).then(function(){ $('msg').textContent=b.dataset.s==='closed'?'Message closed.':'Marked as replied.'; load(); }); }); $('refresh').addEventListener('click', load);
   $('signout').addEventListener('click', function(){ sessionStorage.removeItem('ll_owner_token'); location.reload(); });
   $('approvals').addEventListener('click', function(e){ var b=e.target.closest('button[data-id]'); if(!b) return;
     api('/api/owner/approvals/'+b.dataset.id,{method:'POST',body:JSON.stringify({status:b.dataset.s})}).then(function(){ $('msg').textContent=b.dataset.s==='approved'?'Approved.':'Rejected.'; load(); }); });

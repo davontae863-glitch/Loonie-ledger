@@ -218,8 +218,27 @@ prose('/about/', 'About', 'Who makes Loonie Ledger and why.', `
 </ul>`);
 
 prose('/contact/', 'Contact', 'How to reach Loonie Ledger.', `
-<p class="lede">Email ${contact}. We reply within two business days.</p>
-<p>For a download problem, include the email address you bought with and the tool's name, so we can find your order. Please don't send card numbers, SIN or banking details by email.</p>`);
+<p class="lede">Send us a message below, or email ${contact}. We reply within two business days.</p>
+<p class="note" id="sent" hidden style="border-left-color:var(--ok)">Thanks, your message is in. We'll reply by email within two business days.</p>
+<p class="note" id="err" hidden></p>
+<form class="sheet contact-form" method="post" action="/api/support">
+  <label for="c-name">Your name <span class="muted">(optional)</span></label>
+  <input id="c-name" name="name" autocomplete="name" maxlength="80">
+  <label for="c-email">Email to reply to</label>
+  <input id="c-email" name="email" type="email" autocomplete="email" required>
+  <label for="c-order">Email you bought with <span class="muted">(if different)</span></label>
+  <input id="c-order" name="order_email" type="email">
+  <label for="c-msg">Message</label>
+  <textarea id="c-msg" name="message" rows="6" required minlength="10" maxlength="4000"></textarea>
+  <div class="hp" aria-hidden="true"><label for="c-web">Leave this empty</label><input id="c-web" name="website" tabindex="-1" autocomplete="off"></div>
+  <button class="btn" type="submit">Send message</button>
+  <p class="small muted" style="margin:0">Please don't include card numbers, your SIN or banking details. We keep messages for up to 12 months after we close them; see our <a href="/privacy/">privacy policy</a>.</p>
+</form>
+<script>
+(function(){var q=new URLSearchParams(location.search);
+if(q.get('sent')){document.getElementById('sent').hidden=false;document.querySelector('.contact-form').hidden=true;}
+if(q.get('error')){var e=document.getElementById('err');e.textContent=q.get('error');e.hidden=false;}})();
+</script>`);
 
 prose('/faq/', 'FAQ', 'Answers to common questions about Loonie Ledger tools.', `<dl class="faq">
 <dt>What do I actually get?</dt><dd>A Google Sheets copy link and an Excel (.xlsx) file, plus a one-page setup guide. They arrive by email right after payment.</dd>
@@ -258,7 +277,7 @@ prose('/privacy/', 'Privacy policy', 'How Loonie Ledger collects and uses person
 <ul>
 <li><strong>When you buy:</strong> your name, email address and purchase details are collected by our checkout provider, Payhip, and card payments are processed by Stripe or PayPal. We never see or store your full card number.</li>
 <li><strong>In our own records:</strong> order amounts, which tool you bought, and a one-way scrambled version of your email address, used to match support requests and prevent double-counting. We don't keep your name or address in our systems.</li>
-<li><strong>When you email us:</strong> whatever you choose to send.</li>
+<li><strong>When you contact us:</strong> your name (optional), email address and message. We keep these to answer you and delete them 12 months after we close your request.</li>
 <li><strong>On this website:</strong> our host (Cloudflare) processes standard technical data, such as IP addresses, to deliver pages and protect the site. The GST checker runs in your browser; what you type isn't sent anywhere.</li>
 </ul>
 <h2>How we use it</h2>

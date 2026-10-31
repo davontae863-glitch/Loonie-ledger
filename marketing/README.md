@@ -1,0 +1,27 @@
+# Marketing system
+
+Organic only: Pinterest, TikTok, Instagram Reels, YouTube Shorts, and search. No paid ads, no fake engagement, no claims we can't back up.
+
+## How a day works
+
+1. A scheduled task (Claude) writes the day's draft to `drafts/YYYY-MM-DD.md` each morning: one Pinterest pin and one 30-second video script, both from `calendar.md`, plus captions and the tracked link.
+2. Davontae reviews the draft, makes the pin (Canva free plan, using the text in the draft) or films the screen recording, and posts it.
+3. Every post uses its **tracked link**, so the dashboard shows which posts bring visitors.
+4. Each Monday's draft starts with a short review of last week's clicks (from the dashboard) and what to change.
+
+## Tracked links
+
+Format: `https://shop.loonieledger.workers.dev/go/<campaign>?to=<page>`
+
+- `campaign`: lowercase letters, numbers and dashes, e.g. `pin-gst-threshold-01`
+- `to`: a page on our site, e.g. `/gst-threshold-checker/`
+
+The link counts the click, then sends the visitor to the page. It only ever sends people to our own site.
+
+## Rules for every piece of content
+
+- Facts about CRA rules, rates or limits must be checked against canada.ca on the day, with the source noted in the draft.
+- No "passive income", "guaranteed", or "save thousands" claims.
+- Products marked "Coming soon" are never promoted as available; point to the free GST checker or the product page's "Coming soon" status.
+- No customer stories, reviews or numbers until they're real.
+- Posting is done by the owner from their own accounts. Nothing posts automatically until a platform's official API is approved for this account.

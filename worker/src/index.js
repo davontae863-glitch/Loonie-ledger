@@ -5,6 +5,9 @@ import { verifyPayhipSignature, parsePaid, parseRefund, readBody, safeEqual } fr
 import { summarize, formatCad } from './lib/money.js';
 import { ownerIdentity } from './lib/auth.js';
 import { DASHBOARD_HTML } from './dashboard.js';
+import { raiseAlert, runAlertRules, pushPendingAlerts } from './lib/alerts.js';
+import { classify, draftReply, validateContact } from './lib/support.js';
+import { sha256Hex } from './lib/payhip.js';
 
 const JSON_HEADERS = {
   'content-type': 'application/json; charset=utf-8',
@@ -90,6 +93,8 @@ async function handlePayhipWebhook(request, env, pathToken) {
       await env.DB.prepare('UPDATE orders SET refunded_cents = ?, status = ? WHERE id = ?')
         .bind(Math.min(r.amount_refunded_cents, existing.gross_cents), status, r.id).run();
       await logWebhook(env, type, externalId, 'stored', status);
+      await raiseAlert(env, { key: `refund:${r.id}:${r.amount_refunded_cents}`, level: 'warning',
+        title: `Refund recorded: ${formatCad(r.amount_refunded_cents)}`, detail: `Order ${r.id}. Note the reason in the experiments log if it points to a product problem.` });
       return json({ ok: true });
     }
 
@@ -171,6 +176,47 @@ async function handleOwner(request, env, url, owner) {
     return json({ ok: true });
   }
 
+  if (request.method === 'GET' && path === '/alerts') {
+    const rows = (await env.DB.prepare(
+      "SELECT id, level, title, detail, created_at FROM alerts WHERE status = 'open' ORDER BY CASE level WHEN 'urgent' THEN 0 WHEN 'warning' THEN 1 ELSE 2 END, id DESC LIMIT 50"
+    ).all()).results;
+    return json({ alerts: rows });
+  }
+  const da = path.match(/^\/alerts\/(\d+)\/dismiss$/);
+  if (request.method === 'POST' && da) {
+    await env.DB.prepare("UPDATE alerts SET status = 'dismissed' WHERE id = ?").bind(Number(da[1])).run();
+    return json({ ok: true });
+  }
+
+  if (request.method === 'GET' && path === '/tickets') {
+    const rows = (await env.DB.prepare(
+      "SELECT id, category, escalate, status, summary, customer_name, customer_email, message, draft_reply, created_at FROM support_tickets WHERE status != 'closed' ORDER BY escalate DESC, id DESC LIMIT 50"
+    ).all()).results;
+    return json({ tickets: rows });
+  }
+  const tk = path.match(/^\/tickets\/(\d+)$/);
+  if (request.method === 'POST' && tk) {
+    const b = await request.json();
+    if (!['open', 'waiting', 'closed'].includes(b.status)) return json({ error: 'status must be open, waiting or closed' }, 400);
+    await env.DB.prepare("UPDATE support_tickets SET status = ?, closed_at = CASE WHEN ? = 'closed' THEN datetime('now') ELSE NULL END WHERE id = ?")
+      .bind(b.status, b.status, Number(tk[1])).run();
+    return json({ ok: true });
+  }
+
+  if (request.method === 'GET' && path === '/reports') {
+    const kind = ['daily', 'weekly', 'monthly'].includes(url.searchParams.get('kind')) ? url.searchParams.get('kind') : 'daily';
+    const rows = (await env.DB.prepare('SELECT kind, period_start, period_end, json FROM reports WHERE kind = ? ORDER BY period_start DESC LIMIT 12')
+      .bind(kind).all()).results.map((r) => ({ ...r, json: JSON.parse(r.json) }));
+    return json({ reports: rows });
+  }
+
+  if (request.method === 'GET' && path === '/clicks') {
+    const rows = (await env.DB.prepare(
+      "SELECT campaign, target, COUNT(*) AS clicks FROM link_clicks WHERE clicked_on >= date('now','-30 days') GROUP BY campaign, target ORDER BY clicks DESC LIMIT 50"
+    ).all()).results;
+    return json({ clicks: rows });
+  }
+
   if (request.method === 'GET' && path === '/health') {
     return json(await healthReport(env));
   }
@@ -198,21 +244,79 @@ async function healthReport(env) {
 }
 
 // ---------- Scheduled jobs ----------
-async function dailyReport(env) {
-  const end = new Date();
-  end.setUTCHours(0, 0, 0, 0);
-  const start = new Date(end.getTime() - 86400000);
+const DAY = 86400000;
+
+async function saveReport(env, kind, start, end) {
   const summary = await buildSummary(env, start.toISOString(), end.toISOString());
-  const date = start.toISOString().slice(0, 10);
-  await env.DB.prepare('INSERT OR REPLACE INTO daily_reports (report_date, json) VALUES (?, ?)')
-    .bind(date, JSON.stringify(summary)).run();
-  return `report ${date}: ${summary.order_count} orders, net ${formatCad(summary.net_operating_profit_cents)}`;
+  await env.DB.prepare('INSERT OR REPLACE INTO reports (kind, period_start, period_end, json) VALUES (?, ?, ?, ?)')
+    .bind(kind, start.toISOString().slice(0, 10), end.toISOString().slice(0, 10), JSON.stringify(summary)).run();
+  return `${kind} ${start.toISOString().slice(0, 10)}: ${summary.order_count} orders, net ${formatCad(summary.net_operating_profit_cents)}`;
 }
 
-async function heartbeat(env) {
+/** Daily at 13:00 UTC: yesterday's report; Mondays also last week's; the 1st also last month's; then cleanup. */
+async function dailyJobs(env, now = new Date()) {
+  const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const out = [await saveReport(env, 'daily', new Date(today.getTime() - DAY), today)];
+  if (today.getUTCDay() === 1) out.push(await saveReport(env, 'weekly', new Date(today.getTime() - 7 * DAY), today));
+  if (today.getUTCDate() === 1) out.push(await saveReport(env, 'monthly', new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() - 1, 1)), today));
+  // Retention: closed support tickets after 12 months, raw webhook logs after 6 months, click logs after ~13 months.
+  await env.DB.batch([
+    env.DB.prepare("DELETE FROM support_tickets WHERE status = 'closed' AND closed_at < datetime('now','-365 days')"),
+    env.DB.prepare("DELETE FROM webhook_events WHERE received_at < datetime('now','-180 days')"),
+    env.DB.prepare("DELETE FROM link_clicks WHERE clicked_on < date('now','-400 days')"),
+    env.DB.prepare("DELETE FROM job_runs WHERE ran_at < datetime('now','-90 days')"),
+  ]);
+  return out.join('; ');
+}
+
+async function hourlyJobs(env) {
   const h = await healthReport(env);
   if (h.db !== 'ok') throw new Error('database unreachable');
-  return `db ok, webhook errors 24h: ${h.webhook_errors_24h}`;
+  const raised = await runAlertRules(env);
+  const pushed = await pushPendingAlerts(env);
+  return `db ok; alerts raised: ${raised.join(',') || 'none'}; pushed: ${pushed}`;
+}
+
+// ---------- Customer support form ----------
+async function handleSupport(request, env) {
+  const isForm = (request.headers.get('content-type') || '').includes('form');
+  const reply = (ok, message, status = 200) => isForm
+    ? Response.redirect(new URL(ok ? '/contact/?sent=1' : `/contact/?error=${encodeURIComponent(message)}`, request.url).toString(), 303)
+    : json(ok ? { ok: true } : { error: message }, status);
+
+  let input;
+  try { input = await readBody(request); } catch { return reply(false, 'Something went wrong reading your message. Please try again.', 400); }
+  const v = validateContact(input);
+  if (v.spam) return reply(true); // look successful to bots, store nothing
+  if (!v.ok) return reply(false, v.error, 400);
+
+  const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+  const ipHash = await sha256Hex(`${ip}:${env.WEBHOOK_PATH_TOKEN || 'salt'}`);
+  const recent = await env.DB.prepare("SELECT COUNT(*) AS n FROM support_tickets WHERE ip_hash = ? AND created_at >= datetime('now','-1 hour')").bind(ipHash).first();
+  if (recent && recent.n >= 5) return reply(false, 'You\'ve sent several messages in the last hour. We\'ll reply to those first.', 429);
+
+  const { name, email, message, orderEmail } = v.value;
+  const { category, escalate } = classify(message);
+  const draft = draftReply({ category, name, escalate });
+  const summary = message.replace(/\s+/g, ' ').slice(0, 120);
+  const res = await env.DB.prepare(
+    `INSERT INTO support_tickets (category, escalate, status, summary, customer_name, customer_email, message, draft_reply, ip_hash, order_id)
+     VALUES (?, ?, 'open', ?, ?, ?, ?, ?, ?, ?)`
+  ).bind(category, escalate ? 1 : 0, summary, name || null, email, message, draft, ipHash, orderEmail ? `email:${orderEmail}` : null).run();
+  await raiseAlert(env, {
+    key: `ticket:${res.meta.last_row_id ?? summary}`, level: escalate ? 'urgent' : 'info',
+    title: escalate ? `Customer message needs your personal reply (${category})` : `New customer message (${category})`,
+  });
+  return reply(true);
+}
+
+// ---------- Tracked marketing links ----------
+async function handleGo(request, env, url, campaign) {
+  const to = url.searchParams.get('to') || '/';
+  // Internal paths only, so this can never be used to redirect people to other sites.
+  const safe = /^\/[A-Za-z0-9/_-]*$/.test(to) && !to.startsWith('//') ? to : '/';
+  await env.DB.prepare('INSERT INTO link_clicks (campaign, target) VALUES (?, ?)').bind(campaign, safe).run();
+  return Response.redirect(new URL(safe, request.url).toString(), 302);
 }
 
 export default {
@@ -230,6 +334,9 @@ export default {
         const h = await healthReport(env);
         return json({ ok: h.db === 'ok', mode: h.mode }); // public: no business data
       }
+      if (url.pathname === '/api/support' && request.method === 'POST') return handleSupport(request, env);
+      const go = url.pathname.match(/^\/go\/([a-z0-9-]{2,60})$/);
+      if (go && request.method === 'GET') return handleGo(request, env, url, go[1]);
       const wh = url.pathname.match(/^\/api\/webhooks\/payhip\/([A-Za-z0-9_-]{16,128})$/);
       if (wh && request.method === 'POST') return handlePayhipWebhook(request, env, wh[1]);
 
@@ -248,7 +355,7 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
-    const jobs = event.cron === env.DAILY_CRON ? [['daily_report', dailyReport]] : [['heartbeat', heartbeat]];
+    const jobs = event.cron === env.DAILY_CRON ? [['daily_jobs', dailyJobs]] : [['hourly_jobs', hourlyJobs]];
     for (const [name, fn] of jobs) {
       ctx.waitUntil((async () => {
         try {
@@ -262,4 +369,4 @@ export default {
 };
 
 // Exported for tests.
-export { buildSummary, healthReport };
+export { buildSummary, healthReport, dailyJobs };

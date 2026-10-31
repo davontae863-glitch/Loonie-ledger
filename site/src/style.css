@@ -139,3 +139,11 @@ dl.faq dd { margin: 0.3em 0 0; color: var(--ink-soft); max-width: 38em; }
   .cells.stack th { border-bottom: 0; padding-bottom: 2px; }
   .cells.stack td { padding-top: 0; }
 }
+
+/* Contact form */
+.contact-form { display: grid; gap: 8px; padding: 20px; max-width: 36rem; margin-top: 24px; }
+.contact-form label { font-weight: 500; font-size: 0.95rem; margin-top: 6px; }
+.contact-form input, .contact-form textarea { font: inherit; padding: 10px 12px; border: 1px solid var(--rule-strong); border-radius: var(--radius-control); background: var(--paper); color: var(--ink); width: 100%; }
+.contact-form textarea { resize: vertical; }
+.contact-form .btn { justify-self: start; margin-top: 8px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

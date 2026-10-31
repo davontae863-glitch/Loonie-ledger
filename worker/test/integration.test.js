@@ -3,14 +3,14 @@
 import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import worker from '../src/index.js';
 import { sha256Hex } from '../src/lib/payhip.js';
 
 function d1(db) {
   const stmt = (sql, params = []) => ({
     bind: (...p) => stmt(sql, p),
-    run: async () => { const r = db.prepare(sql).run(...params); return { meta: { changes: Number(r.changes) } }; },
+    run: async () => { const r = db.prepare(sql).run(...params); return { meta: { changes: Number(r.changes), last_row_id: Number(r.lastInsertRowid) } }; },
     first: async () => db.prepare(sql).get(...params) ?? null,
     all: async () => ({ results: db.prepare(sql).all(...params) }),
   });
@@ -23,7 +23,9 @@ let env;
 
 before(() => {
   const db = new DatabaseSync(':memory:');
-  db.exec(readFileSync(new URL('../migrations/0001_init.sql', import.meta.url), 'utf8'));
+  for (const f of readdirSync(new URL('../migrations/', import.meta.url)).filter((f) => f.endsWith('.sql')).sort()) {
+    db.exec(readFileSync(new URL('../migrations/' + f, import.meta.url), 'utf8'));
+  }
   env = { DB: d1(db), PAYHIP_API_KEY: 'test-key', WEBHOOK_PATH_TOKEN: TOKEN, OWNER_API_TOKEN: OWNER,
     OWNER_EMAIL: 'owner@example.com', STORE_MODE: 'live', DAILY_CRON: '0 13 * * *' };
 });
