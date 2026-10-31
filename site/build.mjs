@@ -246,7 +246,7 @@ prose('/faq/', 'FAQ', 'Answers to common questions about Loonie Ledger tools.', 
 <dt>Do I need Excel?</dt><dd>No. A free Google account is enough to use the Google Sheets version, on a computer or phone.</dd>
 <dt>Is this tax advice?</dt><dd>No. The tools organize your records using CRA categories. For advice about your situation, talk to an accountant or the CRA.</dd>
 <dt>Are you affiliated with the CRA?</dt><dd>No.</dd>
-<dt>Do prices include tax?</dt><dd>Prices are in Canadian dollars. If we become registered for GST/HST, tax will be shown at checkout.</dd>
+<dt>Do prices include tax?</dt><dd>Prices are in Canadian dollars before tax. Our checkout provider, Payhip, adds any GST/HST that applies where you live and sends it to the government, as the law requires of online marketplaces. You'll see it at checkout before you pay.</dd>
 <dt>Will it work in Quebec?</dt><dd>Yes. The tax presets include GST plus QST.</dd>
 <dt>What if the file doesn't work for me?</dt><dd>Email us and we'll fix it. If we can't, see the <a href="/refunds/">refund policy</a>.</dd>
 <dt>Do I get updates?</dt><dd>Yes. Each January's update to rates and limits is free for anyone who bought the tool.</dd>

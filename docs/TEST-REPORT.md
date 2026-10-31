@@ -23,7 +23,7 @@
 4. Webhook tokens with symbols were rejected. Now accepted.
 
 ## Open before launch
-- Payhip is charging 5% GST at checkout; turn off unless registered for GST/HST.
+- Payhip collects GST/HST at checkout as the platform operator (correct; leave on). After the first real sale, confirm whether Payhip's `price` field includes that tax so our revenue figure excludes it.
 - Stripe shows "Action required".
 - Optional: one more real purchase to see "paid: stored" end to end.
 - Optional: lengthen WEBHOOK_PATH_TOKEN (currently 10 characters) and update Payhip to match.
