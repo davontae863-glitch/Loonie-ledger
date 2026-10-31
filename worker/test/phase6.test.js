@@ -144,7 +144,14 @@ test('owner can verify the webhook address in a browser; wrong or malformed ones
   assert.equal(ok.status, 200);
   assert.match(await ok.text(), /address is correct/);
   assert.equal((await worker.fetch(new Request('https://x/api/webhooks/payhip/wrongtoken_abcdefghijk'), env)).status, 404);
-  const bad = await worker.fetch(new Request('https://x/api/webhooks/payhip/YOUR%20WEBHOOK%20PASSWORD!' + TOKEN, { method: 'POST', body: '{}' }), env);
+  const bad = await worker.fetch(new Request('https://x/api/webhooks/payhip/a/b/c', { method: 'POST', body: '{}' }), env);
   assert.equal(bad.status, 404);
   assert.match(db.prepare('SELECT detail FROM webhook_events ORDER BY id DESC').get().detail, /malformed/);
+});
+
+test('webhook token with symbols (e.g. iPhone passwords) works when URL-encoded', async () => {
+  const sym = 'Ab3$k!x-Yz9#Qp2&Lm7*';
+  const e2 = { ...env, WEBHOOK_PATH_TOKEN: sym };
+  const r = await worker.fetch(new Request('https://x/api/webhooks/payhip/' + encodeURIComponent(sym)), e2);
+  assert.equal(r.status, 200);
 });

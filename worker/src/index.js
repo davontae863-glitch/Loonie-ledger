@@ -348,7 +348,9 @@ export default {
       if (url.pathname === '/api/support' && request.method === 'POST') return handleSupport(request, env);
       const go = url.pathname.match(/^\/go\/([a-z0-9-]{2,60})$/);
       if (go && request.method === 'GET') return handleGo(request, env, url, go[1]);
-      const wh = url.pathname.match(/^\/api\/webhooks\/payhip\/([A-Za-z0-9_-]{16,128})$/);
+      const whRaw = url.pathname.match(/^\/api\/webhooks\/payhip\/([^/]{8,300})\/?$/);
+      let wh = null;
+      if (whRaw) { try { wh = [whRaw[0], decodeURIComponent(whRaw[1]).trim()]; } catch { wh = null; } }
       if (wh && request.method === 'POST') return handlePayhipWebhook(request, env, wh[1]);
       // Owner self-check: opening the exact webhook address in a browser confirms it's right.
       if (wh && request.method === 'GET' && env.WEBHOOK_PATH_TOKEN && safeEqual(wh[1], env.WEBHOOK_PATH_TOKEN)) {
