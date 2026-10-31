@@ -53,7 +53,7 @@
     "short": "Numbered, professional invoices with the right tax line for your province, or none if you're a small supplier.",
     "price_cents": 1500,
     "status": "pending_approval",
-    "payhip_url": "https://payhip.com/b/bllrn",
+    "payhip_url": "https://payhip.com/b/blIrn",
     "launch_wave": 1,
     "for": "Anyone in Canada who bills clients and wants invoices that look professional without an invoicing subscription.",
     "problem": "Free invoice templates rarely handle Canadian sales tax properly: HST in some provinces, GST plus QST in Quebec, and no tax at all for small suppliers.",
