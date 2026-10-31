@@ -1,0 +1,29 @@
+name: Weekly database backup
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"   # Mondays 09:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: worker } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci || npm install
+      - name: Export D1 database
+        run: |
+          mkdir -p ../backups
+          npx wrangler d1 export loonie-ledger --remote --output ../backups/loonie-ledger-$(date -u +%Y%m%d).sql
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Keep backup as a private workflow artifact (90 days)
+        uses: actions/upload-artifact@v4
+        with:
+          name: d1-backup
+          path: backups/*.sql
+          retention-days: 90

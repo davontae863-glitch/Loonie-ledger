@@ -1,0 +1,5 @@
+# Copy to .dev.vars for LOCAL testing only. Never commit .dev.vars.
+PAYHIP_API_KEY=local-test-key-not-real
+WEBHOOK_PATH_TOKEN=localwebhooktoken0123456789abcdef
+OWNER_API_TOKEN=localownertoken0123456789abcdef0123
+OWNER_EMAIL=owner@example.com

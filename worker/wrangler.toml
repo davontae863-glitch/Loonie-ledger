@@ -1,0 +1,24 @@
+name = "loonie-ledger-ops"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Store starts in TEST mode: every order is flagged is_test=1 and excluded from finances.
+# Only the owner switches this to "live" (Phase 7), after approving launch.
+[vars]
+STORE_MODE = "test"
+DAILY_CRON = "0 13 * * *"   # 13:00 UTC = 6-7 AM Edmonton time
+
+[triggers]
+crons = ["0 13 * * *", "0 * * * *"]   # daily report + hourly heartbeat (free plan allows 5 per account)
+
+[[d1_databases]]
+binding = "DB"
+database_name = "loonie-ledger"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"   # filled in during deployment
+migrations_dir = "migrations"
+
+# Secrets (never in this file). Set with: npx wrangler secret put <NAME>
+#   PAYHIP_API_KEY       Payhip > Settings > Developer
+#   WEBHOOK_PATH_TOKEN   random 32+ chars, part of the webhook URL
+#   OWNER_API_TOKEN      random 32+ chars, for the owner dashboard API
+#   OWNER_EMAIL          owner's email (also used by Cloudflare Access)

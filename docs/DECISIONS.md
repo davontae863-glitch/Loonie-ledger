@@ -1,0 +1,11 @@
+# Decision log
+
+| Date | Decision | Reason | By |
+|---|---|---|---|
+| 2026-10-31 | Niche: Canadian financial spreadsheets | Top score (88/100) of 22 niches | Owner approved (moved to Phase 2) |
+| 2026-10-31 | Checkout: Payhip free; Etsy not added | $0 rule; Etsy setup fee | Default; no owner reply on Etsy |
+| 2026-10-31 | Working brand "Loonie Ledger" | No conflict found in web search; trademark check pending | Owner moved to Phase 3 |
+| 2026-10-31 | Database: Cloudflare D1, not Supabase | Supabase free projects pause after 7 days of low activity | Claude |
+| 2026-10-31 | Store starts in test mode | Live payments need owner approval (Phase 7) | Brief requirement |
+| 2026-10-31 | Payhip webhook + URL token | Payhip signature alone is a fixed value | Claude |
+| 2026-10-31 | TikTok Shop deferred | Not open to Canadian sellers | Claude |
