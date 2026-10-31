@@ -1,5 +1,6 @@
 name = "loonie-ledger-ops"
 main = "src/index.js"
+account_id = "0e5d269fcaf2fa0e1c0a64c8c806ae76"   # not a secret
 compatibility_date = "2026-10-01"
 
 # Store starts in TEST mode: every order is flagged is_test=1 and excluded from finances.
@@ -14,7 +15,7 @@ crons = ["0 13 * * *", "0 * * * *"]   # daily report + hourly heartbeat (free pl
 [[d1_databases]]
 binding = "DB"
 database_name = "loonie-ledger"
-database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"   # filled in during deployment
+database_id = "e81ca8ff-d8d2-407a-90a8-7a22f0f6a8af"
 migrations_dir = "migrations"
 
 # Secrets (never in this file). Set with: npx wrangler secret put <NAME>
