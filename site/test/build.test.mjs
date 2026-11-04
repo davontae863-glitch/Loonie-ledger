@@ -55,3 +55,18 @@ test('every page has a title, description, and the legal links in the footer', (
   assert.ok(!read('contact/index.html').includes('[contact email'), 'contact email filled in');
   assert.ok(!read('about/index.html').includes('[owner name'), 'owner name filled in');
 });
+
+test('membership: shows a monthly price, stays "Coming soon" until it has a Payhip link, then says "Join"', () => {
+  const m = base.find((p) => p.billing);
+  assert.ok(m, 'catalog has a membership');
+  let read = build(base);
+  let html = read(`products/${m.slug}/index.html`);
+  assert.match(html, /\$5 <span/);
+  assert.match(html, /per month, or \$39 per year/);
+  assert.match(read('products/index.html'), /\$5\/mo/);
+  if (m.status !== 'live') assert.match(html, /Coming soon/);
+  read = build(base.map((p) => (p === m ? { ...p, status: 'live', payhip_url: 'https://payhip.com/b/Memb1' } : p)));
+  html = read(`products/${m.slug}/index.html`);
+  assert.match(html, /href="https:\/\/payhip\.com\/b\/Memb1">Join for \$5\/month/);
+  assert.doesNotMatch(html, /One-time purchase/);
+});

@@ -182,5 +182,57 @@
         "Yes. Each January's update to rates and limits is free for buyers."
       ]
     ]
+  },
+  {
+    "slug": "all-access-membership",
+    "name": "All-Access Membership",
+    "short": "Every Loonie Ledger tool, every January update and any new tools we release, for one monthly price.",
+    "price_cents": 500,
+    "billing": {
+      "interval": "month",
+      "yearly_cents": 3900
+    },
+    "status": "pending_payhip",
+    "payhip_url": "",
+    "launch_wave": 3,
+    "for": "Anyone who wants the whole kit (bookkeeping, invoicing, registered-account room and household budget) kept current year after year, without buying each tool separately.",
+    "problem": "CRA rates and limits change every year, and your needs change too. The membership keeps you on the current version of every tool instead of buying them one at a time.",
+    "inside": [
+      [
+        "All five tools",
+        "Bookkeeping & GST/HST Tracker, Invoice Generator, TFSA/RRSP/FHSA Room Tracker, Household Budget, and the Vehicle & Home-Office Log"
+      ],
+      [
+        "January updates",
+        "Each year's refreshed rates and limits, sent to members"
+      ],
+      [
+        "New tools",
+        "Any new tool we release while you're a member"
+      ],
+      [
+        "Billing",
+        "$5 a month, or $39 a year. Cancel any time"
+      ]
+    ],
+    "formats": "Google Sheets copy links and Excel (.xlsx) files",
+    "faq": [
+      [
+        "How do I cancel?",
+        "Log in to your Payhip customer account (the link is in your receipt email), open Settings, then Subscriptions, and click cancel. Or email us and we'll help."
+      ],
+      [
+        "What happens to my files if I cancel?",
+        "Files and Google Sheets copies you've already made stay yours to use. You stop getting new tools and updates, and you lose access to the member downloads."
+      ],
+      [
+        "Monthly or yearly?",
+        "Yearly works out cheaper ($39 instead of $60). It's the same price as the Complete Bundle, with updates and new tools included."
+      ],
+      [
+        "Is this tax advice?",
+        "No. The tools organize your records using CRA categories. They aren't tax software or tax advice."
+      ]
+    ]
   }
 ]

@@ -15,6 +15,8 @@ if (!site.ownerName) warnings.push('site.json: ownerName is empty (required befo
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const cad = (c) => `$${(c / 100).toFixed(c % 100 ? 2 : 0)}`;
+// Memberships (billing.interval) show "$5/mo"; everything else is a one-time price.
+const priceShort = (p) => p.billing ? `${cad(p.price_cents)}/mo` : cad(p.price_cents);
 const isBuyable = (p) => p.status === 'live' && /^https:\/\/payhip\.com\//.test(p.payhip_url);
 
 const coin = `<svg class="brand-coin" viewBox="0 0 40 40" aria-hidden="true"><polygon points="${
@@ -116,7 +118,7 @@ const productRows = (list) => `<ul class="ledger">${list.map((p) => `
   <li><a class="row" href="/products/${p.slug}/">
     <span class="row-name">${esc(p.name)}${isBuyable(p) ? '' : '<span class="status">Coming soon</span>'}</span>
     <span class="row-desc">${esc(p.short)}</span>
-    <span class="row-price">${cad(p.price_cents)}</span>
+    <span class="row-price">${priceShort(p)}</span>
   </a></li>`).join('')}</ul>`;
 
 write('/', page({
@@ -128,7 +130,7 @@ write('/', page({
     <h1>Bookkeeping that already speaks Canadian.</h1>
     <p class="lede">Spreadsheets organized the way the CRA asks for things: T2125 expense lines, every province's sales tax, and the $30,000 GST/HST threshold tracked for you.</p>
     <div class="actions"><a class="btn" href="/products/">See the tools</a><a class="btn secondary" href="/gst-threshold-checker/">Check your GST status</a></div>
-    <p class="small muted" style="margin-top:20px">One-time price. Google Sheets and Excel. No subscription.</p>
+    <p class="small muted" style="margin-top:20px">One-time prices, or every tool for $5 a month. Google Sheets and Excel.</p>
   </div>
   ${checker('home')}
 </section>
@@ -159,12 +161,12 @@ ${checkerScript}`,
 write('/products/', page({
   path: '/products/', title: 'Tools',
   description: 'All Loonie Ledger spreadsheet tools for Canadian sole proprietors and households.',
-  body: `<h1>Tools</h1><p class="lede">Each one is a one-time purchase that works in Google Sheets or Excel.</p>${productRows(products)}`,
+  body: `<h1>Tools</h1><p class="lede">Buy any tool once, or get all of them, with updates, through the All-Access Membership. Everything works in Google Sheets or Excel.</p>${productRows(products)}`,
 }));
 
 for (const p of products) {
   const buy = isBuyable(p)
-    ? `<a class="btn" href="${esc(p.payhip_url)}">Buy for ${cad(p.price_cents)}</a>`
+    ? `<a class="btn" href="${esc(p.payhip_url)}">${p.billing ? `Join for ${cad(p.price_cents)}/month` : `Buy for ${cad(p.price_cents)}`}</a>`
     : `<a class="btn" aria-disabled="true" role="link" tabindex="0">Coming soon</a>`;
   write(`/products/${p.slug}/`, page({
     path: `/products/${p.slug}/`, title: p.name, description: p.short,
@@ -187,13 +189,13 @@ ${existsSync(join(root, `src/img/${p.slug}.jpg`)) ? `<img class="cover" src="/im
   <aside>
     <div class="sheet buy-box" style="padding:20px">
       <p class="price">${cad(p.price_cents)} <span class="small muted" style="font-weight:400">CAD</span></p>
-      <p class="small muted">One-time purchase</p>
+      <p class="small muted">${p.billing ? `per month, or ${cad(p.billing.yearly_cents)} per year. Cancel any time.` : 'One-time purchase'}</p>
       ${buy}
-      ${isBuyable(p) ? '' : '<p class="small muted" style="margin-top:12px">This tool is being finished and isn\'t on sale yet.</p>'}
+      ${isBuyable(p) ? '' : `<p class="small muted" style="margin-top:12px">${p.billing ? 'Memberships open soon.' : 'This tool is being finished and isn\'t on sale yet.'}</p>`}
       <ul class="facts">
         <li>${esc(p.formats)}</li>
         <li>Delivered by email right after payment</li>
-        <li>Free January update for rates and limits</li>
+        <li>${p.billing ? 'Every January update included while you\'re a member' : 'Free January update for rates and limits'}</li>
         <li><a href="/refunds/">Refund policy</a></li>
       </ul>
     </div>
@@ -251,6 +253,7 @@ prose('/faq/', 'FAQ', 'Answers to common questions about Loonie Ledger tools.', 
 <dt>Will it work in Quebec?</dt><dd>Yes. The tax presets include GST plus QST.</dd>
 <dt>What if the file doesn't work for me?</dt><dd>Email us and we'll fix it. If we can't, see the <a href="/refunds/">refund policy</a>.</dd>
 <dt>Do I get updates?</dt><dd>Yes. Each January's update to rates and limits is free for anyone who bought the tool.</dd>
+<dt>Is there a subscription?</dt><dd>Optional. The <a href="/products/all-access-membership/">All-Access Membership</a> ($5 a month or $39 a year) includes every tool, every January update and any new tools we release while you're a member. Cancel any time. Buying tools one at a time is still a one-time price.</dd>
 </dl>`);
 
 prose('/delivery/', 'Delivery', 'How Loonie Ledger tools are delivered.', `
@@ -269,6 +272,7 @@ prose('/refunds/', 'Refund policy', 'Refund policy for Loonie Ledger digital pro
 <li><strong>If a file doesn't work</strong> (won't open, formulas broken) and we can't fix it within 7 days of you telling us, we refund you in full.</li>
 <li><strong>If you bought the wrong tool or bought twice</strong>, contact us within 14 days of purchase and we'll refund or swap it.</li>
 <li>Outside those cases we don't usually refund digital downloads, but email us and we'll look at every request.</li>
+<li><strong>Memberships</strong> can be cancelled any time from your Payhip customer account (Settings, then Subscriptions) or by emailing us. Cancelling stops future payments. We don't refund the current month or year already paid, except in the cases above, and files you've already downloaded stay yours.</li>
 </ul>
 <p>Refunds go back to your original payment method through our checkout provider. Your bank may take 5 to 10 business days to show it.</p>
 <p>To ask for a refund, email ${contact} with your order email and the tool's name.</p>`);
@@ -297,6 +301,8 @@ prose('/privacy/', 'Privacy policy', 'How Loonie Ledger collects and uses person
 prose('/terms/', 'Terms of use', 'Terms for using Loonie Ledger tools and website.', `${draftNote}
 <h2>Your licence</h2>
 <p>When you buy a tool, you get a personal licence to use it for your own household or business. Please don't resell, share or publish the files or links.</p>
+<h2>Memberships</h2>
+<p>The All-Access Membership renews automatically each month or year, at the price you signed up at, until you cancel. You can cancel any time; payments stop and you lose access to member downloads, but you keep files you've already downloaded under the licence above. If a payment fails, our checkout provider retries it and emails you before the membership ends.</p>
 <h2>No advice</h2>
 <p>Our tools help you organize records. They aren't tax, accounting, legal or financial advice, and we're not affiliated with the Canada Revenue Agency. Rates and limits in each file are dated; check them against current CRA information before relying on them. You're responsible for your own tax filings.</p>
 <h2>Accuracy</h2>
