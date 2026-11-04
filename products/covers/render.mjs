@@ -132,6 +132,23 @@ covers['bundle'] = page({
      <div><div style="font-size:22px;font-weight:700">${a}</div><div style="font-size:18px;color:#46605a">${b}</div></div></div>`).join('')}`,
 }).replace('<div class="ex">Example data shown</div>', '');
 
+covers['membership'] = page({
+  title: 'All-Access Membership', lede: 'Every tool, kept current every year.',
+  bullets: ['All five tools, including the bonus log', 'Every January rate and limit update', 'New tools as we release them', '$5 a month or $39 a year. Cancel any time'],
+  chips: fmtChips,
+  sheet: `<div class="st">Your membership</div>${[
+    ['All five tools', 'Bookkeeping, invoicing, room tracker, budget, vehicle & home-office log'],
+    ['January updates', 'New CRA rates and limits each year'],
+    ['New tools', 'Added while you’re a member'],
+  ].map(([a, b], i) => `<div style="display:flex;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid #e1ece5">
+     <div style="width:52px;height:52px;border-radius:12px;background:#eef4f0;border:1.5px solid #cfe0d6;display:grid;place-items:center;font-weight:800;font-size:22px;color:#1d5a45">${i + 1}</div>
+     <div><div style="font-size:22px;font-weight:700">${a}</div><div style="font-size:18px;color:#46605a">${b}</div></div></div>`).join('')}
+   <div style="display:flex;gap:16px;margin-top:26px">
+     <div style="flex:1;border:1.5px solid #cfe0d6;border-radius:12px;padding:18px 20px"><div style="font-size:18px;color:#46605a">Monthly</div><div style="font-size:34px;font-weight:800">$5<span style="font-size:20px;font-weight:600;color:#46605a">/mo</span></div></div>
+     <div style="flex:1;border:1.5px solid #d9c08f;background:#fffaf0;border-radius:12px;padding:18px 20px"><div style="font-size:18px;color:#7a5410">Yearly</div><div style="font-size:34px;font-weight:800">$39<span style="font-size:20px;font-weight:600;color:#46605a">/yr</span></div></div>
+   </div>`,
+}).replace('<div class="ex">Example data shown</div>', '');
+
 mkdirSync(here + 'out', { recursive: true });
 const browser = await chromium.launch();
 const pg = await browser.newPage({ viewport: { width: 1600, height: 1200 } });
