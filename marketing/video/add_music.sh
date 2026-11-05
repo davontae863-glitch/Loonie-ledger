@@ -2,10 +2,13 @@
 # Mixes one of our original music tracks (marketing/video/music/track-N.m4a) under a video,
 # replacing its (silent) audio track. Video is copied, not re-encoded.
 # Usage: marketing/video/add_music.sh in.mp4 out.mp4 [track-number]
-# Without a track number, one is picked from the file name so the same video always gets the same track.
+# Without a track number, the track rotates by date (America/Edmonton): consecutive days never share a track,
+# and the same track comes back only every N days (N = number of tracks in music/).
 set -euo pipefail
 in="$1"; out="$2"; dir="$(cd "$(dirname "$0")" && pwd)/music"
-n="${3:-$(( $(basename "$in" | cksum | cut -d' ' -f1) % 4 + 1 ))}"
+count=$(ls "$dir"/track-*.m4a | wc -l)
+doy=$(TZ=America/Edmonton date +%j); doy=$((10#$doy))
+n="${3:-$(( doy % count + 1 ))}"
 track="$dir/track-$n.m4a"
 dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$in")
 fade_start=$(awk -v d="$dur" 'BEGIN{s=d-1.5; if(s<0)s=0; print s}')
