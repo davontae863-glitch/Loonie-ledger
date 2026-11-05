@@ -76,9 +76,9 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/style.css?v=${cssVersion}">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap"></noscript>
-<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*"]}}]},"eagerness":"eager"}],"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*","/contact/*"]}}]},"eagerness":"moderate"}]}</script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*"]}}]},"eagerness":"moderate"}],"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*","/contact/*"]}}]},"eagerness":"moderate"}]}</script>
 <script>
 /* Back/forward swipes slide the other way, like iOS. */
 addEventListener('pagereveal', function (e) {

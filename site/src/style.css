@@ -188,7 +188,7 @@ dl.faq dd { margin: 0.3em 0 0; color: var(--ink-soft); max-width: 38em; }
 @media (min-width: 640px) { .cards { grid-template-columns: repeat(2, 1fr); } }
 .card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule-strong); border-radius: var(--radius-sheet); overflow: hidden;
   box-shadow: 0 1px 0 var(--rule), 0 12px 32px -26px rgba(16,42,34,0.5); }
-.card a:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--rule), 0 20px 40px -24px rgba(16,42,34,0.55); }
+.card a:hover { transform: translateY(-2px); }
 .card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 1px solid var(--rule); background: var(--paper); }
 .card-body { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px; flex: 1; }
 .card-name { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
@@ -209,37 +209,36 @@ dl.faq dd { margin: 0.3em 0 0; color: var(--ink-soft); max-width: 38em; }
 
 /* iOS-style motion: content slides in like a pushed screen, header stays put, taps respond instantly */
 :root { --ease-ios: cubic-bezier(0.32, 0.72, 0, 1); }
-html { -webkit-tap-highlight-color: transparent; touch-action: manipulation; scroll-behavior: smooth; }
+html { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 picture { display: block; }
 @view-transition { navigation: auto; }
 .site-head { view-transition-name: site-head; }
 .site-foot { view-transition-name: site-foot; }
 ::view-transition-group(site-head) { animation: none; }
-::view-transition-old(root) { animation: 0.32s var(--ease-ios) both vt-out-left; }
-::view-transition-new(root) { animation: 0.32s var(--ease-ios) both vt-in-right; }
+::view-transition-old(root) { animation: 0.12s ease-out both vt-out-left; }
+::view-transition-new(root) { animation: 0.22s var(--ease-ios) both vt-in-right; }
 html:active-view-transition-type(back)::view-transition-old(root) { animation-name: vt-out-right; }
 html:active-view-transition-type(back)::view-transition-new(root) { animation-name: vt-in-left; }
-@keyframes vt-in-right { from { transform: translateX(28%); opacity: 0; } }
-@keyframes vt-out-left { to { transform: translateX(-12%); opacity: 0; } }
-@keyframes vt-in-left { from { transform: translateX(-12%); opacity: 0; } }
-@keyframes vt-out-right { to { transform: translateX(28%); opacity: 0; } }
+@keyframes vt-in-right { from { transform: translateX(14%); opacity: 0; } }
+@keyframes vt-out-left { to { opacity: 0; } }
+@keyframes vt-in-left { from { transform: translateX(-14%); opacity: 0; } }
+@keyframes vt-out-right { to { opacity: 0; } }
 
 /* Press feedback: things shrink a touch under your finger, then spring back */
-.btn, .nav a, .card a, .feature, .row, .brand { transition: transform 0.25s var(--ease-ios), background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.25s var(--ease-ios); }
+.btn, .nav a, .card a, .feature, .row, .brand { transition: transform 0.18s var(--ease-ios), background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease; }
 .btn:active, .nav a:active, .brand:active { transform: scale(0.96); transition-duration: 0.08s; }
 .card a:active, .feature:active { transform: scale(0.985); transition-duration: 0.08s; }
 @media (hover: none) { .card a:hover { transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
-  html { scroll-behavior: auto; }
   .card a:hover, .btn:active, .nav a:active, .brand:active, .card a:active, .feature:active { transform: none; }
 }
 
 /* Membership plan picker */
 .plans { display: grid; gap: 10px; margin-top: 4px; }
 .plan { display: grid; gap: 2px; padding: 14px 16px; border-radius: 12px; border: 1.5px solid var(--rule-strong); background: var(--sheet); color: var(--ink); text-decoration: none;
-  transition: transform 0.25s var(--ease-ios), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.25s var(--ease-ios); }
+  transition: transform 0.15s var(--ease-ios), background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease; }
 .plan:hover { border-color: var(--spruce); }
 .plan:active { transform: scale(0.97); transition-duration: 0.08s; }
 .plan-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
@@ -247,10 +246,10 @@ html:active-view-transition-type(back)::view-transition-new(root) { animation-na
 .plan-tag { font-size: 0.78rem; font-weight: 600; padding: 2px 9px; border-radius: 99px; background: #fffaf0; border: 1px solid #d9c08f; color: #7a5410; }
 .plan-price { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
 .plan-price small { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); letter-spacing: 0; }
-.plan-go { max-height: 0; opacity: 0; overflow: hidden; font-weight: 600; font-size: 0.92rem; transition: max-height 0.3s var(--ease-ios), opacity 0.2s ease, margin 0.3s var(--ease-ios); }
+.plan-go { display: none; font-weight: 600; font-size: 0.92rem; margin-top: 4px; }
 .plan.is-picked { background: var(--spruce); border-color: var(--spruce); color: #fff; box-shadow: 0 10px 24px -14px rgba(16,42,34,0.7); }
 .plan.is-picked .plan-price small { color: #cfe0d6; }
 .plan.is-picked .plan-tag { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.35); color: #fff; }
-.plan.is-picked .plan-go { max-height: 2em; opacity: 1; margin-top: 4px; }
+.plan.is-picked .plan-go { display: block; }
 .plan-help { margin: 10px 0 0; }
 @media (prefers-reduced-motion: reduce) { .plan:active { transform: none; } }
