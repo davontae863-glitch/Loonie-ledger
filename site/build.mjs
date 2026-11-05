@@ -68,6 +68,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
   <a class="brand" href="/">${coin}<span>${esc(site.name)}</span></a>
   <nav class="nav" aria-label="Main">${nav.map(([h, l]) => `<a href="${h}"${h === path ? ' aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
 </div></header>
+<script>(function(){var n=document.querySelector('.nav'),a=n&&n.querySelector('[aria-current]');if(a&&n.scrollWidth>n.clientWidth)n.scrollLeft=a.offsetLeft-(n.clientWidth-a.offsetWidth)/2;})();</script>
 <main id="main"><div class="wrap">
 ${body}
 </div></main>
