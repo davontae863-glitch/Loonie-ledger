@@ -72,7 +72,16 @@ function page({ path, title, description, body, noindex = false }) {
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:type" content="website">
 ${noindex ? '<meta name="robots" content="noindex">' : ''}
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1d5a45">
+<meta property="og:image" content="${site.baseUrl}/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:site_name" content="${esc(site.name)}">
+<meta property="og:url" content="${site.baseUrl}${path}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/style.css?v=${cssVersion}">
@@ -403,6 +412,10 @@ write('/404.html', page({ path: '/404.html', title: 'Page not found', descriptio
 
 // ---------- Assets, sitemap, robots ----------
 copyFileSync(join(root, 'src/style.css'), join(out, 'style.css'));
+// Icons for browsers, phones' home screens, and link previews (YouTube, Facebook, iMessage use these, not the SVG).
+for (const f of readdirSync(join(root, 'src/icons'))) copyFileSync(join(root, 'src/icons', f), join(out, f));
+writeFileSync(join(out, 'site.webmanifest'), JSON.stringify({ name: site.name, short_name: site.name, start_url: '/', display: 'standalone', background_color: '#f5f9f6', theme_color: '#1d5a45',
+  icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }] }));
 mkdirSync(join(out, 'img'), { recursive: true });
 for (const f of readdirSync(join(root, 'src/img'))) copyFileSync(join(root, 'src/img', f), join(out, 'img', f));
 writeFileSync(join(out, 'favicon.svg'), coin.replace('class="brand-coin" ', 'xmlns="http://www.w3.org/2000/svg" '));
@@ -412,7 +425,8 @@ writeFileSync(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site
 writeFileSync(join(out, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n
 /style.css\n  Cache-Control: public, max-age=31536000, immutable\n
 /img/*\n  Cache-Control: public, max-age=86400, stale-while-revalidate=604800\n
-/favicon.svg\n  Cache-Control: public, max-age=86400, stale-while-revalidate=604800\n`);
+/favicon.svg\n  Cache-Control: public, max-age=86400, stale-while-revalidate=604800\n
+/favicon.ico\n  Cache-Control: public, max-age=86400, stale-while-revalidate=604800\n`);
 
 console.log(`Built ${paths.length + 1} pages into dist/`);
 for (const w of warnings) console.warn('WARNING:', w);
