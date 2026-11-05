@@ -412,6 +412,9 @@ write('/404.html', page({ path: '/404.html', title: 'Page not found', descriptio
 
 // ---------- Assets, sitemap, robots ----------
 copyFileSync(join(root, 'src/style.css'), join(out, 'style.css'));
+// Social videos, hosted here so Instagram/Facebook can fetch them by URL when we publish through their APIs.
+mkdirSync(join(out, 'media'), { recursive: true });
+if (existsSync(join(root, 'src/media'))) for (const f of readdirSync(join(root, 'src/media'))) copyFileSync(join(root, 'src/media', f), join(out, 'media', f));
 // Icons for browsers, phones' home screens, and link previews (YouTube, Facebook, iMessage use these, not the SVG).
 for (const f of readdirSync(join(root, 'src/icons'))) copyFileSync(join(root, 'src/icons', f), join(out, f));
 writeFileSync(join(out, 'site.webmanifest'), JSON.stringify({ name: site.name, short_name: site.name, start_url: '/', display: 'standalone', background_color: '#f5f9f6', theme_color: '#1d5a45',
