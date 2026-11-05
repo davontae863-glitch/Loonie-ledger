@@ -60,7 +60,16 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="stylesheet" href="/style.css?v=${cssVersion}">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap"></noscript>
-<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*"]}}]},"eagerness":"moderate"}]}</script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*"]}}]},"eagerness":"eager"}],"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*","/contact/*"]}}]},"eagerness":"moderate"}]}</script>
+<script>
+/* Back/forward swipes slide the other way, like iOS. */
+addEventListener('pagereveal', function (e) {
+  try { if (e.viewTransition && navigation.activation && navigation.activation.navigationType === 'traverse') {
+    var from = navigation.activation.from, to = navigation.activation.entry;
+    if (from && to && to.index < from.index) e.viewTransition.types.add('back');
+  } } catch (_) {}
+});
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>

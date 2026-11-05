@@ -187,7 +187,7 @@ dl.faq dd { margin: 0.3em 0 0; color: var(--ink-soft); max-width: 38em; }
 .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
 @media (min-width: 640px) { .cards { grid-template-columns: repeat(2, 1fr); } }
 .card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule-strong); border-radius: var(--radius-sheet); overflow: hidden;
-  box-shadow: 0 1px 0 var(--rule), 0 12px 32px -26px rgba(16,42,34,0.5); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  box-shadow: 0 1px 0 var(--rule), 0 12px 32px -26px rgba(16,42,34,0.5); }
 .card a:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--rule), 0 20px 40px -24px rgba(16,42,34,0.55); }
 .card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 1px solid var(--rule); background: var(--paper); }
 .card-body { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px; flex: 1; }
@@ -207,15 +207,31 @@ dl.faq dd { margin: 0.3em 0 0; color: var(--ink-soft); max-width: 38em; }
 .free-tool .btn { justify-self: start; }
 @media (min-width: 760px) { .free-tool { grid-template-columns: 1fr auto; padding: 28px 32px; } }
 
-/* Smoothness: soft cross-fade between pages (supporting browsers), gentle hover states */
-@view-transition { navigation: auto; }
-::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.18s; }
-.site-head { view-transition-name: site-head; }
+/* iOS-style motion: content slides in like a pushed screen, header stays put, taps respond instantly */
+:root { --ease-ios: cubic-bezier(0.32, 0.72, 0, 1); }
+html { -webkit-tap-highlight-color: transparent; touch-action: manipulation; scroll-behavior: smooth; }
 picture { display: block; }
-.btn, .nav a, .feature { transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease; }
-html { scroll-behavior: smooth; }
+@view-transition { navigation: auto; }
+.site-head { view-transition-name: site-head; }
+.site-foot { view-transition-name: site-foot; }
+::view-transition-group(site-head) { animation: none; }
+::view-transition-old(root) { animation: 0.32s var(--ease-ios) both vt-out-left; }
+::view-transition-new(root) { animation: 0.32s var(--ease-ios) both vt-in-right; }
+html:active-view-transition-type(back)::view-transition-old(root) { animation-name: vt-out-right; }
+html:active-view-transition-type(back)::view-transition-new(root) { animation-name: vt-in-left; }
+@keyframes vt-in-right { from { transform: translateX(28%); opacity: 0; } }
+@keyframes vt-out-left { to { transform: translateX(-12%); opacity: 0; } }
+@keyframes vt-in-left { from { transform: translateX(-12%); opacity: 0; } }
+@keyframes vt-out-right { to { transform: translateX(28%); opacity: 0; } }
+
+/* Press feedback: things shrink a touch under your finger, then spring back */
+.btn, .nav a, .card a, .feature, .row, .brand { transition: transform 0.25s var(--ease-ios), background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.25s var(--ease-ios); }
+.btn:active, .nav a:active, .brand:active { transform: scale(0.96); transition-duration: 0.08s; }
+.card a:active, .feature:active { transform: scale(0.985); transition-duration: 0.08s; }
+@media (hover: none) { .card a:hover { transform: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
   html { scroll-behavior: auto; }
-  .card a:hover { transform: none; }
+  .card a:hover, .btn:active, .nav a:active, .brand:active, .card a:active, .feature:active { transform: none; }
 }
