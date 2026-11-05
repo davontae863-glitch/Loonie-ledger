@@ -9,7 +9,7 @@ import argparse, json, os, subprocess, sys, tempfile, wave
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-VOICES = ['af_heart', 'af_bella']  # Kokoro voices used in rotation (TikTok-style upbeat narrator)
+VOICES = ['aspen']  # owner picked Aspen (kokoro_tts.BLENDS) on 2026-11-05
 sys.path.insert(0, HERE); import kokoro_tts
 
 def synth(text, voice, speed):
@@ -19,7 +19,7 @@ def synth(text, voice, speed):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('video'); ap.add_argument('lines'); ap.add_argument('out')
-    ap.add_argument('--voice'); ap.add_argument('--speed', type=float, default=1.12); ap.add_argument('--track', type=int)
+    ap.add_argument('--voice'); ap.add_argument('--speed', type=float, default=1.05); ap.add_argument('--track', type=int)
     ap.add_argument('--outro-line', default='Follow Loonie Ledger for more money tips.')
     ap.add_argument('--outro-secs', type=float, default=2.8, help='length of the outro at the end (0 if none)')
     a = ap.parse_args()
