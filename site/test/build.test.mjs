@@ -67,7 +67,8 @@ test('membership: shows a monthly price, stays "Coming soon" until it has a Payh
   if (m.status !== 'live') assert.match(html, /Coming soon/);
   read = build(base.map((p) => (p === m ? { ...p, status: 'live', payhip_url: 'https://payhip.com/b/Memb1', payhip_url_yearly: 'https://payhip.com/b/Year1' } : p)));
   html = read(`products/${m.slug}/index.html`);
-  assert.match(html, /href="https:\/\/payhip\.com\/b\/Memb1">Join monthly: \$5\/month/);
-  assert.match(html, /href="https:\/\/payhip\.com\/b\/Year1">Join yearly: \$39\/year/);
+  assert.match(html, /class="plan" href="https:\/\/payhip\.com\/b\/Memb1"/);
+  assert.match(html, /class="plan" href="https:\/\/payhip\.com\/b\/Year1"/);
+  assert.match(html, /Save \$21/);
   assert.doesNotMatch(html, /One-time purchase/);
 });

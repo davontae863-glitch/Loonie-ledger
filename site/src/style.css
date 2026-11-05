@@ -235,3 +235,22 @@ html:active-view-transition-type(back)::view-transition-new(root) { animation-na
   html { scroll-behavior: auto; }
   .card a:hover, .btn:active, .nav a:active, .brand:active, .card a:active, .feature:active { transform: none; }
 }
+
+/* Membership plan picker */
+.plans { display: grid; gap: 10px; margin-top: 4px; }
+.plan { display: grid; gap: 2px; padding: 14px 16px; border-radius: 12px; border: 1.5px solid var(--rule-strong); background: var(--sheet); color: var(--ink); text-decoration: none;
+  transition: transform 0.25s var(--ease-ios), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.25s var(--ease-ios); }
+.plan:hover { border-color: var(--spruce); }
+.plan:active { transform: scale(0.97); transition-duration: 0.08s; }
+.plan-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.plan-name { font-weight: 650; }
+.plan-tag { font-size: 0.78rem; font-weight: 600; padding: 2px 9px; border-radius: 99px; background: #fffaf0; border: 1px solid #d9c08f; color: #7a5410; }
+.plan-price { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+.plan-price small { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); letter-spacing: 0; }
+.plan-go { max-height: 0; opacity: 0; overflow: hidden; font-weight: 600; font-size: 0.92rem; transition: max-height 0.3s var(--ease-ios), opacity 0.2s ease, margin 0.3s var(--ease-ios); }
+.plan.is-picked { background: var(--spruce); border-color: var(--spruce); color: #fff; box-shadow: 0 10px 24px -14px rgba(16,42,34,0.7); }
+.plan.is-picked .plan-price small { color: #cfe0d6; }
+.plan.is-picked .plan-tag { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.35); color: #fff; }
+.plan.is-picked .plan-go { max-height: 2em; opacity: 1; margin-top: 4px; }
+.plan-help { margin: 10px 0 0; }
+@media (prefers-reduced-motion: reduce) { .plan:active { transform: none; } }

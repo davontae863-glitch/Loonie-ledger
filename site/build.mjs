@@ -26,6 +26,24 @@ const pic = (slug, { sizes, alt = '', cls = '', eager = false }) => {
   const webp = existsSync(join(root, `src/img/${slug}-600.webp`));
   return `<picture>${webp ? `<source type="image/webp" srcset="/img/${slug}-600.webp 600w, /img/${slug}-1200.webp 1200w" sizes="${sizes}">` : ''}<img${cls ? ` class="${cls}"` : ''} src="/img/${slug}.jpg" width="1200" height="900" alt="${esc(alt)}" decoding="async" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'}></picture>`;
 };
+// Membership plans: first tap picks a plan (it turns green), second tap on the same plan goes to checkout.
+// Without JavaScript the plans are ordinary checkout links.
+const planPicker = (p) => {
+  const plans = [['Monthly', '', p.payhip_url, cad(p.price_cents), 'month']];
+  if (isPayhip(p.payhip_url_yearly)) plans.push(['Yearly', `Save ${cad(p.price_cents * 12 - p.billing.yearly_cents)}`, p.payhip_url_yearly, cad(p.billing.yearly_cents), 'year']);
+  return `<div class="plans" data-plans>${plans.map(([name, tag, url, price, per]) => `
+    <a class="plan" href="${esc(url)}" data-price="${price}" data-per="per ${per}">
+      <span class="plan-top"><span class="plan-name">${name}</span>${tag ? `<span class="plan-tag">${tag}</span>` : ''}</span>
+      <span class="plan-price">${price}<small>/${per}</small></span>
+      <span class="plan-go" aria-hidden="true">Tap again to check out →</span>
+    </a>`).join('')}</div>
+  <p class="plan-help small muted" aria-live="polite" data-plan-help>Pick a plan, then tap it again to check out.</p>
+  <script>(function(){var w=document.querySelector('[data-plans]');if(!w)return;var help=document.querySelector('[data-plan-help]'),pr=document.querySelector('.buy-box .price'),sub=pr&&pr.nextElementSibling;
+  w.addEventListener('click',function(e){var a=e.target.closest('.plan');if(!a)return;if(a.classList.contains('is-picked'))return;e.preventDefault();
+  w.querySelectorAll('.plan').forEach(function(x){x.classList.toggle('is-picked',x===a);x.setAttribute('aria-current',x===a?'true':'false');});
+  var name=a.querySelector('.plan-name').textContent;help.textContent=name+' plan selected. Tap it again to check out.';
+  if(pr){pr.firstChild.nodeValue=a.dataset.price+' ';sub.textContent=a.dataset.per+'. Cancel any time.';}});})();</script>`;
+};
 // Stylesheet gets a content hash so browsers can cache it for a year and still get changes right away.
 const cssVersion = createHash('sha256').update(readFileSync(join(root, 'src/style.css'))).digest('hex').slice(0, 10);
 
@@ -233,7 +251,7 @@ ${others.length ? `<section class="shelf"><h2>More tools</h2><ul class="cards">$
 for (const p of products) {
   const buy = isBuyable(p)
     ? (p.billing
-      ? `<a class="btn" href="${esc(p.payhip_url)}">Join monthly: ${cad(p.price_cents)}/month</a>${isPayhip(p.payhip_url_yearly) ? `<a class="btn secondary" style="margin-top:10px" href="${esc(p.payhip_url_yearly)}">Join yearly: ${cad(p.billing.yearly_cents)}/year</a>` : ''}`
+      ? planPicker(p)
       : `<a class="btn" href="${esc(p.payhip_url)}">Buy for ${cad(p.price_cents)}</a>`)
     : `<a class="btn" aria-disabled="true" role="link" tabindex="0">Coming soon</a>`;
   write(`/products/${p.slug}/`, page({
