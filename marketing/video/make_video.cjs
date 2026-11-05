@@ -56,7 +56,7 @@ function endcard(t) {
   return `<div class="brand">${coin}Loonie Ledger</div>
   <div class="big" style="top:560px;font-size:112px;${style(a)}">Check yours <span class="bz">free.</span></div>
   <div class="small" style="top:860px;font-size:48px;color:#102a22;${style(b)}">Type your last four quarters into the free GST/HST checker.</div>
-  <div style="position:absolute;left:72px;top:1120px;${style(b)}"><span class="pill">Link in bio</span></div>
+  <div style="position:absolute;left:72px;top:1120px;${style(b)}"><span class="pill">Free at Loonie Ledger</span></div>
   <div class="small" style="top:1600px;font-size:32px;${style(c)}">Not tax advice. Check CRA's "When to register" page for your situation.</div>`;
 }
 
@@ -128,7 +128,9 @@ async function main() {
   await new Promise((res, rej) => spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list,
     '-f', 'lavfi', '-t', '30', '-i', 'anullsrc=r=44100:cl=stereo', '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-shortest', '-movflags', '+faststart', final])
     .on('close', (c) => (c === 0 ? res() : rej(new Error('concat ' + c)))));
-  await new Promise((res, rej) => spawn(path.join(__dirname, 'add_music.sh'), [final, final], { stdio: 'inherit' })
+  await new Promise((res, rej) => spawn(path.join(__dirname, 'add_outro.sh'), [final, final], { stdio: 'inherit' })
+      .on('close', (c) => (c === 0 ? res() : rej(new Error('add_outro ' + c)))));
+    await new Promise((res, rej) => spawn(path.join(__dirname, 'add_music.sh'), [final, final], { stdio: 'inherit' })
       .on('close', (c) => (c === 0 ? res() : rej(new Error('add_music ' + c)))));
     console.log('wrote', final);
 }

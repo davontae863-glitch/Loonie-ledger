@@ -20,9 +20,13 @@ def synth(text, voice, speed):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('video'); ap.add_argument('lines'); ap.add_argument('out')
     ap.add_argument('--voice'); ap.add_argument('--speed', type=float, default=1.12); ap.add_argument('--track', type=int)
+    ap.add_argument('--outro-line', default='Follow Loonie Ledger for more money tips.')
+    ap.add_argument('--outro-secs', type=float, default=2.8, help='length of the outro at the end (0 if none)')
     a = ap.parse_args()
     lines = sorted(json.load(open(a.lines)), key=lambda l: l['t'])
     dur = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', a.video]))
+    if a.outro_secs and a.outro_line:  # spoken sign-off as the outro's coin lands
+        lines = [l for l in lines if l['t'] < dur - a.outro_secs] + [{'t': dur - a.outro_secs + 0.2, 'text': a.outro_line}]
     import datetime, zoneinfo
     doy = datetime.datetime.now(zoneinfo.ZoneInfo('America/Edmonton')).timetuple().tm_yday
     voice = a.voice or VOICES[doy % len(VOICES)]
@@ -31,7 +35,7 @@ def main():
     tmp = tempfile.mkdtemp(); sr = 24000; vo = np.zeros(int((dur + 1) * sr), np.float32); cursor = 0.0
     for i, l in enumerate(lines):
         start = max(l['t'], cursor)
-        limit = (lines[i + 1]['t'] if i + 1 < len(lines) else dur - 0.3) - start - 0.12
+        limit = (lines[i + 1]['t'] if i + 1 < len(lines) else dur - 0.05) - start - 0.12
         speed = a.speed; x, sr = synth(l['text'], voice, speed)
         if len(x) / sr > limit and limit > 0:
             speed = min(1.4, speed * (len(x) / sr) / limit); x, sr = synth(l['text'], voice, speed)
@@ -45,7 +49,8 @@ def main():
     fc = (f"[1:a]atrim=0:{dur},afade=t=in:d=0.02,afade=t=out:st={fade}:d=1.5,volume=0.5,aformat=channel_layouts=stereo[m];"
           f"[2:a]aresample=44100,highpass=f=90,acompressor=threshold=0.1:ratio=3:attack=5:release=80,volume=1.6,aformat=channel_layouts=stereo,asplit=2[v][key];"
           f"[m][key]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=300[md];"
-          f"[md][v]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=9[a]")
+          f"[0:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.8[o];"
+          f"[md][v][o]amix=inputs=3:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=9[a]")
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', a.video, '-i', track, '-i', vw, '-filter_complex', fc,
                     '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-ar', '44100', '-t', str(dur),
                     '-movflags', '+faststart', a.out + '.tmp.mp4'], check=True)

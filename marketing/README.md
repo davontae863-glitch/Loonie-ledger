@@ -35,3 +35,7 @@ Every video gets upbeat (120–128 BPM) background music mixed into the file bef
 ## Voiceover (being set up)
 
 `marketing/video/voiceover.py` reads the on-screen text aloud with Kokoro (an open-source AI voice, Apache-2.0) over one of the music tracks, with the music turned down under the voice. Run `marketing/video/get_tts.sh` first (downloads the model, ~350 MB, into ~/.cache). Lines and timings go in a JSON file like `marketing/video/voice-lines-tfsa-withdrawal-trap.json`. Not on in the daily task until the owner picks a voice. Never use the Piper "lessac" voice (research-only license).
+
+## Outro (every video)
+
+Every video ends with the Loonie Ledger outro: `marketing/video/outro/outro.mp4` (2.8 s: the coin spins in with a coin "ding", then "Loonie Ledger", "Canadian money, made simple." and "Free tools & spreadsheets · link in bio"). Order: render the video → `add_outro.sh in.mp4 out.mp4` → `add_music.sh` (music only) or `voiceover.py` (voice + music; it adds the spoken sign-off "Follow Loonie Ledger for more money tips." over the outro). End cards say "Get it at Loonie Ledger" / "Free at Loonie Ledger" instead of a bare "Link in bio". Rebuild the outro with `python3 outro/make_ding.py && node outro/make_outro.cjs`.
