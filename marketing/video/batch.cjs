@@ -229,6 +229,8 @@ async function main() {
     await new Promise((res, rej) => spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list,
       '-f', 'lavfi', '-t', '40', '-i', 'anullsrc=r=44100:cl=stereo', '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-shortest', '-movflags', '+faststart', final])
       .on('close', (c) => (c === 0 ? res() : rej(new Error('concat ' + c)))));
+    await new Promise((res, rej) => spawn(path.join(__dirname, 'add_music.sh'), [final, final], { stdio: 'inherit' })
+      .on('close', (c) => (c === 0 ? res() : rej(new Error('add_music ' + c)))));
     console.log('wrote', final);
   }
 

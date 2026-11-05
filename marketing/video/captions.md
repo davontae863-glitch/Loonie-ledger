@@ -1,6 +1,6 @@
 # Captions — batch 1 (written 2026-10-31)
 
-Same video file works on TikTok, Instagram Reels, Facebook Reels and X (1080×1920, ~21 s, silent track — add a sound in-app if you like).
+Same video file works on TikTok, Instagram Reels, Facebook Reels and X (1080×1920, ~21 s, with our own background music mixed in — marketing/video/add_music.sh).
 Bio link for TikTok/Instagram: https://shop.loonieledger.workers.dev
 
 Facts checked on canada.ca 2026-10-31:
