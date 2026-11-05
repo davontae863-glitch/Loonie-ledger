@@ -11,7 +11,7 @@ dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$in")
 fade_start=$(awk -v d="$dur" 'BEGIN{s=d-1.5; if(s<0)s=0; print s}')
 tmp="${out%.mp4}.music-tmp.mp4"
 ffmpeg -y -loglevel error -i "$in" -i "$track" -map 0:v -map 1:a -c:v copy \
-  -af "atrim=0:$dur,afade=t=in:d=0.3,afade=t=out:st=$fade_start:d=1.5,volume=-2dB" \
+  -af "atrim=0:$dur,afade=t=in:d=0.02,afade=t=out:st=$fade_start:d=1.5,volume=-2dB" \
   -c:a aac -b:a 160k -ar 44100 -ac 2 -shortest -movflags +faststart "$tmp"
 mv "$tmp" "$out"
 echo "added music track-$n to $out"
