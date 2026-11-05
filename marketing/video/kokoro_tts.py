@@ -38,14 +38,27 @@ def phonemize(text):
     return ''.join(c for c in ps.strip() if c in _V)
 
 _sess = _voices = None
+BLENDS = {  # our own voices: weighted mixes of Kokoro's built-in voice styles (made 2026-11-05)
+    'maple':   {'af_heart': 0.5, 'af_bella': 0.5},
+    'juniper': {'af_bella': 0.7, 'af_jessica': 0.3},
+    'aspen':   {'af_heart': 0.6, 'af_sarah': 0.4},
+    'rowan':   {'am_puck': 0.5, 'am_michael': 0.5},
+}
+
+def blend(voice):
+    """voice = a Kokoro voice id, a name from BLENDS, or 'af_bella:0.6,af_heart:0.4'."""
+    spec = BLENDS.get(voice) or ({k: float(w) for k, w in (p.split(':') for p in voice.split(','))} if ':' in voice else {voice: 1.0})
+    tot = sum(spec.values())
+    return sum(_voices[k] * (w / tot) for k, w in spec.items())
+
 def tts(text, voice='af_heart', speed=1.0):
     global _sess, _voices
     import onnxruntime as ort
     if _sess is None:
         _sess = ort.InferenceSession(os.path.join(KDIR, 'kokoro-v1.0.onnx'), providers=['CPUExecutionProvider'])
-        _voices = np.load(os.path.join(KDIR, 'voices-v1.0.bin'))
+        _voices = dict(np.load(os.path.join(KDIR, 'voices-v1.0.bin')))
     ph = phonemize(text)[:510]; toks = [_V[c] for c in ph]
-    style = _voices[voice][len(toks)]  # (1, 256)
+    style = blend(voice)[len(toks)]  # (1, 256)
     audio = _sess.run(None, {'tokens': np.array([[0, *toks, 0]], np.int64), 'style': style.astype(np.float32),
                              'speed': np.array([speed], np.float32)})[0]
     return np.asarray(audio, np.float32).reshape(-1), ph
