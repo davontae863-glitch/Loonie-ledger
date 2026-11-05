@@ -1,7 +1,7 @@
 // Builds the owner's daily "posting kit" page: video + cover + TikTok/YouTube captions + Pinterest pin, with copy buttons.
 // Usage: node marketing/kit/make_kit.mjs kit.json   -> writes site/src/media/kit-<date>.html (unlisted, noindex)
 // kit.json: { "date": "YYYY-MM-DD", "topic": "...", "video": "<date>.mp4", "cover": "<date>-cover.jpg",
-//   "tiktok_caption": "...", "youtube_title": "...", "youtube_caption": "...",
+//   "title": "...", "caption": "...", "voiced": true|false,   (one caption for BOTH TikTok and YouTube; owner request 2026-11-05)
 //   "pin": { "image": "<date>-pin.jpg", "title": "...", "description": "...", "link": "https://...", "board": "..." } }
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -22,8 +22,9 @@ img,video{max-width:100%;border-radius:10px;border:1px solid #cfe0d6;display:blo
 <h2>1. TikTok + YouTube Short</h2>
 <div class="row"><video src="/media/${esc(k.video)}" controls playsinline preload="metadata" poster="/media/${esc(k.cover)}"></video><img src="/media/${esc(k.cover)}" alt="Cover"></div>
 <a class="dl" href="/media/${esc(k.video)}" download>Download video</a><a class="dl s" href="/media/${esc(k.cover)}" download>Download cover</a>
-${field('TikTok caption', k.tiktok_caption)}${field('YouTube title', k.youtube_title)}${field('YouTube description', k.youtube_caption)}
-<p class="m">TikTok: pick the cover frame ~1.5 s in and add a quiet trending sound. YouTube: category Education, not made for kids.</p>
+${k.voiced ? '<p class="f" style="background:#fff7e6;border-color:#e8c98a"><b>🎙️ Voiced video:</b> on TikTok, turn on the “AI-generated content” label before posting.</p>' : '<p class="m">Music-only video: no AI label needed.</p>'}
+${field('Title (YouTube — or put it at the top of the caption)', k.title ?? k.youtube_title)}${field('Caption (same for TikTok and YouTube)', k.caption ?? k.tiktok_caption)}
+<p class="m">The video already has its music${k.voiced ? ' and voiceover' : ''}, so don't add a sound. Pick the cover frame ~1.5 s in. YouTube: category Education, not made for kids.</p>
 <h2>2. Pinterest pin</h2><img src="/media/${esc(k.pin.image)}" alt="Pin image"><a class="dl" href="/media/${esc(k.pin.image)}" download>Download pin</a>
 ${field('Title', k.pin.title)}${field('Description', k.pin.description)}${field('Link', k.pin.link)}${field('Board', k.pin.board)}
 <p class="m">Schedule both for 5:37 PM Mountain. Not tax advice is already in every caption.</p>

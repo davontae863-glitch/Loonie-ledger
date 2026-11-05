@@ -83,3 +83,22 @@ Self-employed? Client lunch = T2125 line 8523, and only 50% counts. Phone bill =
 - **Description:** Freelancing or running a side hustle in Canada? The $30,000 small-supplier limit counts any single quarter, or any four quarters in a row. Check where you stand with the free checker. Not tax advice.
 - **Link:** https://shop.loonieledger.workers.dev/go/pin-gst-register-b1?to=/gst-threshold-checker/
 - **Board:** Canadian Small Business Tax
+
+---
+
+## TikTok + YouTube Shorts — one caption each (2026-11-05, owner posts these via Buffer)
+
+Post in this order so voice and music-only alternate. Voiced files end in `-voiced.mp4`; turn on TikTok's AI-generated content label for those.
+
+1. **Sort these expenses (voiced)** — `loonie-ledger-sort-these-expenses-voiced.mp4`
+   - Title: Can You Sort These 5 Business Expenses? (Canada T2125 Quiz)
+   - Caption: Self-employed in Canada? 5 expenses, 5 different T2125 lines 👀 Guess each one before it flips. Client lunches only count at 50%! Comment your score 👇 Follow Loonie Ledger for more Canadian tax tips — Bookkeeping Tracker at the link on our profile. Not tax advice. 🎙️ AI voiceover #SelfEmployedCanada #CanadianTaxes #Bookkeeping #SideHustleCanada
+2. **GST four quarters (music only)** — `loonie-ledger-gst-four-quarters.mp4`
+   - Title: The $30,000 GST/HST Rule Most Canadian Freelancers Get Wrong
+   - Caption: You can hit the $30,000 GST/HST limit without making $30K in a calendar year 😳 CRA counts any 4 quarters in a row, not Jan to Dec. Did you know this? 👇 Follow Loonie Ledger for more — free GST/HST checker at the link on our profile. Not tax advice. #GSTHST #SideHustleCanada #FreelanceCanada #CanadianTaxes
+3. **TFSA withdrawal trap (voiced)** — `loonie-ledger-tfsa-withdrawal-trap-voiced.mp4`
+   - Title: TFSA Withdrawal Mistake: Don't Put the Money Back Yet
+   - Caption: Took money out of your TFSA? Don't put it back yet ⚠️ Your room only comes back on January 1 of next year, so re-depositing early can put you over the limit. Did you know this? 👇 Follow Loonie Ledger for more — TFSA Room Tracker at the link on our profile. Not tax advice. 🎙️ AI voiceover #TFSA #PersonalFinanceCanada #CanadianMoney #MoneyTips
+4. **Same invoice, four tax lines (music only)** — `loonie-ledger-same-invoice-four-tax-lines.mp4`
+   - Title: Same $1,000 Invoice, 4 Different Tax Totals (Canada GST/HST)
+   - Caption: Same $1,000 invoice, 4 different totals 🧾 Alberta 5% GST, Ontario 13% HST, Nova Scotia 14% HST, or nothing if you're not registered. For services, it usually depends on where your client is. Which province are your clients in? 👇 Follow Loonie Ledger for more — Invoice Generator at the link on our profile. Not tax advice. #FreelanceCanada #GSTHST #SmallBusinessCanada #Invoicing
