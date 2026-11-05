@@ -5,3 +5,4 @@ node_modules/
 .wrangler/
 backups/
 site/dist/
+__pycache__/
