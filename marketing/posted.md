@@ -9,3 +9,5 @@ One line per published post. The auto-post task reads this to avoid posting twic
 | 2026-11-05 | Instagram Reel | EXTRA (owner request, 00:25): TFSA withdrawal trap (batch 1 video) | link in bio (go/bio-ig) | 18357393727219997 |
 | 2026-11-05 | Instagram carousel | midday post: December bookkeeping checklist (5 slides) | link in bio (go/bio-ig) | 18018062489974624 |
 | 2026-11-05 | Facebook photo | midday post: December bookkeeping checklist | go/fb-post-december-checklist-05?to=/gst-threshold-checker/ | 1438638599327729_122101918917536568 |
+| 2026-11-05 | Instagram Reel | EXTRA (owner request, 17:15): Sort these expenses (batch 1, voiced) | link in bio (go/bio-ig) | 17919670743259233 |
+| 2026-11-05 | Facebook photo | EXTRA (owner request, 17:15): Sort these expenses (batch 1, voiced) | go/fb-sort-expenses-voiced-1105?to=/products/sole-proprietor-bookkeeping-tracker/ | 1438638599327729_122102125173536568 |
