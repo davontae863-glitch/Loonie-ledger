@@ -1,5 +1,6 @@
 // Static site builder. No dependencies: `node build.mjs` writes ./dist
 // Products and settings come from src/products.json and src/site.json.
+import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,6 +20,14 @@ const cad = (c) => `$${(c / 100).toFixed(c % 100 ? 2 : 0)}`;
 const priceShort = (p) => p.billing ? `${cad(p.price_cents)}/mo` : cad(p.price_cents);
 const isPayhip = (u) => /^https:\/\/payhip\.com\//.test(u || '');
 const isBuyable = (p) => p.status === 'live' && isPayhip(p.payhip_url);
+// Responsive cover: small WebP for phones and cards, large WebP for wide screens, JPG for old browsers.
+const hasCover = (slug) => existsSync(join(root, `src/img/${slug}.jpg`));
+const pic = (slug, { sizes, alt = '', cls = '', eager = false }) => {
+  const webp = existsSync(join(root, `src/img/${slug}-600.webp`));
+  return `<picture>${webp ? `<source type="image/webp" srcset="/img/${slug}-600.webp 600w, /img/${slug}-1200.webp 1200w" sizes="${sizes}">` : ''}<img${cls ? ` class="${cls}"` : ''} src="/img/${slug}.jpg" width="1200" height="900" alt="${esc(alt)}" decoding="async" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'}></picture>`;
+};
+// Stylesheet gets a content hash so browsers can cache it for a year and still get changes right away.
+const cssVersion = createHash('sha256').update(readFileSync(join(root, 'src/style.css'))).digest('hex').slice(0, 10);
 
 const coin = `<svg class="brand-coin" viewBox="0 0 40 40" aria-hidden="true"><polygon points="${
   Array.from({ length: 11 }, (_, i) => {
@@ -48,8 +57,10 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v=${cssVersion}">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap"></noscript>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/go/*","/api/*","/owner","/owner/*"]}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -159,10 +170,54 @@ write('/gst-threshold-checker/', page({
 ${checkerScript}`,
 }));
 
+const bySlug = Object.fromEntries(products.map((p) => [p.slug, p]));
+const card = (p, badge = '') => `
+  <li class="card">
+    <a href="/products/${p.slug}/">
+      ${hasCover(p.slug) ? pic(p.slug, { sizes: '(min-width: 1100px) 520px, (min-width: 640px) 46vw, 92vw' }) : ''}
+      <span class="card-body">
+        ${badge ? `<span class="badge">${badge}</span>` : ''}
+        <span class="card-name">${esc(p.name)}${isBuyable(p) ? '' : '<span class="status">Coming soon</span>'}</span>
+        <span class="card-desc">${esc(p.short)}</span>
+        <span class="card-foot"><span class="card-price">${priceShort(p)}</span><span class="card-go">See what's inside <span aria-hidden="true">→</span></span></span>
+      </span>
+    </a>
+  </li>`;
+const group = (title, sub, slugs, badges = {}) => {
+  const list = slugs.map((s) => bySlug[s]).filter(Boolean);
+  return list.length ? `<section class="shelf"><h2>${title}</h2><p class="muted">${sub}</p><ul class="cards">${list.map((p) => card(p, badges[p.slug])).join('')}</ul></section>` : '';
+};
+const member = products.find((p) => p.billing);
+const grouped = new Set(['sole-proprietor-bookkeeping-tracker', 'freelancer-invoice-generator', 'tfsa-rrsp-fhsa-room-tracker', 'canadian-household-budget', 'complete-bundle', member && member.slug]);
+const others = products.filter((p) => !grouped.has(p.slug));
+
 write('/products/', page({
   path: '/products/', title: 'Tools',
   description: 'All Loonie Ledger spreadsheet tools for Canadian sole proprietors and households.',
-  body: `<h1>Tools</h1><p class="lede">Buy any tool once, or get all of them, with updates, through the All-Access Membership. Everything works in Google Sheets or Excel.</p>${productRows(products)}`,
+  body: `
+<header class="tools-head">
+  <h1>Tools</h1>
+  <p class="lede">Spreadsheets built around how the CRA does things. Buy one tool once, or get all of them with the membership.</p>
+  <ul class="chips"><li>Google Sheets &amp; Excel</li><li>Made for Canada</li><li>Updated every January</li></ul>
+</header>
+${member ? `
+<a class="feature" href="/products/${member.slug}/">
+  <span class="feature-coin" aria-hidden="true">${coin}</span>
+  <span class="feature-text">
+    <span class="feature-kicker">${isBuyable(member) ? 'New' : 'Coming soon'} · ${esc(member.name)}</span>
+    <span class="feature-title">Every tool, kept current every year.</span>
+    <span class="feature-sub">All five tools, every January update and new tools as we release them. Cancel any time.</span>
+  </span>
+  <span class="feature-price"><strong>${cad(member.price_cents)}</strong>/month<br><span>or ${cad(member.billing.yearly_cents)}/year</span></span>
+</a>` : ''}
+${group('For your business', 'Freelancers, contractors and side hustles that file a T2125.', ['sole-proprietor-bookkeeping-tracker', 'freelancer-invoice-generator'])}
+${group('For your household', 'Registered accounts and the monthly budget.', ['tfsa-rrsp-fhsa-room-tracker', 'canadian-household-budget'])}
+${group('Everything at once', 'A one-time price for all of it.', ['complete-bundle'], { 'complete-bundle': 'Best value: $39 instead of $65' })}
+${others.length ? `<section class="shelf"><h2>More tools</h2><ul class="cards">${others.map((p) => card(p)).join('')}</ul></section>` : ''}
+<aside class="free-tool sheet">
+  <div><p class="feature-kicker" style="color:var(--bronze)">Free tool</p><h2>Do you need to register for GST/HST?</h2><p class="muted">Type in your last four quarters of sales and see where you stand against the $30,000 small-supplier threshold. Nothing you type leaves the page.</p></div>
+  <a class="btn" href="/gst-threshold-checker/">Try the free checker</a>
+</aside>`,
 }));
 
 for (const p of products) {
@@ -177,7 +232,7 @@ for (const p of products) {
 <p class="small"><a href="/products/">All tools</a></p>
 <h1>${esc(p.name)}</h1>
 <p class="lede">${esc(p.short)}</p>
-${existsSync(join(root, `src/img/${p.slug}.jpg`)) ? `<img class="cover" src="/img/${p.slug}.jpg" width="1200" height="900" alt="${esc(p.name)}: preview of the spreadsheet with example data">` : ''}
+${hasCover(p.slug) ? pic(p.slug, { sizes: '(min-width: 920px) 880px, 92vw', alt: `${p.name}: preview of the spreadsheet with example data`, cls: 'cover', eager: true }) : ''}
 <div class="product">
   <div>
     <h2>Who it's for</h2><p>${esc(p.for)}</p>
@@ -326,7 +381,10 @@ writeFileSync(join(out, 'favicon.svg'), coin.replace('class="brand-coin" ', 'xml
 const paths = ['/', '/products/', '/gst-threshold-checker/', '/faq/', '/about/', '/contact/', '/delivery/', '/refunds/', '/privacy/', '/terms/', ...products.map((p) => `/products/${p.slug}/`)];
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((p) => `<url><loc>${site.baseUrl}${p}</loc></url>`).join('')}</urlset>\n`);
 writeFileSync(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site.baseUrl}/sitemap.xml\n`);
-writeFileSync(join(out, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n`);
+writeFileSync(join(out, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n
+/style.css\n  Cache-Control: public, max-age=31536000, immutable\n
+/img/*\n  Cache-Control: public, max-age=86400, stale-while-revalidate=604800\n
+/favicon.svg\n  Cache-Control: public, max-age=86400, stale-while-revalidate=604800\n`);
 
 console.log(`Built ${paths.length + 1} pages into dist/`);
 for (const w of warnings) console.warn('WARNING:', w);

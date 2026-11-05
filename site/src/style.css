@@ -150,3 +150,60 @@ dl.faq dd { margin: 0.3em 0 0; color: var(--ink-soft); max-width: 38em; }
 
 /* Product cover image */
 .cover { width: 100%; max-width: 880px; height: auto; border-radius: var(--radius-sheet); border: 1px solid var(--rule); margin: 8px 0 28px; background: var(--sheet); }
+
+/* Tools page: shelves of cards */
+.tools-head { margin-bottom: 28px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 16px 0 0; }
+.chips li { font-size: 0.9rem; font-weight: 500; padding: 5px 12px; border-radius: 99px; border: 1px solid var(--rule-strong); background: var(--sheet); color: var(--spruce); }
+.chips li:nth-child(2) { border-color: #d9c08f; color: #7a5410; background: #fffaf0; }
+
+.feature { display: grid; gap: 16px; align-items: center; padding: 24px; border-radius: var(--radius-sheet); background: var(--spruce); color: #fff; text-decoration: none; position: relative; overflow: hidden;
+  background-image: repeating-linear-gradient(transparent 0 31px, rgba(255,255,255,0.06) 31px 32px); box-shadow: 0 18px 40px -24px rgba(16,42,34,0.7); }
+.feature:hover { background-color: var(--ink); color: #fff; }
+.feature-coin svg { width: 56px; height: 56px; }
+.feature-text { display: grid; gap: 6px; }
+.feature-kicker { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #e8cf98; margin: 0; }
+.feature-title { font-size: clamp(1.35rem, 3.5vw, 1.75rem); font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; }
+.feature-sub { color: #cfe0d6; }
+.feature-price { font-size: 1rem; color: #cfe0d6; }
+.feature-price strong { font-size: 2.2rem; color: #fff; letter-spacing: -0.02em; }
+.feature-price span { font-size: 0.95rem; }
+@media (min-width: 760px) { .feature { grid-template-columns: auto 1fr auto; padding: 28px 32px; gap: 28px; } .feature-price { text-align: right; } }
+
+.shelf h2 { margin-bottom: 0.2em; }
+.shelf > p { margin-bottom: 18px; }
+.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+@media (min-width: 640px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+.card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule-strong); border-radius: var(--radius-sheet); overflow: hidden;
+  box-shadow: 0 1px 0 var(--rule), 0 12px 32px -26px rgba(16,42,34,0.5); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.card a:hover { transform: translateY(-3px); box-shadow: 0 1px 0 var(--rule), 0 20px 40px -24px rgba(16,42,34,0.55); }
+.card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.card-body { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px; flex: 1; }
+.card-name { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+.card-desc { color: var(--ink-soft); flex: 1; }
+.card-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.card-price { font-weight: 700; font-size: 1.3rem; }
+.card-go { color: var(--spruce); font-weight: 600; font-size: 0.95rem; }
+.card a:hover .card-go { text-decoration: underline; }
+.badge { align-self: flex-start; font-size: 0.8rem; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: #fffaf0; border: 1px solid #d9c08f; color: #7a5410; }
+.shelf:has(.badge) .cards { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .shelf:has(.badge) .card a { flex-direction: row; } .shelf:has(.badge) .card img { width: 50%; border-bottom: 0; border-right: 1px solid var(--rule); } }
+
+.free-tool { display: grid; gap: 16px; align-items: center; padding: 24px; margin-top: 56px; border-left: 4px solid var(--bronze); }
+.free-tool h2 { margin: 4px 0 8px; font-size: 1.4rem; }
+.free-tool p { margin-bottom: 0; }
+.free-tool .btn { justify-self: start; }
+@media (min-width: 760px) { .free-tool { grid-template-columns: 1fr auto; padding: 28px 32px; } }
+
+/* Smoothness: soft cross-fade between pages (supporting browsers), gentle hover states */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.18s; }
+.site-head { view-transition-name: site-head; }
+picture { display: block; }
+.btn, .nav a, .feature { transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  html { scroll-behavior: auto; }
+  .card a:hover { transform: none; }
+}

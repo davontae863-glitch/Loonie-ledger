@@ -63,7 +63,7 @@ test('membership: shows a monthly price, stays "Coming soon" until it has a Payh
   let html = read(`products/${m.slug}/index.html`);
   assert.match(html, /\$5 <span/);
   assert.match(html, /per month, or \$39 per year/);
-  assert.match(read('products/index.html'), /\$5\/mo/);
+  assert.match(read('products/index.html'), /<strong>\$5<\/strong>\/month/);
   if (m.status !== 'live') assert.match(html, /Coming soon/);
   read = build(base.map((p) => (p === m ? { ...p, status: 'live', payhip_url: 'https://payhip.com/b/Memb1', payhip_url_yearly: 'https://payhip.com/b/Year1' } : p)));
   html = read(`products/${m.slug}/index.html`);
