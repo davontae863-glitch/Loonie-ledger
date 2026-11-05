@@ -15,7 +15,7 @@ for (const p of ['/', '/products/', '/gst-threshold-checker/', '/faq/', '/about/
 }
 for (const x of products.filter((x) => x.status === 'live')) {
   const body = await (await get(`/products/${x.slug}/`)).text();
-  check(body.includes(`href="${x.payhip_url}"`), `on sale with checkout link: ${x.slug}`);
+  check(body.includes(`href="${x.payhip_url.replace(/&/g, '&amp;')}"`), `on sale with checkout link: ${x.slug}`);
 }
 for (const x of products.filter((x) => x.status !== 'live')) {
   const body = await (await get(`/products/${x.slug}/`)).text();

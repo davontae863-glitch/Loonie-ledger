@@ -17,7 +17,8 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const cad = (c) => `$${(c / 100).toFixed(c % 100 ? 2 : 0)}`;
 // Memberships (billing.interval) show "$5/mo"; everything else is a one-time price.
 const priceShort = (p) => p.billing ? `${cad(p.price_cents)}/mo` : cad(p.price_cents);
-const isBuyable = (p) => p.status === 'live' && /^https:\/\/payhip\.com\//.test(p.payhip_url);
+const isPayhip = (u) => /^https:\/\/payhip\.com\//.test(u || '');
+const isBuyable = (p) => p.status === 'live' && isPayhip(p.payhip_url);
 
 const coin = `<svg class="brand-coin" viewBox="0 0 40 40" aria-hidden="true"><polygon points="${
   Array.from({ length: 11 }, (_, i) => {
@@ -166,7 +167,9 @@ write('/products/', page({
 
 for (const p of products) {
   const buy = isBuyable(p)
-    ? `<a class="btn" href="${esc(p.payhip_url)}">${p.billing ? `Join for ${cad(p.price_cents)}/month` : `Buy for ${cad(p.price_cents)}`}</a>`
+    ? (p.billing
+      ? `<a class="btn" href="${esc(p.payhip_url)}">Join monthly: ${cad(p.price_cents)}/month</a>${isPayhip(p.payhip_url_yearly) ? `<a class="btn secondary" style="margin-top:10px" href="${esc(p.payhip_url_yearly)}">Join yearly: ${cad(p.billing.yearly_cents)}/year</a>` : ''}`
+      : `<a class="btn" href="${esc(p.payhip_url)}">Buy for ${cad(p.price_cents)}</a>`)
     : `<a class="btn" aria-disabled="true" role="link" tabindex="0">Coming soon</a>`;
   write(`/products/${p.slug}/`, page({
     path: `/products/${p.slug}/`, title: p.name, description: p.short,

@@ -19,3 +19,4 @@
 | 2026-10-31 | Wave 2 approved: Room Tracker ($14), Household Budget ($12), Complete Bundle ($39) | Owner reviewed the files | Owner (Davontae Williams) |
 | 2026-10-31 | All five products on sale (Room Tracker, Household Budget, Complete Bundle added) with cover images | Owner created Payhip listings | Owner |
 | 2026-11-04 | All-Access Membership added to the site: $5/month or $39/year, all five tools + January updates + new tools; shows "Coming soon" until the owner creates the Payhip membership and the link is added | Owner asked for a monthly subscription before promotion starts; Payhip supports recurring billing via Stripe. Refund policy and terms updated for memberships. | Owner (Davontae Williams) |
+| 2026-11-05 | All-Access Membership on sale: monthly ($5) and yearly ($39) Payhip checkout links on the product page | Owner created the Payhip membership (1 post with all files, 2 subscription plans) and sent the checkout links | Owner (Davontae Williams) |

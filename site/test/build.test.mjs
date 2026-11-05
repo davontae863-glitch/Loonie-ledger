@@ -22,7 +22,7 @@ test('current catalog: live products link to payhip.com; everything else is "Com
     const html = read(`products/${p.slug}/index.html`);
     if (p.status === 'live') {
       assert.match(p.payhip_url, /^https:\/\/payhip\.com\//);
-      assert.ok(html.includes(`href="${p.payhip_url}"`), p.slug);
+      assert.ok(html.includes(`href="${p.payhip_url.replace(/&/g, '&amp;')}"`), p.slug);
       assert.doesNotMatch(html, /Coming soon/);
     } else {
       assert.match(html, /Coming soon/);
@@ -65,8 +65,9 @@ test('membership: shows a monthly price, stays "Coming soon" until it has a Payh
   assert.match(html, /per month, or \$39 per year/);
   assert.match(read('products/index.html'), /\$5\/mo/);
   if (m.status !== 'live') assert.match(html, /Coming soon/);
-  read = build(base.map((p) => (p === m ? { ...p, status: 'live', payhip_url: 'https://payhip.com/b/Memb1' } : p)));
+  read = build(base.map((p) => (p === m ? { ...p, status: 'live', payhip_url: 'https://payhip.com/b/Memb1', payhip_url_yearly: 'https://payhip.com/b/Year1' } : p)));
   html = read(`products/${m.slug}/index.html`);
-  assert.match(html, /href="https:\/\/payhip\.com\/b\/Memb1">Join for \$5\/month/);
+  assert.match(html, /href="https:\/\/payhip\.com\/b\/Memb1">Join monthly: \$5\/month/);
+  assert.match(html, /href="https:\/\/payhip\.com\/b\/Year1">Join yearly: \$39\/year/);
   assert.doesNotMatch(html, /One-time purchase/);
 });

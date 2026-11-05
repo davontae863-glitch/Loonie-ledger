@@ -192,8 +192,8 @@
       "interval": "month",
       "yearly_cents": 3900
     },
-    "status": "pending_payhip",
-    "payhip_url": "",
+    "status": "live",
+    "payhip_url": "https://payhip.com/order?link=9y2f3&pricing_plan=lKzy28oxBX",
     "launch_wave": 3,
     "for": "Anyone who wants the whole kit (bookkeeping, invoicing, registered-account room and household budget) kept current year after year, without buying each tool separately.",
     "problem": "CRA rates and limits change every year, and your needs change too. The membership keeps you on the current version of every tool instead of buying them one at a time.",
@@ -233,6 +233,7 @@
         "Is this tax advice?",
         "No. The tools organize your records using CRA categories. They aren't tax software or tax advice."
       ]
-    ]
+    ],
+    "payhip_url_yearly": "https://payhip.com/order?link=9y2f3&pricing_plan=18B1V3r2GZ"
   }
 ]
