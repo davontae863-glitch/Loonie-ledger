@@ -24,4 +24,6 @@ The link counts the click, then sends the visitor to the page. It only ever send
 - No "passive income", "guaranteed", or "save thousands" claims.
 - Products marked "Coming soon" are never promoted as available; point to the free GST checker or the product page's "Coming soon" status.
 - No customer stories, reviews or numbers until they're real.
-- Posting is done by the owner from their own accounts. Nothing posts automatically until a platform's official API is approved for this account.
+- Instagram and the Facebook Page post automatically every evening through Windsor.ai (official Meta APIs), approved by the owner on 2026-11-05 ("do it every day without my go-ahead"). The scheduled task "Loonie Ledger daily auto-post" publishes that day's draft, logs it in `posted.md`, and never posts twice in one day.
+- YouTube Shorts, TikTok and Pinterest are posted by the owner (Buffer free plan). Windsor.ai reads their stats only.
+- Auto-posts follow every rule above; if a fact can't be re-checked on canada.ca that day, the post is skipped and the owner is notified.
