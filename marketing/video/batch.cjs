@@ -41,6 +41,24 @@ const st = (o, dy = 40) => `opacity:${o};transform:translateY(${(1 - o) * dy}px)
 const brand = `<div class="brand">${coin}Loonie Ledger</div>`;
 const money = (n) => (n < 0 ? '−' : '') + '$' + Math.abs(n).toLocaleString('en-CA');
 
+
+// Hook scene for NEW videos (README "Hooks: beat the 3-second skip"): full hook readable on frame 1, dark spruce
+// background that stands out in the feed, no brand bar for the first 3 s, motion from 0.0 s (punch-in zoom +
+// bronze bar sweep). lines: [['text', 'bz'|''], ...] — keep it to ~7 words in total.
+function hookScene(lines, sub) {
+  return (t) => {
+    const z = 1 + 0.06 * ease(t / 0.6), bar = ease(t / 0.5);
+    return `<div style="position:absolute;inset:0;background:#102a22"></div>
+    <div style="position:absolute;left:60px;right:60px;top:380px;height:1000px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transform:scale(${z});transform-origin:50% 50%">
+      <div style="font-family:'Inter Display',Inter,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:128px;color:#fff">
+        ${lines.map(([txt, c]) => `<div style="${c === 'bz' ? 'color:#e0b25a' : ''}">${txt}</div>`).join('')}
+      </div>
+      <div style="margin-top:44px;height:14px;width:${560 * bar}px;background:#9a6b14;border-radius:7px"></div>
+      ${sub ? `<div style="margin-top:36px;font-size:52px;color:#cfe7da;font-weight:600">${sub}</div>` : ''}
+    </div>`;
+  };
+}
+
 function endcard(product, line) {
   return (t) => `${brand}
   <div class="big" style="top:520px;font-size:100px;${st(fin(t, 0.05))}">${line}</div>
@@ -51,9 +69,7 @@ function endcard(product, line) {
 
 // ---------------- Video 1: TFSA withdrawal trap ----------------
 const v1 = [
-  ['hook', 3.6, (t) => `${brand}
-    <div class="big" style="top:560px;font-size:120px"><div style="${st(fin(t, 0.1))}">Took money out of your TFSA?</div>
-    <div style="margin-top:30px;${st(fin(t, 1.0))}" class="bz">Don't put it back yet.</div></div>`],
+  ['hook', 3.0, hookScene([['Took money out of your TFSA?', ''], ["Don't put it back yet.", 'bz']])],
   ['ledger', 10.5, (t) => {
     const steps = [
       ['Jan', 'Room available', null, 7000],
@@ -89,9 +105,7 @@ const prov = [
   ['Not registered yet (small supplier)', null, 0, 1000],
 ];
 const v2 = [
-  ['hook', 3.6, (t) => `${brand}
-    <div class="big" style="top:560px;font-size:124px"><div style="${st(fin(t, 0.1))}">Same $1,000 invoice.</div>
-    <div style="margin-top:30px;${st(fin(t, 1.0))}" class="bz">Four different tax lines.</div></div>`],
+  ['hook', 3.0, hookScene([['Same $1,000 invoice.', ''], ['4 different totals.', 'bz']])],
   ['invoice', 10.4, (t) => {
     const i = Math.min(3, Math.floor(Math.max(0, t - 0.6) / 2.45));
     const [who, tax, amt, total] = prov[i];
@@ -124,10 +138,7 @@ const items = [
   ['Flyers for your business', '8521', 'Advertising', ''],
 ];
 const v3 = [
-  ['hook', 3.4, (t) => `${brand}
-    <div class="big" style="top:600px;font-size:124px"><div style="${st(fin(t, 0.1))}">Self-employed?</div>
-    <div style="margin-top:30px;${st(fin(t, 0.9))}" class="bz">Sort these 5 expenses.</div></div>
-    <div class="small" style="top:1260px;${st(fin(t, 1.6))}">Which T2125 line does each one go on?</div>`],
+  ['hook', 3.0, hookScene([['Self-employed?', ''], ['Sort these 5 expenses.', 'bz']], 'Guess before it flips 👇')],
   ['sort', 13.2, (t) => {
     const per = 2.5;
     return `${brand}
@@ -212,7 +223,7 @@ async function main() {
   for (const [name, scenes] of Object.entries(videos)) {
     const files = [];
     for (const [sname, secs, fn] of scenes) {
-      if (PREVIEW) { await set(fn(secs - 0.1)); await page.screenshot({ path: path.join(OUT, `${name}-${sname}.png`) }); continue; }
+      if (PREVIEW) { await set(fn(0)); await page.screenshot({ path: path.join(OUT, `${name}-${sname}-t0.png`) }); await set(fn(secs - 0.1)); await page.screenshot({ path: path.join(OUT, `${name}-${sname}.png`) }); continue; }
       const frames = [];
       const n = Math.round(secs * FPS);
       for (let f = 0; f < n; f++) {

@@ -52,3 +52,5 @@ Early Reels lost most viewers in the first seconds (avg watch 4.5–6.4 s on ~22
 6. **Change something every ~1.5–2 s** after the hook (new line, new card, number reveal). No static frame longer than 2.5 s.
 7. **Keep it short:** 12–18 s before the outro.
 8. **Cover = the hook frame**, so the grid and the first frame match.
+
+Copy `hookScene()` from `marketing/video/batch.cjs` for the hook scene (3.0 s) — it already does rules 1, 2 and 4. On voiced days the first line in the voice JSON uses `"t": 0.0`.
