@@ -6,5 +6,24 @@
   "ownerName": "Davontae Williams",
   "province": "Alberta",
   "policiesUpdated": "2026-11-04",
-  "_note": "contactEmail and ownerName must be filled in by the owner before launch. The build warns while they are empty."
+  "_note": "contactEmail and ownerName must be filled in by the owner before launch. The build warns while they are empty.",
+  "social": [
+    [
+      "Instagram",
+      "https://www.instagram.com/loonieledgerofficial/"
+    ],
+    [
+      "TikTok",
+      "https://www.tiktok.com/@loonieledgerofficial"
+    ],
+    [
+      "Facebook",
+      "https://www.facebook.com/profile.php?id=1438638599327729"
+    ],
+    [
+      "All our links",
+      "https://linktr.ee/LoonieLedger.ca"
+    ]
+  ],
+  "followPromise": "A Canadian money tip every day"
 }

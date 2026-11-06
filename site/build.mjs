@@ -58,6 +58,8 @@ const nav = [
   ['/', 'Home'], ['/products/', 'Tools'], ['/gst-threshold-checker/', 'GST checker'], ['/faq/', 'FAQ'], ['/about/', 'About'], ['/contact/', 'Contact'],
 ];
 
+// Social links + the follow promise (owner request 2026-11-06: site visitors are the warmest followers).
+const socialBand = () => (site.social && site.social.length) ? `<div class="follow"><p><strong>${esc(site.followPromise || 'Follow along')}</strong> — follow Loonie Ledger:</p><ul>${site.social.map(([l, u]) => `<li><a href="${esc(u)}" rel="noopener" target="_blank">${esc(l)}</a></li>`).join('')}</ul></div>` : '';
 function page({ path, title, description, body, noindex = false }) {
   const fullTitle = path === '/' ? `${site.name} — ${site.tagline}` : `${title} — ${site.name}`;
   return `<!doctype html>
@@ -108,7 +110,7 @@ addEventListener('pagereveal', function (e) {
 <main id="main"><div class="wrap">
 ${body}
 </div></main>
-<footer class="site-foot"><div class="wrap"><div class="cols">
+<footer class="site-foot"><div class="wrap">${socialBand()}<div class="cols">
   <div><strong>${esc(site.name)}</strong><p class="small">${esc(site.tagline)} Spreadsheet tools for Canadian sole proprietors and households. Not affiliated with the Canada Revenue Agency. Our tools organize records; they are not tax, accounting or legal advice.</p></div>
   <div><ul><li><a href="/products/">All tools</a></li><li><a href="/gst-threshold-checker/">GST/HST threshold checker</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/delivery/">Delivery</a></li></ul></div>
   <div><ul><li><a href="/refunds/">Refund policy</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/terms/">Terms of use</a></li><li><a href="/contact/">Contact</a></li></ul></div>
@@ -127,6 +129,7 @@ function write(path, html) {
 const checker = (id) => `
 <section class="sheet" aria-labelledby="${id}-title">
   <div class="sheet-title"><span id="${id}-title" style="color:var(--ink);font-weight:600;font-size:1rem">GST/HST small-supplier check</span><span>Your taxable sales, CAD</span></div>
+  <p class="cells-note">Example numbers — replace them with yours.</p>
   <table class="cells" data-checker>
     <tbody>
       ${['Most recent quarter', 'Quarter before', 'Two quarters back', 'Three quarters back'].map((q, i) => `
@@ -164,7 +167,8 @@ document.querySelectorAll('[data-checker]').forEach(function (t) {
 // ---------- Pages ----------
 const wave1 = products.filter((p) => p.launch_wave === 1);
 const productRows = (list) => `<ul class="ledger">${list.map((p) => `
-  <li><a class="row" href="/products/${p.slug}/">
+  <li><a class="row${hasCover(p.slug) ? ' has-thumb' : ''}" href="/products/${p.slug}/">
+    ${hasCover(p.slug) ? `<span class="row-thumb">${pic(p.slug, { sizes: '120px' })}</span>` : ''}
     <span class="row-name">${esc(p.name)}${isBuyable(p) ? '' : '<span class="status">Coming soon</span>'}</span>
     <span class="row-desc">${esc(p.short)}</span>
     <span class="row-price">${priceShort(p)}</span>
@@ -197,6 +201,7 @@ write('/gst-threshold-checker/', page({
 <h1>Do I need to register for GST/HST?</h1>
 <p class="lede">Enter your taxable sales for each of the last four calendar quarters. Nothing you type leaves this page.</p>
 <div style="max-width:36rem;margin-top:24px">${checker('tool')}</div>
+${(() => { const t = products.find((p) => p.slug === 'sole-proprietor-bookkeeping-tracker'); return t ? `<aside class="next-step sheet"><p class="feature-kicker" style="color:var(--bronze)">Next step</p><p><strong>Track this automatically, every month.</strong> The ${esc(t.name)} keeps a running four-quarter total as you log income, and warns you before you reach $30,000.</p><a class="btn" href="/products/${t.slug}/">See the tracker — ${priceShort(t)}</a></aside>` : ''; })()}
 <div class="prose">
 <h2>How the threshold works</h2>
 <p>You're a small supplier, and don't have to register, while your worldwide taxable sales stay at $30,000 or less in any single calendar quarter and over the last four consecutive calendar quarters. Once you pass it, you have to register and start charging GST/HST.</p>
@@ -257,6 +262,10 @@ ${others.length ? `<section class="shelf"><h2>More tools</h2><ul class="cards">$
 </aside>`,
 }));
 
+// Short demo videos on product pages (owner request 2026-11-06). Files live in src/media; poster = first frame.
+const productVideo = { 'sole-proprietor-bookkeeping-tracker': 'loonie-ledger-sort-these-expenses-voiced', 'freelancer-invoice-generator': 'loonie-ledger-same-invoice-four-tax-lines', 'tfsa-rrsp-fhsa-room-tracker': 'loonie-ledger-tfsa-withdrawal-trap-voiced', 'complete-bundle': 'loonie-ledger-gst-four-quarters' };
+const videoBlock = (slug) => { const v = productVideo[slug]; if (!v || !existsSync(join(root, `src/media/${v}.mp4`))) return '';
+  return `<h2>See it in 20 seconds</h2><div class="demo-video"><video controls playsinline preload="none" width="1080" height="1920"${existsSync(join(root, `src/media/${v}-poster.jpg`)) ? ` poster="/media/${v}-poster.jpg"` : ''}><source src="/media/${v}.mp4" type="video/mp4"></video></div>`; };
 for (const p of products) {
   const buy = isBuyable(p)
     ? (p.billing
@@ -274,6 +283,7 @@ ${hasCover(p.slug) ? pic(p.slug, { sizes: '(min-width: 920px) 880px, 92vw', alt:
   <div>
     <h2>Who it's for</h2><p>${esc(p.for)}</p>
     <h2>The problem it solves</h2><p>${esc(p.problem)}</p>
+    ${videoBlock(p.slug)}
     <h2>What's inside</h2>
     <section class="sheet"><table class="cells stack"><tbody>
       ${p.inside.map(([a, b]) => `<tr><th scope="row" style="color:var(--ink);font-weight:600">${esc(a)}</th><td style="text-align:left;color:var(--ink-soft)">${esc(b)}</td></tr>`).join('')}

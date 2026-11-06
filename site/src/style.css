@@ -253,3 +253,35 @@ html:active-view-transition-type(back)::view-transition-new(root) { animation-na
 .plan.is-picked .plan-go { display: block; }
 .plan-help { margin: 10px 0 0; }
 @media (prefers-reduced-motion: reduce) { .plan:active { transform: none; } }
+
+/* Follow band (footer) */
+.follow { border-bottom: 1px solid var(--rule); padding: 0 0 18px; margin-bottom: 22px; }
+.follow p { margin: 0 0 10px; }
+.follow ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.follow a { display: inline-block; padding: 8px 14px; border: 1px solid var(--rule); border-radius: 999px; text-decoration: none; color: var(--ink); font-weight: 600; background: var(--sheet); }
+.follow a:hover { border-color: var(--ink); }
+/* Checker example note + next step */
+.cells-note { margin: 0; padding: 8px 16px; font-size: .85rem; color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
+.next-step { max-width: 36rem; margin-top: 18px; padding: 20px; }
+.next-step p { margin: 0 0 12px; }
+/* Home rows with thumbnails */
+.ledger a.row.has-thumb { grid-template-columns: 72px 1fr auto; }
+.ledger .row-thumb { grid-row: 1 / span 2; width: 72px; align-self: start; }
+.ledger .row-thumb img { width: 72px; height: 54px; object-fit: cover; border-radius: 8px; border: 1px solid var(--rule); display: block; }
+.ledger a.row.has-thumb .row-desc { grid-column: 2 / -1; }
+@media (min-width: 720px) {
+  .ledger a.row.has-thumb { grid-template-columns: 96px 1fr 2fr auto; align-items: center; }
+  .ledger .row-thumb { grid-row: auto; width: 96px; }
+  .ledger .row-thumb img { width: 96px; height: 72px; }
+  .ledger a.row.has-thumb .row-desc { grid-column: auto; }
+}
+/* Product demo video */
+.demo-video { max-width: 320px; }
+.demo-video video { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--rule); background: #102a22; display: block; }
+.ledger a.row.has-thumb .row-name { grid-column: 2; grid-row: 1; }
+.ledger a.row.has-thumb .row-price { grid-column: 3; grid-row: 1; }
+.ledger a.row.has-thumb .row-desc { grid-row: 2; }
+@media (min-width: 720px) {
+  .ledger a.row.has-thumb .row-name, .ledger a.row.has-thumb .row-price, .ledger a.row.has-thumb .row-desc { grid-row: auto; }
+  .ledger a.row.has-thumb .row-name { grid-column: 2; } .ledger a.row.has-thumb .row-desc { grid-column: 3; } .ledger a.row.has-thumb .row-price { grid-column: 4; }
+}
