@@ -131,7 +131,7 @@ h1{position:absolute;left:70px;right:70px;top:250px;font-family:"Inter Display",
 .r i{font-style:normal;width:56px;height:56px;border-radius:50%;background:#1d5a45;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;flex:none}
 .n{position:absolute;left:70px;right:70px;bottom:200px;font-size:28px;color:#46605a}
 .f{position:absolute;left:70px;right:70px;bottom:80px;display:flex;justify-content:space-between;align-items:center;font-size:32px}
-.f b{white-space:nowrap;background:#1d5a45;color:#fff;padding:18px 30px;border-radius:999px}${require('fs').readFileSync(require('path').join(__dirname, '../pin-dark.css'), 'utf8')}</style></head><body>
+.f b{white-space:nowrap;background:#1d5a45;color:#fff;padding:18px 30px;border-radius:999px}${process.env.PIN_STYLE === 'light' ? '.hi{color:#9a6b14}.mut{color:#46605a}' : require('fs').readFileSync(require('path').join(__dirname, '../pin-dark.css'), 'utf8')}</style></head><body>
 <div class="b">${coin}Loonie Ledger</div><div class="cal"><div>DEC</div><div>31</div></div>
 <h1>December bookkeeping checklist: <span class="hi">5 things before Jan 1</span></h1>
 <div class="card">${items.map((x, i) => `<div class="r"><i>${i + 1}</i>${x}</div>`).join('')}</div>

@@ -165,7 +165,7 @@ h1{position:absolute;left:70px;right:70px;top:250px;font-family:"Inter Display",
 .bar{position:absolute;left:70px;right:70px;top:960px;height:44px;border-radius:22px;background:#dcebe2}.bar i{display:block;height:100%;width:92%;background:#1d5a45;border-radius:22px}
 .k{position:absolute;left:70px;right:70px;top:1030px;display:flex;justify-content:space-between;font-size:40px;font-weight:700}
 .f{position:absolute;left:70px;right:70px;bottom:90px;display:flex;justify-content:space-between;align-items:center;font-size:34px}
-.f b{white-space:nowrap;background:#1d5a45;color:#fff;padding:18px 30px;border-radius:999px}${require('fs').readFileSync(require('path').join(__dirname, 'pin-dark.css'), 'utf8')}</style></head><body>
+.f b{white-space:nowrap;background:#1d5a45;color:#fff;padding:18px 30px;border-radius:999px}${process.env.PIN_STYLE === 'light' ? '.hi{color:#9a6b14}.mut{color:#46605a}' : require('fs').readFileSync(require('path').join(__dirname, 'pin-dark.css'), 'utf8')}</style></head><body>
 <div class="b">${coin}Loonie Ledger</div>
 <h1>Do I need to register for <span class="hi">GST/HST?</span></h1>
 <div class="s">The $30,000 small-supplier rule counts any single quarter, or any four quarters in a row.</div>

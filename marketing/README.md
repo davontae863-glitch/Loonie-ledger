@@ -55,6 +55,9 @@ Early Reels lost most viewers in the first seconds (avg watch 4.5–6.4 s on ~22
 
 Copy `hookScene()` from `marketing/video/batch.cjs` for the hook scene (3.0 s) — it already does rules 1, 2 and 4. On voiced days the first line in the voice JSON uses `"t": 0.0`.
 
-## Pinterest pins: dark style (owner request, 2026-11-06)
+## Pinterest pins: white or green, picked at random (owner request, 2026-11-06)
 
-Pins now use the same dark spruce + gold look as the video hooks (this replaces the old "light ledger background" pin style). Build the pin as before (brand bar, big headline, a card/checklist/table, CTA pill at the bottom, "Not tax advice" if tax), then append `marketing/video/pin-dark.css` after the pin's own CSS, and use `class="hi"` for the gold highlight word and `class="mut"` for muted text. Example: the `--pin` block in `marketing/video/daily/2026-11-05.cjs`.
+Each day's pin is randomly either the white style or the green style. Run `python3 marketing/video/pin_style.py <date>`: it prints `light` or `dark` (random, but fixed per date). Build the pin as before (brand bar, big headline, a card/checklist/table, CTA pill at the bottom, "Not tax advice" if tax).
+- `light` (white): the original light ledger background, ink #102a22, bronze #9a6b14 highlight (`.hi{color:#9a6b14}.mut{color:#46605a}`), spruce #1d5a45 pill.
+- In the example templates, set `PIN_STYLE=light` or `PIN_STYLE=dark` in the environment when rendering.
+- `dark` (green): append `marketing/video/pin-dark.css` after the pin's own CSS, and use `class="hi"` for the gold highlight word and `class="mut"` for muted text. Example: the `--pin` block in `marketing/video/daily/2026-11-05.cjs`.
