@@ -13,3 +13,4 @@ One line per published post. The auto-post task reads this to avoid posting twic
 | 2026-11-05 | Facebook photo | EXTRA (owner request, 17:15): Sort these expenses (batch 1, voiced) | go/fb-sort-expenses-voiced-1105?to=/products/sole-proprietor-bookkeeping-tracker/ | 1438638599327729_122102125173536568 |
 | 2026-11-05 | Instagram Reel | evening reel: December bookkeeping checklist (music only, track 3) | link in bio (go/bio-ig) | 17892890547459258 |
 | 2026-11-05 | Facebook photo | evening reel: December bookkeeping checklist | go/fb-vid-december-checklist-05?to=/gst-threshold-checker/ | 1438638599327729_122102167935536568 |
+| 2026-11-05 | Instagram Reel | EXTRA (owner request, 20:05, test of Instagram→Facebook reel auto-share): GST four quarters (batch 1, new hook, music only) | link in bio (go/bio-ig) | 18025662197926544 |
