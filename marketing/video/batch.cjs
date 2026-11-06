@@ -165,12 +165,12 @@ h1{position:absolute;left:70px;right:70px;top:250px;font-family:"Inter Display",
 .bar{position:absolute;left:70px;right:70px;top:960px;height:44px;border-radius:22px;background:#dcebe2}.bar i{display:block;height:100%;width:92%;background:#1d5a45;border-radius:22px}
 .k{position:absolute;left:70px;right:70px;top:1030px;display:flex;justify-content:space-between;font-size:40px;font-weight:700}
 .f{position:absolute;left:70px;right:70px;bottom:90px;display:flex;justify-content:space-between;align-items:center;font-size:34px}
-.f b{white-space:nowrap;background:#1d5a45;color:#fff;padding:18px 30px;border-radius:999px}</style></head><body>
+.f b{white-space:nowrap;background:#1d5a45;color:#fff;padding:18px 30px;border-radius:999px}${require('fs').readFileSync(require('path').join(__dirname, 'pin-dark.css'), 'utf8')}</style></head><body>
 <div class="b">${coin}Loonie Ledger</div>
-<h1>Do I need to register for <span style="color:#9a6b14">GST/HST?</span></h1>
+<h1>Do I need to register for <span class="hi">GST/HST?</span></h1>
 <div class="s">The $30,000 small-supplier rule counts any single quarter, or any four quarters in a row.</div>
-<div class="bar"><i></i></div><div class="k"><span>$27,600</span><span style="color:#46605a">of $30,000</span></div>
-<div class="f"><span style="color:#46605a">Canadian side hustles &amp; freelancers</span><b>Free checker →</b></div></body></html>`;
+<div class="bar"><i></i></div><div class="k"><span>$27,600</span><span class="mut">of $30,000</span></div>
+<div class="f"><span class="mut">Canadian side hustles &amp; freelancers</span><b>Free checker →</b></div></body></html>`;
 
 function mockup(pinB64) {
   const tiles = [[360, '#e7dccb'], [470, '#d6e4ec'], [300, '#efe3e6'], [420, '#dfe8d6'], [380, '#e9e4f2']];
@@ -255,4 +255,7 @@ async function main() {
   console.log('wrote pinterest');
   await browser.close();
 }
-main().catch((e) => { console.error(e); process.exit(1); });
+// `node batch.cjs <outdir> pin` renders only the Pinterest pin
+if (process.argv[3] === 'pin') (async () => { fs.mkdirSync(OUT, { recursive: true }); const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1000, height: 1500 } });
+  await p.setContent(PIN); await p.screenshot({ path: path.join(OUT, 'pinterest-pin-gst-register.png') }); await b.close(); console.log('wrote pin'); })();
+else main().catch((e) => { console.error(e); process.exit(1); });

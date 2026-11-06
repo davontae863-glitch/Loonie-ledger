@@ -1,0 +1,11 @@
+/* Dark pin style (owner request 2026-11-06): matches the dark-spruce video hooks. Append after a pin's own CSS. */
+body{background:#102a22;color:#fff}
+body:before{background-image:linear-gradient(rgba(255,255,255,.06) 2px,transparent 2px);opacity:1}
+.b{color:#fff}
+.s,.n{color:#cfe7da}
+.bar{background:rgba(255,255,255,.15)}.bar i{background:#e0b25a}
+.card{background:#16382d;border-color:#2a5a48;box-shadow:none}
+.r{border-bottom-color:#2a5a48;color:#fff}.r i{background:#e0b25a;color:#102a22}
+.cal{background:#fff;border-color:#2a5a48}.cal div:first-child{background:#9a6b14}.cal div:last-child{color:#102a22}
+.f b{background:#e0b25a;color:#102a22}
+.hi{color:#e0b25a}.mut{color:#a9c7b8}

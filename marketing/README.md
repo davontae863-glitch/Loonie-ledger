@@ -54,3 +54,7 @@ Early Reels lost most viewers in the first seconds (avg watch 4.5–6.4 s on ~22
 8. **Cover = the hook frame**, so the grid and the first frame match.
 
 Copy `hookScene()` from `marketing/video/batch.cjs` for the hook scene (3.0 s) — it already does rules 1, 2 and 4. On voiced days the first line in the voice JSON uses `"t": 0.0`.
+
+## Pinterest pins: dark style (owner request, 2026-11-06)
+
+Pins now use the same dark spruce + gold look as the video hooks (this replaces the old "light ledger background" pin style). Build the pin as before (brand bar, big headline, a card/checklist/table, CTA pill at the bottom, "Not tax advice" if tax), then append `marketing/video/pin-dark.css` after the pin's own CSS, and use `class="hi"` for the gold highlight word and `class="mut"` for muted text. Example: the `--pin` block in `marketing/video/daily/2026-11-05.cjs`.
