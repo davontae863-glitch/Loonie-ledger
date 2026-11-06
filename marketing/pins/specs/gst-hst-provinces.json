@@ -1,0 +1,50 @@
+{
+ "kicker": "GST/HST",
+ "title": [
+  "GST or HST?",
+  "Which applies where"
+ ],
+ "titleHi": 1,
+ "titleSize": 82,
+ "lead": "Five provinces charge HST. The rest of Canada: 5% GST.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "GST/HST rate by province",
+   "rows": [
+    [
+     "Ontario",
+     "13% HST"
+    ],
+    [
+     "Nova Scotia",
+     "14% HST"
+    ],
+    [
+     "New Brunswick",
+     "15% HST"
+    ],
+    [
+     "Newfoundland and Labrador",
+     "15% HST"
+    ],
+    [
+     "Prince Edward Island",
+     "15% HST"
+    ]
+   ],
+   "total": [
+    "All other provinces & territories",
+    "5% GST"
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "info",
+   "text": "PST and Quebec's QST are separate provincial taxes. Check that province's rules."
+  }
+ ],
+ "ctaLead": "Bill clients in other provinces?",
+ "cta": "Freelancer Invoice Generator",
+ "source": "CRA, 2026"
+}
