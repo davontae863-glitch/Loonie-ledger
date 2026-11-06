@@ -76,3 +76,13 @@ Pins are mini-infographics (the owner liked tax-tip boards that teach one thing 
 ## Bio link (2026-11-06)
 
 All profiles' bio link is the owner's Linktree: **https://linktr.ee/LoonieLedger.ca** (free GST/HST checker, all tools, Bookkeeping & GST/HST Tracker, TFSA/RRSP/FHSA Room Tracker, Complete Bundle, plus social icons). "Link in bio" in captions means this page. TikTok can't show a clickable link until the account gets the Website field (follower minimum), so the TikTok bio shows `linktr.ee/LoonieLedger.ca` as text; TikTok captions may also say "free checker linked on our Instagram @loonieledgerofficial".
+
+## Follower growth (owner request, 2026-11-06 — the current priority)
+
+Skip rate is improving; the goal now is follows (0 followers on 2026-11-06). Every post must give a clear reason to follow:
+- **The promise:** "a Canadian money tip every day". Use it as the follow line everywhere — the outro pill and the spoken outro already say it. Caption CTA (replaces "Follow Loonie Ledger for more…"): "Follow @loonieledgerofficial for a Canadian money tip every day." on Instagram/Facebook; "Follow for a Canadian money tip every day." in the TikTok/YouTube caption.
+- **Series:** label videos and carousels as part of a running series so people follow to catch the next one — "Canadian money mistake #N" for mistakes/traps, "Tax-season prep #N" for deadline/checklist topics. Put the label as a small kicker on the hook/slide 1 and in the caption's first line; N counts up from posted.md.
+- **Save/share bait that's honest:** end carousels with "Save this for tax time" or "Send this to someone with a side hustle" (one, not both).
+- **Comment prompts:** keep one easy question per post ("Did you know this?", "Comment your score") — comments push reach to non-followers.
+- **Carousel last slide:** the CTA pill says "Follow for a daily Canadian money tip"; product/checker link goes in a smaller line under it ("Free GST/HST checker — link in bio").
+- Never buy followers, use follow/unfollow tricks, engagement pods or "follow for follow".

@@ -25,7 +25,7 @@ const frame = (t) => {
   <div class="coin" style="transform:scale(${s}) rotateY(${rot}deg)">${coin}</div>
   <div class="c name" style="${st(a)}">Loonie Ledger</div>
   <div class="c tag" style="${st(b)}">Canadian money, made simple.</div>
-  <div class="c pill" style="${st(c)}"><span>Free tools &amp; spreadsheets · link in bio</span></div>`;
+  <div class="c pill" style="${st(c)}"><span>Follow for a daily Canadian money tip</span></div>`;
 };
 (async () => {
   const browser = await chromium.launch(); const page = await browser.newPage({ viewport: { width: W, height: H } });
