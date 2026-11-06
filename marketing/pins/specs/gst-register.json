@@ -1,0 +1,10 @@
+{ "kicker": "GST/HST", "title": ["Do I need to register", "for GST/HST?"], "titleHi": 1,
+  "lead": "The $30,000 small-supplier limit isn't just January to December. CRA also counts any four calendar quarters in a row.",
+  "blocks": [
+    {"type": "flow", "steps": [
+      {"icon": "calendar", "big": "$6K", "label": "Q4"}, {"icon": "calendar", "big": "$7K", "label": "Q1"},
+      {"icon": "calendar", "big": "$8K", "label": "Q2"}, {"icon": "calendar", "big": "$10K", "label": "Q3"}],
+     "result": {"icon": "alert", "big": "$31,000", "label": "Over $30,000 in 4 quarters in a row"}},
+    {"type": "note", "icon": "info", "text": "Over $30,000 in a single quarter? You're no longer a small supplier from that sale."}
+  ],
+  "ctaLead": "Type in your last 4 quarters", "cta": "Free checker", "source": "CRA, 2026" }

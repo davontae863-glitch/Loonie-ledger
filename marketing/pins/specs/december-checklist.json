@@ -1,0 +1,7 @@
+{ "kicker": "Year-end", "title": ["Self-employed?", "5 things to do", "before Jan 1"], "titleHi": 2, "titleSize": 96,
+  "lead": "Self-employed individuals generally have a December 31 year-end, so December is clean-up month.",
+  "blocks": [
+    {"type": "checks", "items": ["Total your sales for each quarter", "Write down your odometer on Dec 31", "Match bank statements to income", "No receipt? Note who, what, when, $", "Follow up on unpaid invoices"]},
+    {"type": "note", "icon": "car", "text": "CRA asks for each vehicle's odometer reading at the start and end of the fiscal period."}
+  ],
+  "ctaLead": "Start with step 1", "cta": "Free GST/HST checker", "source": "CRA, 2026" }
