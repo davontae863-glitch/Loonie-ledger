@@ -1,0 +1,19 @@
+/* Green video style (owner request 2026-11-06). Append after batch.cjs's CSS when `pin_style.py <date> video` prints "dark". */
+body{background:#102a22;color:#fff}
+body:before{background-image:linear-gradient(rgba(255,255,255,.06) 2px,transparent 2px);opacity:1}
+.brand{color:#fff}
+.small{color:#cfe7da}
+.bz{color:#e0b25a}
+.hl{background:#e0b25a;color:#102a22}
+.card{background:#16382d;border-color:#2a5a48;box-shadow:none;color:#fff}
+.row{border-bottom-color:#2a5a48}
+.head{background:#0b1f19}
+.pill{background:#e0b25a;border-color:#e0b25a;color:#102a22}
+.tag{background:#2a5a48;color:#fff}
+.quote{border-left-color:#e0b25a}
+.red{color:#ff8a80}.grn{color:#7fd6a4}
+[style*="color:#46605a"]{color:#a9c7b8 !important}
+[style*="color:#102a22"]{color:#fff !important}
+[style*="color:#1d5a45"]{color:#e0b25a !important}
+[style*="background:#eef4f0"]{background:#1d4537 !important}
+[style*="background:#dcebe2"]{background:#24503f !important}

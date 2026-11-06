@@ -16,6 +16,8 @@ const PREVIEW = process.argv[3] === 'preview';
 const W = 1080, H = 1920, FPS = 30;
 const coin = fs.readFileSync(path.join(__dirname, '../../site/dist/favicon.svg'), 'utf8');
 
+// STYLE=light|dark — from `python3 marketing/video/pin_style.py <date> video` (owner: shuffle white/green, 2026-11-06)
+const STYLE = process.env.STYLE || 'light';
 const CSS = `*{box-sizing:border-box;margin:0}html,body{width:${W}px;height:${H}px;overflow:hidden}
 body{background:#f5f9f6;font-family:Inter,sans-serif;color:#102a22;position:relative;font-feature-settings:"tnum" 1}
 body:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#e3eee7 2px,transparent 2px);background-size:100% 64px;opacity:.6}
@@ -32,7 +34,7 @@ body:before{content:"";position:absolute;inset:0;background-image:linear-gradien
 .head{background:#1d5a45;color:#fff;font-weight:700;font-size:34px;padding:24px 40px;display:flex;justify-content:space-between}
 .pill{display:inline-block;background:#fff;border:3px solid #9dbcaa;border-radius:999px;padding:18px 34px;font-size:40px;font-weight:700;color:#1d5a45}
 .tag{display:inline-block;font-size:30px;font-weight:700;padding:8px 18px;border-radius:12px;background:#dcebe2;color:#1d5a45}
-.quote{position:absolute;left:90px;right:90px;border-left:12px solid #9a6b14;padding:10px 0 10px 44px;font-size:56px;font-weight:700;line-height:1.25}`;
+.quote{position:absolute;left:90px;right:90px;border-left:12px solid #9a6b14;padding:10px 0 10px 44px;font-size:56px;font-weight:700;line-height:1.25}` + (STYLE === 'dark' ? fs.readFileSync(path.join(__dirname, 'video-dark.css'), 'utf8') : '');
 
 const clamp = (x) => Math.min(1, Math.max(0, x));
 const ease = (x) => 1 - Math.pow(1 - clamp(x), 3);
@@ -48,13 +50,14 @@ const money = (n) => (n < 0 ? '−' : '') + '$' + Math.abs(n).toLocaleString('en
 function hookScene(lines, sub) {
   return (t) => {
     const z = 1 + 0.06 * ease(t / 0.6), bar = ease(t / 0.5);
-    return `<div style="position:absolute;inset:0;background:#102a22"></div>
+    const D = STYLE === 'dark', bg = D ? '#102a22' : '#f5f9f6', ink = D ? '#fff' : '#102a22', hi = D ? '#e0b25a' : '#9a6b14', sub2 = D ? '#cfe7da' : '#46605a', barc = D ? '#9a6b14' : '#1d5a45';
+    return `<div style="position:absolute;inset:0;background:${bg}"></div>
     <div style="position:absolute;left:60px;right:60px;top:380px;height:1000px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transform:scale(${z});transform-origin:50% 50%">
-      <div style="font-family:'Inter Display',Inter,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:128px;color:#fff">
-        ${lines.map(([txt, c]) => `<div style="${c === 'bz' ? 'color:#e0b25a' : ''}">${txt}</div>`).join('')}
+      <div style="font-family:'Inter Display',Inter,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:128px;color:${ink}">
+        ${lines.map(([txt, c]) => `<div style="${c === 'bz' ? 'color:' + hi : ''}">${txt}</div>`).join('')}
       </div>
-      <div style="margin-top:44px;height:14px;width:${560 * bar}px;background:#9a6b14;border-radius:7px"></div>
-      ${sub ? `<div style="margin-top:36px;font-size:52px;color:#cfe7da;font-weight:600">${sub}</div>` : ''}
+      <div style="margin-top:44px;height:14px;width:${560 * bar}px;background:${barc};border-radius:7px"></div>
+      ${sub ? `<div style="margin-top:36px;font-size:52px;color:${sub2};font-weight:600">${sub}</div>` : ''}
     </div>`;
   };
 }

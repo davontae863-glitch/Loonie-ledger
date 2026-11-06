@@ -1,0 +1,16 @@
+/* Green carousel style (owner request 2026-11-06). Append after the slide CSS when pin_style.py <date> carousel prints "dark". */
+body{background:#102a22;color:#fff}
+body:before{background-image:linear-gradient(rgba(255,255,255,.06) 2px,transparent 2px);opacity:1}
+.brand{color:#fff}
+.small{color:#cfe7da}
+.bz{color:#e0b25a}
+.hl{background:#e0b25a;color:#102a22}
+.num{background:#e0b25a;color:#102a22}
+.card{background:#16382d;border-color:#2a5a48;box-shadow:none;color:#fff}
+.card .small{color:#cfe7da}
+.pill{background:#e0b25a;color:#102a22}
+.foot{color:#a9c7b8}
+li{border-bottom-color:#2a5a48}
+.cal{border-color:#2a5a48}
+.cal div:last-child{color:#102a22}
+[style*="color:#102a22"]{color:#fff !important}

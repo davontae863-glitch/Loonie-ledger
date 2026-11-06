@@ -55,9 +55,14 @@ Early Reels lost most viewers in the first seconds (avg watch 4.5–6.4 s on ~22
 
 Copy `hookScene()` from `marketing/video/batch.cjs` for the hook scene (3.0 s) — it already does rules 1, 2 and 4. On voiced days the first line in the voice JSON uses `"t": 0.0`.
 
-## Pinterest pins: white or green, picked at random (owner request, 2026-11-06)
+## White or green: every post, picked at random (owner request, 2026-11-06)
 
-Each day's pin is randomly either the white style or the green style. Run `python3 marketing/video/pin_style.py <date>`: it prints `light` or `dark` (random, but fixed per date). Build the pin as before (brand bar, big headline, a card/checklist/table, CTA pill at the bottom, "Not tax advice" if tax).
-- `light` (white): the original light ledger background, ink #102a22, bronze #9a6b14 highlight (`.hi{color:#9a6b14}.mut{color:#46605a}`), spruce #1d5a45 pill.
-- In the example templates, set `PIN_STYLE=light` or `PIN_STYLE=dark` in the environment when rendering.
-- `dark` (green): append `marketing/video/pin-dark.css` after the pin's own CSS, and use `class="hi"` for the gold highlight word and `class="mut"` for muted text. Example: the `--pin` block in `marketing/video/daily/2026-11-05.cjs`.
+Every piece of content is randomly either the **white** style (light ledger background #f5f9f6, ink #102a22, bronze #9a6b14 highlight, spruce #1d5a45 buttons) or the **green** style (dark spruce #102a22 background, white text, gold #e0b25a highlight and buttons). Each type gets its own pick, so they don't always match:
+
+| Content | Get today's pick | Green CSS (append after the normal CSS) | Example |
+|---|---|---|---|
+| Evening video (hook + all scenes; the outro is always green) | `python3 marketing/video/pin_style.py <date> video` | `marketing/video/video-dark.css` | `STYLE=dark node marketing/video/batch.cjs <out> preview` — `hookScene()` follows `STYLE` too |
+| Midday carousel (Instagram + the Facebook image made from slide 1) | `python3 marketing/video/pin_style.py <date> carousel` | `marketing/carousel/carousel-dark.css` | `STYLE=dark node marketing/carousel/2026-11-05.cjs <out>` |
+| Pinterest pin | `python3 marketing/video/pin_style.py <date>` | `marketing/video/pin-dark.css` (use `class="hi"` / `class="mut"`; light pins need `.hi{color:#9a6b14}.mut{color:#46605a}`) | `PIN_STYLE=dark node marketing/video/daily/2026-11-05.cjs --pin <out.png>` |
+
+The script prints `light` or `dark`; the pick is random but fixed per date, so a re-run makes the same choice. This replaces any "light background" wording in the scheduled tasks. On green, check every frame/slide for dark text that disappeared (the CSS files fix the common cases). The hook rules above apply in both styles.
