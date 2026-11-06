@@ -34,11 +34,14 @@ const fadeIn = (t, start, dur = 0.35) => ease((t - start) / dur);
 const style = (o, dy = 40) => `opacity:${o};transform:translateY(${(1 - o) * dy}px)`;
 
 // ---------- scene builders: return HTML for time t (seconds into the scene) ----------
-function hook(t) {
-  const a = fadeIn(t, 0.1), b = fadeIn(t, 0.9), c = fadeIn(t, 1.8);
-  return `<div class="brand">${coin}Loonie Ledger</div>
-  <div class="big" style="top:560px;font-size:124px"><div style="${style(a)}">You can pass the GST limit</div><div style="margin-top:24px;${style(b)}">without making <span class="bz">$30,000</span> in a year.</div></div>
-  <div class="small" style="top:1380px;font-size:46px;${style(c)}">Side hustle or freelancing in Canada? Here's the rule.</div>`;
+function hook(t) {  // README "Hooks: beat the 3-second skip": full hook on frame 1, dark background, motion from 0.0 s
+  const z = 1 + 0.06 * ease(t / 0.6), bar = ease(t / 0.5);
+  return `<div style="position:absolute;inset:0;background:#102a22"></div>
+  <div style="position:absolute;left:60px;right:60px;top:380px;height:1000px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transform:scale(${z})">
+    <div style="font-family:'Inter Display',Inter,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:128px;color:#fff">
+      <div>You can hit the GST limit</div><div style="color:#e0b25a">without making $30K.</div></div>
+    <div style="margin-top:44px;height:14px;width:${560 * bar}px;background:#9a6b14;border-radius:7px"></div>
+  </div>`;
 }
 function rule(t) {
   const q = [['6,000', 'Q4'], ['7,000', 'Q1'], ['8,000', 'Q2'], ['10,000', 'Q3']];
@@ -86,7 +89,7 @@ async function main() {
   }
 
   const files = [];
-  files.push(await animated('s1-hook', hook, 3.6, [3.5]));
+  files.push(await animated('s1-hook', hook, 3.0, [0, 2.9]));
   files.push(await animated('s2-rule', rule, 5.2, [5.1]));
 
   // ---------- Scene 3: real checker demo ----------

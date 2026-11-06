@@ -1,7 +1,22 @@
 [
- {"t": 0.15, "text": "You can pass the GST limit without making thirty thousand in a year."},
- {"t": 3.7, "text": "It's not January to December. CRA counts any four quarters in a row."},
- {"t": 9.0, "text": "Each quarter looks small."},
- {"t": 12.8, "text": "Together, thirty-one thousand. That's over."},
- {"t": 15.8, "text": "Check yours free with the GST HST checker."}
+ {
+  "t": 0.0,
+  "text": "You can hit the GST limit without making thirty thousand."
+ },
+ {
+  "t": 3.1,
+  "text": "It's not January to December. CRA counts any four quarters in a row."
+ },
+ {
+  "t": 8.4,
+  "text": "Each quarter looks small."
+ },
+ {
+  "t": 12.2,
+  "text": "Together, thirty-one thousand. That's over."
+ },
+ {
+  "t": 15.2,
+  "text": "Check yours free with the GST HST checker."
+ }
 ]

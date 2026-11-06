@@ -1,9 +1,30 @@
 [
- {"t": 0.15, "text": "Same thousand-dollar invoice. Four different tax lines."},
- {"t": 4.2, "text": "Client in Alberta: five percent GST."},
- {"t": 6.65, "text": "Ontario: thirteen percent HST."},
- {"t": 9.1, "text": "Nova Scotia: fourteen percent HST."},
- {"t": 11.55, "text": "Not registered yet? No GST or HST line."},
- {"t": 14.1, "text": "For services, the rate usually follows where your client is."},
- {"t": 18.5, "text": "The Invoice Generator fills in the tax line for you."}
+ {
+  "t": 0.0,
+  "text": "Same thousand-dollar invoice. Four different totals."
+ },
+ {
+  "t": 3.6,
+  "text": "Client in Alberta: five percent GST."
+ },
+ {
+  "t": 6.05,
+  "text": "Ontario: thirteen percent HST."
+ },
+ {
+  "t": 8.5,
+  "text": "Nova Scotia: fourteen percent HST."
+ },
+ {
+  "t": 10.95,
+  "text": "Not registered yet? No GST or HST line."
+ },
+ {
+  "t": 13.5,
+  "text": "For services, the rate usually follows where your client is."
+ },
+ {
+  "t": 17.9,
+  "text": "The Invoice Generator fills in the tax line for you."
+ }
 ]

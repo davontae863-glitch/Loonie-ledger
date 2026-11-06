@@ -1,30 +1,30 @@
 [
  {
-  "t": 0.15,
+  "t": 0.0,
   "text": "Took money out of your TFSA? Don't put it back yet."
  },
  {
-  "t": 3.8,
+  "t": 3.2,
   "text": "You have seven thousand of room. You put in five thousand."
  },
  {
-  "t": 6.7,
+  "t": 6.1,
   "text": "Then take out two thousand."
  },
  {
-  "t": 8.6,
+  "t": 8.0,
   "text": "That doesn't give the room back this year."
  },
  {
-  "t": 10.6,
+  "t": 10.0,
   "text": "Put three thousand back, and you're over by a thousand."
  },
  {
-  "t": 14.2,
+  "t": 13.6,
   "text": "The CRA adds withdrawals back to your room on January first of the next year."
  },
  {
-  "t": 18.6,
+  "t": 18.0,
   "text": "Track your room before you deposit."
  }
 ]
