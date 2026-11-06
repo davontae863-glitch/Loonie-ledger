@@ -39,3 +39,16 @@ Videos on even day-of-year dates (America/Edmonton) get a voiceover reading the 
 ## Outro (every video)
 
 Every video ends with the Loonie Ledger outro: `marketing/video/outro/outro.mp4` (2.8 s: the coin spins in with a coin "ding", then "Loonie Ledger", "Canadian money, made simple." and "Free tools & spreadsheets · link in bio"). Order: render the video → `add_outro.sh in.mp4 out.mp4` → `add_music.sh` (music only) or `voiceover.py` (voice + music; it adds the spoken sign-off "Follow Loonie Ledger for more money tips." over the outro). End cards say "Get it at Loonie Ledger" / "Free at Loonie Ledger" instead of a bare "Link in bio". Rebuild the outro with `python3 outro/make_ding.py && node outro/make_outro.cjs`.
+
+## Hooks: beat the 3-second skip (owner request, 2026-11-06)
+
+Early Reels lost most viewers in the first seconds (avg watch 4.5–6.4 s on ~22 s videos). Every new video follows these rules; they override the batch-1 look where they conflict.
+
+1. **Frame 1 says it all.** The full hook is on screen at 100% opacity on the very first frame — no fade-in, no blank frame, no brand bar or logo in the first 3 s (the brand appears after the hook and in the outro).
+2. **Max ~7 words, huge type** (≥120 px), high contrast, centred in the middle third of the screen (not under the Reels UI at the bottom). Use a dark spruce (#102a22 / #1d5a45) background for the hook scene so it stands out from the light feed; bronze highlight on the key word or number.
+3. **Lead with the surprise, a number, or "you".** Patterns that work: a mistake ("Don't put it back yet"), a specific number ("$30,000 — without making $30,000"), a direct challenge ("Sort these 5 expenses"), or the result first. Never open with the brand, a greeting, or a slow setup.
+4. **Motion from 0.0 s.** Something moves in the first half-second: a quick punch-in zoom (100%→106% over 0.6 s), a number counting up, or a word popping in — while the hook text itself is already readable.
+5. **Sound from 0.0 s.** Voiced days: the first voice line starts at t = 0.0 and is the hook word-for-word. Music days: the track starts on the beat at frame 1 (it does already).
+6. **Change something every ~1.5–2 s** after the hook (new line, new card, number reveal). No static frame longer than 2.5 s.
+7. **Keep it short:** 12–18 s before the outro.
+8. **Cover = the hook frame**, so the grid and the first frame match.
