@@ -21,3 +21,19 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-05 | Facebook | Canadian Federation of Independent Business (CFIB) | Small-business news, your audience | official |
 | 2026-11-05 | Facebook | Futurpreneur Canada | Young Canadian entrepreneurs | official |
 | 2026-11-05 | Pinterest | Search "Canadian budget" and "small business tax Canada" → follow 3 active boards | Pinterest works on topics/boards more than people | — |
+| 2026-11-06 | Instagram | Nicole Victoria (@nobudgetbabe) | Paying off debt, spending wisely | money.ca, Jul 2024 |
+| 2026-11-06 | Instagram | Grow CPA (@growcpa) | Two Ontario CPAs, small-business money tips | CPA Canada Pivot, 2022 |
+| 2026-11-06 | Instagram | Financial Consumer Agency of Canada (fcac_can) | Official consumer money info | official, canada.ca/fcac |
+| 2026-11-06 | Instagram | Canadian Business (cdnbusiness) | Gov't of Canada small-business account | official, ised-isde.canada.ca |
+| 2026-11-06 | Instagram | BDC (bdc_ca) | Business Development Bank of Canada, entrepreneur tips | official, bdc.ca |
+| 2026-11-06 | TikTok | Corynn Fowler (@howtoadultschool) | Budgeting, credit and tax basics for 20s–30s | Global News, Nov 2023 |
+| 2026-11-06 | TikTok | Ellyce Fulmore (@ellyce.fulmore) | Budgeting, identity-based money tips (Calgary) | Globe and Mail; handle from money.ca, Jul 2024 |
+| 2026-11-06 | TikTok | Miss Excel (Kat Norton) | Excel tips; search the name for the handle | CNBC |
+| 2026-11-06 | YouTube | Ms. Balance Gabrielle Lee (Gabrielle Chung, CPA) | Budgeting, saving, tax tips from a CPA | CPA Canada Pivot, 2022 |
+| 2026-11-06 | YouTube | Lyn Allure (@LynAllure) | Budgeting, saving, investing | money.ca, Jul 2024 |
+| 2026-11-06 | YouTube | Financial Consumer Agency of Canada (youtube.com/user/FCACan) | Official money explainers | official, canada.ca/fcac |
+| 2026-11-06 | YouTube | Canada Business Network (youtube.com/user/CanadaBusinessCBN) | Permits, licences, grants | official, ised-isde.canada.ca |
+| 2026-11-06 | Facebook | Financial Consumer Agency of Canada (facebook.com/FCACan) | Official consumer money info to share | official, canada.ca/fcac |
+| 2026-11-06 | Facebook | BDC (facebook.com/BDC.ca) | Small-business news and tips | official, bdc.ca |
+| 2026-11-06 | Facebook | Canada Business (facebook.com/CanadaBusiness) | Gov't help starting a business | official, ised-isde.canada.ca |
+| 2026-11-06 | Pinterest | Search "Google Sheets budget template", "freelancer bookkeeping Canada", "TFSA tips Canada" → follow 3 active boards | No reputable source names Pinterest accounts | — |
