@@ -38,29 +38,49 @@ def phonemize(text):
     return ''.join(c for c in ps.strip() if c in _V)
 
 _sess = _voices = None
+_eng = {}  # engine name -> (session, voices dict)
+K11_DIR = os.environ.get('KOKORO11_DIR', os.path.expanduser('~/.cache/loonie-tts2/kokoro-multi-lang-v1_1.x/kokoro-multi-lang-v1_1'))
+
+def engine(name):
+    """'v10' = Kokoro v1.0 (default), 'v11' = Kokoro v1.1 (newer English voices af_maple, af_sol, bf_vale)."""
+    import onnxruntime as ort
+    if name not in _eng:
+        if name == 'v11':
+            sess = ort.InferenceSession(os.path.join(K11_DIR, 'model.onnx'), providers=['CPUExecutionProvider'])
+            meta = sess.get_modelmeta().custom_metadata_map
+            names = meta['speaker_names'].split(',')
+            arr = np.fromfile(os.path.join(K11_DIR, 'voices.bin'), dtype=np.float32).reshape(len(names), 510, 1, 256)
+            _eng[name] = (sess, {n: arr[i] for i, n in enumerate(names)})
+        else:
+            sess = ort.InferenceSession(os.path.join(KDIR, 'kokoro-v1.0.onnx'), providers=['CPUExecutionProvider'])
+            _eng[name] = (sess, dict(np.load(os.path.join(KDIR, 'voices-v1.0.bin'))))
+    return _eng[name]
+
 BLENDS = {  # our own voices: weighted mixes of Kokoro's built-in voice styles (made 2026-11-05)
     'maple':   {'af_heart': 0.5, 'af_bella': 0.5},
     'juniper': {'af_bella': 0.7, 'af_jessica': 0.3},
     'aspen':   {'af_heart': 0.6, 'af_sarah': 0.4},
     'rowan':   {'am_puck': 0.5, 'am_michael': 0.5},
 }
+V11_VOICES = {'maple': 'af_maple', 'sol': 'af_sol', 'vale': 'bf_vale'}  # Kokoro v1.1 voices (engine 'v11')
 
-def blend(voice):
+def blend(voice, voices=None):
     """voice = a Kokoro voice id, a name from BLENDS, or 'af_bella:0.6,af_heart:0.4'."""
+    voices = voices if voices is not None else _voices
     spec = BLENDS.get(voice) or ({k: float(w) for k, w in (p.split(':') for p in voice.split(','))} if ':' in voice else {voice: 1.0})
     tot = sum(spec.values())
-    return sum(_voices[k] * (w / tot) for k, w in spec.items())
+    return sum(voices[k] * (w / tot) for k, w in spec.items())
 
 def tts(text, voice='af_heart', speed=1.0):
-    global _sess, _voices
-    import onnxruntime as ort
-    if _sess is None:
-        _sess = ort.InferenceSession(os.path.join(KDIR, 'kokoro-v1.0.onnx'), providers=['CPUExecutionProvider'])
-        _voices = dict(np.load(os.path.join(KDIR, 'voices-v1.0.bin')))
+    """voice may be prefixed 'v11:' (e.g. 'v11:maple') to use Kokoro v1.1."""
+    eng = 'v10'
+    if voice.startswith('v11:'):
+        eng, voice = 'v11', V11_VOICES.get(voice[4:], voice[4:])
+    sess, voices = engine(eng)
     ph = phonemize(text)[:510]; toks = [_V[c] for c in ph]
-    style = blend(voice)[len(toks)]  # (1, 256)
-    audio = _sess.run(None, {'tokens': np.array([[0, *toks, 0]], np.int64), 'style': style.astype(np.float32),
-                             'speed': np.array([speed], np.float32)})[0]
+    style = blend(voice, voices)[len(toks)]  # (1, 256)
+    audio = sess.run(None, {'tokens': np.array([[0, *toks, 0]], np.int64), 'style': style.astype(np.float32),
+                            'speed': np.array([speed], np.float32)})[0]
     return np.asarray(audio, np.float32).reshape(-1), ph
 
 def save(path, x, sr=SR):
