@@ -86,3 +86,5 @@ Skip rate is improving; the goal now is follows (0 followers on 2026-11-06). Eve
 - **Comment prompts:** keep one easy question per post ("Did you know this?", "Comment your score") — comments push reach to non-followers.
 - **Carousel last slide:** the CTA pill says "Follow for a daily Canadian money tip"; product/checker link goes in a smaller line under it ("Free GST/HST checker — link in bio").
 - Never buy followers, use follow/unfollow tricks, engagement pods or "follow for follow".
+
+**Voice (2026-11-06):** the owner picked **Aspen with the "humanize" tweaks** (natural pauses between sentences, slight pace variation, warmer voice polish) over the plain voice and the Kokoro v1.1 voices (Maple, Sol). `voiceover.py` does this by default — don't pass `--plain` or a `v11:` voice.
