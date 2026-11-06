@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 320">
+  <!-- own illustration: four calendar pages (quarters) stacking into a coin pile -->
+  <ellipse cx="220" cy="300" rx="190" ry="14" fill="#000" opacity=".08"/>
+  <g transform="rotate(-8 120 150)"><rect x="40" y="60" width="150" height="170" rx="16" fill="#fff" stroke="#cfe0d6" stroke-width="4"/><rect x="40" y="60" width="150" height="44" rx="16" fill="#1d5a45"/><rect x="40" y="88" width="150" height="16" fill="#1d5a45"/><text x="115" y="91" font-family="Inter" font-weight="800" font-size="24" fill="#fff" text-anchor="middle">Q4</text><text x="115" y="175" font-family="Inter" font-weight="800" font-size="40" fill="#102a22" text-anchor="middle">$6K</text></g>
+  <g transform="translate(40 0) rotate(4 210 140)"><rect x="130" y="40" width="150" height="170" rx="16" fill="#fff" stroke="#cfe0d6" stroke-width="4"/><rect x="130" y="40" width="150" height="44" rx="16" fill="#1d5a45"/><rect x="130" y="68" width="150" height="16" fill="#1d5a45"/><text x="205" y="71" font-family="Inter" font-weight="800" font-size="24" fill="#fff" text-anchor="middle">Q1–Q3</text><text x="205" y="150" font-family="Inter" font-weight="800" font-size="34" fill="#102a22" text-anchor="middle">$25K</text></g>
+  <g transform="translate(40 0)">
+    <ellipse cx="315" cy="262" rx="62" ry="20" fill="#7a5410"/><rect x="253" y="222" width="124" height="40" fill="#9a6b14"/><ellipse cx="315" cy="222" rx="62" ry="20" fill="#e0b25a"/>
+    <rect x="253" y="190" width="124" height="32" fill="#9a6b14"/><ellipse cx="315" cy="190" rx="62" ry="20" fill="#e0b25a"/>
+    <rect x="253" y="158" width="124" height="32" fill="#9a6b14"/><ellipse cx="315" cy="158" rx="62" ry="20" fill="#f0c978"/>
+    <text x="315" y="166" font-family="Inter" font-weight="800" font-size="24" fill="#7a5410" text-anchor="middle">$31K</text>
+  </g>
+</svg>

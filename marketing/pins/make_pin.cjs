@@ -7,7 +7,7 @@
 //               {"type":"example","rows":[["Q1","$10,000"],...],"total":["Total","$31,000"]},
 //               {"type":"checks","items":["...","..."]},
 //               {"type":"note","icon":"info","text":"..."} ],
-//   "cta": "Free GST/HST checker", "source": "CRA, 2026" }
+//   "cta": "Free GST/HST checker", "source": "CRA, 2026", "art": "quarters" }   (art = an SVG in marketing/pins/art/, our own drawings)
 const { chromium } = require('playwright');
 const fs = require('fs'), path = require('path');
 const spec = JSON.parse(fs.readFileSync(process.argv[2], 'utf8')), out = process.argv[3];
@@ -45,9 +45,9 @@ body{width:1000px;height:1500px;background:${C.bg};color:${C.ink};font-family:In
 .top{display:flex;justify-content:space-between;align-items:center;padding:56px 64px 0}
 .brand{display:flex;align-items:center;gap:14px;font-weight:800;font-size:30px;letter-spacing:.02em}.brand svg{width:54px;height:54px}
 .kicker{font-size:24px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.accInk};background:${C.acc};padding:8px 18px;border-radius:999px}
-h1{padding:34px 64px 0;font-family:"Inter Display",Inter,sans-serif;font-weight:800;font-size:${spec.titleSize || 92}px;line-height:1.02;letter-spacing:-.03em}
-.lead{padding:22px 64px 0;font-size:31px;line-height:1.4;color:${C.mut}}
-.body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:26px;padding:24px 64px}
+h1{padding:26px 64px 0;font-family:"Inter Display",Inter,sans-serif;font-weight:800;font-size:${spec.titleSize || 92}px;line-height:1.02;letter-spacing:-.03em}
+.lead{padding:16px 64px 0;font-size:29px;line-height:1.4;color:${C.mut}}
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:18px 64px}
 .flow{display:flex;align-items:stretch;gap:10px}.arr{align-self:center;font-size:40px;color:${C.mut}}
 .step{flex:1;background:${C.card};border:3px solid ${C.line};border-radius:22px;padding:20px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .step b{font-size:32px;letter-spacing:-.01em}.step span{font-size:23px;color:${C.mut};font-weight:600}
@@ -64,9 +64,10 @@ h1{padding:34px 64px 0;font-family:"Inter Display",Inter,sans-serif;font-weight:
 .cta b{background:${C.acc};color:${C.accInk};padding:12px 26px;border-radius:999px;white-space:nowrap}
 .foot{background:${C.foot};color:${C.footInk};padding:24px 64px;font-size:22px;line-height:1.45;display:flex;justify-content:space-between;gap:24px}
 .foot b{color:#fff}
+.art{display:flex;justify-content:center;padding:18px 64px 0}.art svg{height:230px;width:auto;display:block}
 </style></head><body>
 <div class="top"><div class="brand">${coin}LOONIE LEDGER</div>${spec.kicker ? `<div class="kicker">${esc(spec.kicker)}</div>` : ''}</div>
-<h1>${title}</h1>${spec.lead ? `<div class="lead">${esc(spec.lead)}</div>` : ''}
+<h1>${title}</h1>${spec.lead ? `<div class="lead">${esc(spec.lead)}</div>` : ''}${spec.art ? `<div class="art">${fs.readFileSync(path.join(__dirname, 'art', spec.art + '.svg'), 'utf8')}</div>` : ''}
 <div class="body">${blocks}</div>
 <div class="cta"><span>${esc(spec.ctaLead || 'Check yours in seconds')}</span><b>${esc(spec.cta || 'Free GST/HST checker')} →</b></div>
 <div class="foot"><span><b>shop.loonieledger.workers.dev</b><br>Spreadsheet tools for Canadian money</span><span style="text-align:right">General info${spec.source ? ' · ' + esc(spec.source) : ''}<br>Not tax advice — check CRA for your situation.</span></div>
@@ -74,7 +75,7 @@ h1{padding:34px 64px 0;font-family:"Inter Display",Inter,sans-serif;font-weight:
 (async () => {
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1000, height: 1500 } });
   await p.setContent(html);
-  const over = await p.evaluate(() => document.body.scrollHeight > 1500);
+  const sh = await p.evaluate(() => document.body.scrollHeight), over = sh > 1500;
   await p.screenshot({ path: out, type: out.endsWith('.png') ? 'png' : 'jpeg', ...(out.endsWith('.png') ? {} : { quality: 92 }) });
-  await b.close(); console.log(over ? 'WARNING: content overflows 1500px — shorten it' : 'ok', out);
+  await b.close(); console.log(over ? 'WARNING: content overflows 1500px by ' + (sh - 1500) + 'px — shorten it' : 'ok', out);
 })();

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320">
+  <!-- own illustration: Dec 31 calendar, receipt and a small car -->
+  <ellipse cx="200" cy="300" rx="170" ry="14" fill="#000" opacity=".08"/>
+  <g transform="rotate(-6 130 140)"><rect x="50" y="40" width="170" height="190" rx="18" fill="#fff" stroke="#cfe0d6" stroke-width="4"/><rect x="50" y="40" width="170" height="54" rx="18" fill="#9a6b14"/><rect x="50" y="76" width="170" height="18" fill="#9a6b14"/><text x="135" y="80" font-family="Inter" font-weight="800" font-size="30" fill="#fff" text-anchor="middle">DEC</text><text x="135" y="190" font-family="Inter" font-weight="800" font-size="84" fill="#102a22" text-anchor="middle">31</text></g>
+  <g transform="rotate(8 300 120)"><path d="M255 30h100v170l-14-9-14 9-14-9-14 9-14-9-14 9-16-9z" fill="#fff" stroke="#cfe0d6" stroke-width="4"/><rect x="272" y="56" width="66" height="8" rx="4" fill="#cfe0d6"/><rect x="272" y="80" width="66" height="8" rx="4" fill="#cfe0d6"/><rect x="272" y="104" width="44" height="8" rx="4" fill="#cfe0d6"/><text x="305" y="160" font-family="Inter" font-weight="800" font-size="30" fill="#1d5a45" text-anchor="middle">$</text></g>
+  <g transform="translate(170 205)"><path d="M10 50l18-34h120l20 34v26H10z" fill="#1d5a45"/><path d="M40 22h44v26H34zM92 22h44l14 26H92z" fill="#cfe7da"/><circle cx="45" cy="78" r="17" fill="#102a22"/><circle cx="45" cy="78" r="7" fill="#cfe0d6"/><circle cx="135" cy="78" r="17" fill="#102a22"/><circle cx="135" cy="78" r="7" fill="#cfe0d6"/></g>
+</svg>
