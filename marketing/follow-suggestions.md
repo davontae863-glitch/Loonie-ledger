@@ -37,3 +37,19 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-06 | Facebook | BDC (facebook.com/BDC.ca) | Small-business news and tips | official, bdc.ca |
 | 2026-11-06 | Facebook | Canada Business (facebook.com/CanadaBusiness) | Gov't help starting a business | official, ised-isde.canada.ca |
 | 2026-11-06 | Pinterest | Search "Google Sheets budget template", "freelancer bookkeeping Canada", "TFSA tips Canada" → follow 3 active boards | No reputable source names Pinterest accounts | — |
+| 2026-11-07 | Instagram | Barry Choi (@barry_choi) | Personal finance + travel rewards, budgeting | money.ca, Jul 2024 (platform not stated; search the name) |
+| 2026-11-07 | Instagram | Michelle Robertson, Ms. Money and Math (@ms.moneyandmath) | Financial literacy for women | money.ca, Jul 2024 |
+| 2026-11-07 | Instagram | Gina Judge (@iamginajudge) | Financial educator, podcast and workshops | MoneySense, Jul 2026 |
+| 2026-11-07 | Instagram | Canada Revenue Agency (@CanRevAgency) | Official tax deadlines and reminders | official, canada.ca/revenue-agency |
+| 2026-11-07 | TikTok | Jashan Mundi (@itsjashanmundi) | Brampton money coach, budgeting and saving | Tangerine, Apr 2023; money.ca, Jul 2024 |
+| 2026-11-07 | TikTok | Parween Mander (parween.mander) | Accredited financial counsellor, explains money jargon | CPA Canada Pivot; handle from money.ca, Jul 2024 |
+| 2026-11-07 | TikTok | Credit Canada (@getouttadebt) | Non-profit credit counselling, debt and budgeting tips | official, creditcanada.com |
+| 2026-11-07 | TikTok | Two Girls Investing (@twogirlsinvesting) | Beginner investing explained | Credit Canada blog, Mar 2023 |
+| 2026-11-07 | YouTube | Canada Revenue Agency (youtube.com/canrevagency) | Official tax how-to videos | official, canada.ca/revenue-agency |
+| 2026-11-07 | YouTube | Bassem Zahili, CPA ("Bassem - Canadian Finance, Investing & Real Estate") | Toronto CPA, personal finance basics | CPABC, Nov 2022 |
+| 2026-11-07 | YouTube | Pattie Lovett-Reid (@pattie_lovettreid) | CTV chief financial commentator | money.ca, Jul 2024 |
+| 2026-11-07 | YouTube | Adrian Bar (@canadianinatshirt) | Independent Canadian money YouTuber, no sponsorships | MoneySense, Jul 2026 |
+| 2026-11-07 | Facebook | Credit Canada (facebook.com/creditcanada) | Non-profit debt and budgeting help to share | official, creditcanada.com |
+| 2026-11-07 | Facebook | WeBC, Women's Enterprise Centre BC (facebook.com/TheWeBC) | Women entrepreneurs, small-business loans and training | official, we-bc.ca |
+| 2026-11-07 | Facebook | Prosper Canada (search the name) | National financial-empowerment charity | official, prospercanada.org |
+| 2026-11-07 | Pinterest | Search "self-employed tax deductions Canada", "invoice template small business", "FHSA Canada first home" → follow 3 active boards | No reputable source names Pinterest accounts | — |
