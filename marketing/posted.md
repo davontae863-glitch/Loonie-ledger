@@ -18,3 +18,5 @@ One line per published post. The auto-post task reads this to avoid posting twic
 | 2026-11-06 | Facebook photo | midday post: GST vs HST by province — Canadian money mistake #1 (light) | go/fb-post-gst-hst-provinces-06?to=/products/freelancer-invoice-generator/ | 1438638599327729_122102812035536568 |
 | 2026-11-06 | Instagram Reel | evening reel: GST vs HST by province — Canadian money mistake #1 (voiced) (light) | link in bio (go/bio-ig) | 18086808689328216 |
 | 2026-11-06 | Facebook photo | evening reel: GST vs HST by province — Canadian money mistake #1 (voiced) (light) | go/fb-vid-gst-hst-provinces-06?to=/products/freelancer-invoice-generator/ | 1438638599327729_122103097023536568 |
+| 2026-11-07 | Instagram carousel | midday post: FHSA room only starts when you open one — Canadian money mistake #2 (5 slides) (dark) | link in bio (go/bio-ig) | 17871012687662043 |
+| 2026-11-07 | Facebook photo | midday post: FHSA room only starts when you open one — Canadian money mistake #2 (dark) | go/fb-post-fhsa-room-starts-1107?to=/products/tfsa-rrsp-fhsa-room-tracker/ | 1438638599327729_122103864897536568 |
