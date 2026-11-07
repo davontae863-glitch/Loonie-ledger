@@ -16,3 +16,5 @@ One line per published post. The auto-post task reads this to avoid posting twic
 | 2026-11-05 | Instagram Reel | EXTRA (owner request, 20:05, test of Instagram→Facebook reel auto-share): GST four quarters (batch 1, new hook, music only) | link in bio (go/bio-ig) | 18025662197926544 |
 | 2026-11-06 | Instagram carousel | midday post: GST vs HST by province — Canadian money mistake #1 (5 slides) (light) | link in bio (go/bio-ig) | 18147180286582012 |
 | 2026-11-06 | Facebook photo | midday post: GST vs HST by province — Canadian money mistake #1 (light) | go/fb-post-gst-hst-provinces-06?to=/products/freelancer-invoice-generator/ | 1438638599327729_122102812035536568 |
+| 2026-11-06 | Instagram Reel | evening reel: GST vs HST by province — Canadian money mistake #1 (voiced) (light) | link in bio (go/bio-ig) | 18086808689328216 |
+| 2026-11-06 | Facebook photo | evening reel: GST vs HST by province — Canadian money mistake #1 (voiced) (light) | go/fb-vid-gst-hst-provinces-06?to=/products/freelancer-invoice-generator/ | 1438638599327729_122103097023536568 |
