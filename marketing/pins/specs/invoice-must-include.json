@@ -1,0 +1,29 @@
+{
+ "kicker": "Invoicing",
+ "title": [
+  "What your invoice",
+  "must show at $100+"
+ ],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "GST/HST registered? Your business clients need these details to claim input tax credits.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Invoice total → what CRA looks for",
+   "rows": [
+    ["Under $100", "Your name, date, total"],
+    ["$100 – $499.99", "+ GST/HST number & tax"],
+    ["$500 or more", "+ client name, description, terms"]
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "Easy to miss: your GST/HST registration number on invoices of $100 or more."
+  }
+ ],
+ "ctaLead": "Never miss a line",
+ "cta": "Freelancer Invoice Generator",
+ "source": "CRA, 2026"
+}
