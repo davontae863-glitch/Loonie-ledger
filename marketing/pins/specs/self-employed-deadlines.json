@@ -1,0 +1,26 @@
+{
+ "kicker": "Tax-season prep",
+ "title": ["Self-employed?", "File by June 15,", "pay by April 30"],
+ "titleHi": 2,
+ "titleSize": 84,
+ "lead": "For your 2026 return, the extra filing time doesn't move the date your tax is due.",
+ "blocks": [
+  {
+   "type": "flow",
+   "steps": [
+    {"icon": "receipt", "big": "Dec 31", "label": "2026 tax year ends"},
+    {"icon": "coins", "big": "Apr 30", "label": "Pay any balance"},
+    {"icon": "invoice", "big": "Jun 15", "label": "File your return"}
+   ],
+   "result": {"icon": "alert", "big": "Pay by April 30", "label": "to avoid interest and penalties"}
+  },
+  {
+   "type": "note",
+   "icon": "info",
+   "text": "June 15 also applies if your spouse or common-law partner is self-employed."
+  }
+ ],
+ "ctaLead": "Know your number before April",
+ "cta": "Bookkeeping Tracker",
+ "source": "CRA, 2026"
+}
