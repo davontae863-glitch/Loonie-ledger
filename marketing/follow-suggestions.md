@@ -53,3 +53,18 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-07 | Facebook | WeBC, Women's Enterprise Centre BC (facebook.com/TheWeBC) | Women entrepreneurs, small-business loans and training | official, we-bc.ca |
 | 2026-11-07 | Facebook | Prosper Canada (search the name) | National financial-empowerment charity | official, prospercanada.org |
 | 2026-11-07 | Pinterest | Search "self-employed tax deductions Canada", "invoice template small business", "FHSA Canada first home" → follow 3 active boards | No reputable source names Pinterest accounts | — |
+| 2026-11-08 | Instagram | Startup Canada (@startupcanada) | National entrepreneur network, events and founder stories | official, startupcan.ca |
+| 2026-11-08 | Instagram | Tracy Ma, Financial Nirvana Mama (financialnirvanamama) | Family budgeting and saving | MoneySense, Mar 2025 |
+| 2026-11-08 | Instagram | Joyee Yang (@joyeeeyangg) | Money tips for young Canadians | money.ca, Jul 2024 |
+| 2026-11-08 | Instagram | Bisola Tijani (@WhizQueen) | Personal finance and investing basics | money.ca, Jul 2024 |
+| 2026-11-08 | TikTok | Startup Canada (@startupcanada) | Short entrepreneur tips and stories | official, startupcan.ca |
+| 2026-11-08 | TikTok | Jim Chuong (search the name) | Canadian money explainers | CPA Canada Pivot, "fin-fluencers" article |
+| 2026-11-08 | TikTok | Robyn Thompson (@robynthompsonmoney) | Canadian personal finance | money.ca, Jul 2024 (platform not stated; search the name) |
+| 2026-11-08 | YouTube | Daniel Pronk (@danielpronk) | Canadian investing and personal finance | money.ca, Jul 2024 |
+| 2026-11-08 | YouTube | Griffin Milks (@GriffinMilk) | Canadian personal finance | money.ca, Jul 2024 |
+| 2026-11-08 | YouTube | Tracy Ma (@FinancialNirvanaMama) | Same creator as Instagram, long-form | MoneySense, Mar 2025 |
+| 2026-11-08 | YouTube | Ben Collins (search the name) | Google Sheets tutorials | Carleton University Google Sheets resource list, Mar 2026 |
+| 2026-11-08 | Facebook | Startup Canada (facebook.com/StartupCanada) | Entrepreneur news and events to share | official, startupcan.ca |
+| 2026-11-08 | Facebook | Alberta Women Entrepreneurs, AWE (search the name) | Loans, training for women business owners | Startup Canada, Mar 2024 |
+| 2026-11-08 | Facebook | Women's Enterprise Centre of Manitoba (search the name) | Women-led small-business support | Startup Canada, Mar 2024 |
+| 2026-11-08 | Pinterest | Search "monthly budget printable Canada", "small business bookkeeping spreadsheet", "RRSP vs TFSA" → follow 3 active boards | No reputable source names Pinterest accounts | — |
