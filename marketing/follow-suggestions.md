@@ -68,3 +68,18 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-08 | Facebook | Alberta Women Entrepreneurs, AWE (search the name) | Loans, training for women business owners | Startup Canada, Mar 2024 |
 | 2026-11-08 | Facebook | Women's Enterprise Centre of Manitoba (search the name) | Women-led small-business support | Startup Canada, Mar 2024 |
 | 2026-11-08 | Pinterest | Search "monthly budget printable Canada", "small business bookkeeping spreadsheet", "RRSP vs TFSA" → follow 3 active boards | No reputable source names Pinterest accounts | — |
+| 2026-11-09 | Instagram | CFIB (@cfib_fcei) | Canada's small-business association, policy and tax news | official, cfib-fcei.ca |
+| 2026-11-09 | Instagram | Futurpreneur (@futurpreneur) | Non-profit for founders 18–39, financing and mentoring | official, futurpreneur.ca |
+| 2026-11-09 | Instagram | Nathan Kennedy (natenewmoney) | Canadian personal finance | MoneySense, Mar 2025 |
+| 2026-11-09 | Instagram | Brandon Beavis (brandonbeavisinvesting) | Canadian investing | MoneySense, Mar 2025 |
+| 2026-11-09 | TikTok | Azia Mery (@azia_mery) | Canadian finfluencer | MoneySense, Jul 2026 (platform not stated; search the name) |
+| 2026-11-09 | TikTok | Bianca Michelle Magaña (@financewithbianca) | Personal finance | money.ca, Jul 2024 (platform not stated; search the name) |
+| 2026-11-09 | TikTok | Marika Stimac (@thefinancialconfidencecoach) | Money confidence coaching | money.ca, Jul 2024 (platform not stated; search the name) |
+| 2026-11-09 | YouTube | Nathan Kennedy (@newmoneynate) | Same creator as Instagram, long-form | MoneySense, Mar 2025 |
+| 2026-11-09 | YouTube | Janine Rogan, CPA (search the name) | CPA explaining money basics | MoneySense, Mar 2025 |
+| 2026-11-09 | YouTube | CFIB (youtube.com/user/cfibdotca) | Small-business webinars and explainers | official, cfib-fcei.ca |
+| 2026-11-09 | YouTube | Futurpreneur (youtube.com/user/CYBF) | Founder stories and how-tos | official, futurpreneur.ca |
+| 2026-11-09 | Facebook | Community Futures Network of Alberta (facebook.com/albertacf) | Rural Alberta business loans, coaching, training | official, albertacf.com |
+| 2026-11-09 | Facebook | Melissa Leong (@lisleong) | Canadian personal finance author and TV host | money.ca, Jul 2024 (platform not stated; search the name) |
+| 2026-11-09 | Facebook | Lesley-Anne Scorgie (@lesleyscorgie) | Canadian personal finance author, budgeting | money.ca, Jul 2024 (platform not stated; search the name) |
+| 2026-11-09 | Pinterest | Search "GST HST tracker spreadsheet", "side hustle income tracker", "debt payoff tracker printable" → follow 3 active boards | No reputable source names Pinterest accounts | — |
