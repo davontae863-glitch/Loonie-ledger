@@ -68,11 +68,12 @@ def main():
     with wave.open(vw, 'wb') as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes((np.clip(vo / (np.abs(vo).max() + 1e-9) * 0.9, -1, 1) * 32767).astype('<i2').tobytes())
     fade = max(0, dur - 1.5)
-    fc = (f"[1:a]atrim=0:{dur},afade=t=in:d=0.02,afade=t=out:st={fade}:d=1.5,volume=0.5,aformat=channel_layouts=stereo[m];"
+    # Calm mix (owner request 2026-11-09: "not so loud and overstimulating"): music soft, low-passed and well under the voice; overall -19 LUFS, peaks -3 dBTP.
+    fc = (f"[1:a]atrim=0:{dur},afade=t=in:d=0.02,afade=t=out:st={fade}:d=1.5,lowpass=f=5000,volume=0.22,aformat=channel_layouts=stereo[m];"
           f"[2:a]aresample=44100,{POLISH if HUMANIZE else PLAIN},aformat=channel_layouts=stereo,asplit=2[v][key];"
           f"[m][key]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=300[md];"
-          f"[0:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.8[o];"
-          f"[md][v][o]amix=inputs=3:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=9[a]")
+          f"[0:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.5[o];"
+          f"[md][v][o]amix=inputs=3:normalize=0:duration=first,loudnorm=I=-19:TP=-3:LRA=9[a]")
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', a.video, '-i', track, '-i', vw, '-filter_complex', fc,
                     '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-ar', '44100', '-t', str(dur),
                     '-movflags', '+faststart', a.out + '.tmp.mp4'], check=True)
