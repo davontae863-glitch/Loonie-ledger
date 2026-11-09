@@ -26,3 +26,5 @@ One line per published post. The auto-post task reads this to avoid posting twic
 | 2026-11-08 | Facebook photo | midday post: What your invoice must show at $100+ — Canadian money mistake #3 (light) | go/fb-post-invoice-must-include-08?to=/products/freelancer-invoice-generator/ | 1438638599327729_122104817289536568 |
 | 2026-11-08 | Instagram Reel | evening reel: What your invoice must show at $100+ — Canadian money mistake #3 (voiced) (light) | link in bio (go/bio-ig) | 18099048365440252 |
 | 2026-11-08 | Facebook photo | evening reel: What your invoice must show at $100+ — Canadian money mistake #3 (voiced) (light) | go/fb-vid-invoice-must-include-08?to=/products/freelancer-invoice-generator/ | 1438638599327729_122105077671536568 |
+| 2026-11-09 | Instagram carousel | midday post: Not registered? Don't charge GST — small supplier test — Canadian money mistake #4 (5 slides) (dark) | link in bio (go/bio-ig) | 17952334629342652 |
+| 2026-11-09 | Facebook photo | midday post: Not registered? Don't charge GST — small supplier test — Canadian money mistake #4 (dark) | go/fb-post-small-supplier-09?to=/gst-threshold-checker/ | 1438638599327729_122105842815536568 |
