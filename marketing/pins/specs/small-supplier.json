@@ -1,0 +1,31 @@
+{
+ "kicker": "GST/HST",
+ "title": [
+  "Small supplier?",
+  "Don't charge GST yet"
+ ],
+ "titleHi": 1,
+ "titleSize": 84,
+ "lead": "If you're not registered for GST/HST, you generally don't charge it. Here's how CRA decides if you're a small supplier.",
+ "blocks": [
+  {
+   "type": "checks",
+   "items": [
+    "$30,000 or less in one calendar quarter",
+    "$30,000 or less over the last 4 quarters",
+    "Count your associates' sales too",
+    "Both true? Registering is optional",
+    "Not registered? Don't charge GST/HST"
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "Register voluntarily and you must charge it, but you can claim input tax credits."
+  }
+ ],
+ "ctaLead": "Track sales by quarter",
+ "cta": "GST/HST Tracker",
+ "source": "CRA, 2026",
+ "art": "quarters"
+}
