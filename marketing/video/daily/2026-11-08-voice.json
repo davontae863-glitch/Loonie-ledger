@@ -1,0 +1,10 @@
+[
+ {"t": 0.0, "text": "Over a hundred dollars? Your invoice needs this number."},
+ {"t": 3.0, "text": "Your GST HST number."},
+ {"t": 5.0, "text": "Clients need it to claim tax credits."},
+ {"t": 7.2, "text": "Under a hundred: name, date, total."},
+ {"t": 9.4, "text": "From a hundred: add your number and tax."},
+ {"t": 11.6, "text": "Five hundred: client, description, terms."},
+ {"t": 13.8, "text": "A missing line can stall their claim."},
+ {"t": 15.7, "text": "Our invoice generator fills every line in."}
+]
