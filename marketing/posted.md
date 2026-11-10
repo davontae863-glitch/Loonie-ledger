@@ -30,3 +30,5 @@ One line per published post. The auto-post task reads this to avoid posting twic
 | 2026-11-09 | Facebook photo | midday post: Not registered? Don't charge GST — small supplier test — Canadian money mistake #4 (dark) | go/fb-post-small-supplier-09?to=/gst-threshold-checker/ | 1438638599327729_122105842815536568 |
 | 2026-11-09 | Instagram Reel | evening reel: Not registered? Don't charge GST — small supplier test — Canadian money mistake #4 (music only) (dark) | link in bio (go/bio-ig) | 17971476113966055 |
 | 2026-11-09 | Facebook photo | evening reel: Not registered? Don't charge GST — small supplier test — Canadian money mistake #4 (music only) (dark) | go/fb-vid-small-supplier-09?to=/gst-threshold-checker/ | 1438638599327729_122106119841536568 |
+| 2026-11-10 | Instagram carousel | midday post: Your home office can't create a loss — Canadian money mistake #5 (5 slides) (dark) | link in bio (go/bio-ig) | 18118605521062081 |
+| 2026-11-10 | Facebook photo | midday post: Your home office can't create a loss — Canadian money mistake #5 (dark) | go/fb-post-home-office-10?to=/products/sole-proprietor-bookkeeping-tracker/ | 1438638599327729_122106915387536568 |
