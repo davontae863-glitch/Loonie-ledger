@@ -83,3 +83,17 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-09 | Facebook | Melissa Leong (@lisleong) | Canadian personal finance author and TV host | money.ca, Jul 2024 (platform not stated; search the name) |
 | 2026-11-09 | Facebook | Lesley-Anne Scorgie (@lesleyscorgie) | Canadian personal finance author, budgeting | money.ca, Jul 2024 (platform not stated; search the name) |
 | 2026-11-09 | Pinterest | Search "GST HST tracker spreadsheet", "side hustle income tracker", "debt payoff tracker printable" → follow 3 active boards | No reputable source names Pinterest accounts | — |
+| 2026-11-10 | Instagram | Business Link Alberta (@businesslinkab) | Free small-business advice centre for Alberta entrepreneurs | official, businesslink.ca |
+| 2026-11-10 | Instagram | Ashna Mankotia (@ohmygoshna) | Canadian saving and spending tips | Tangerine, Apr 2023 |
+| 2026-11-10 | Instagram | Jim Chuong (@jim.chuong) | Canadian money explainers (same creator as 2026-11-08 TikTok) | Tangerine, Apr 2023 |
+| 2026-11-10 | TikTok | Ashna Mankotia (@ohmygoshna) | Short saving tips | Tangerine, Apr 2023 |
+| 2026-11-10 | TikTok | Rimi (@wealthsavvygenz) | Budgeting tips from a newcomer to Canada | Tangerine, Aug 2023 |
+| 2026-11-10 | TikTok | Reilly O'Connor (search the name) | Canadian creator, "loud budgeting" | CBC, Jan 2024 |
+| 2026-11-10 | YouTube | Business Link Alberta (@BusinessLinkAB) | Small-business webinars and how-tos | official, businesslink.ca |
+| 2026-11-10 | YouTube | Leila Gharani (search the name) | Excel and Google Sheets tutorials | Noble Desktop, updated Apr 2026 |
+| 2026-11-10 | YouTube | Excel Campus (search the name) | Practical Excel tips | Noble Desktop, updated Apr 2026 |
+| 2026-11-10 | YouTube | MyOnlineTrainingHub (search the name) | Excel dashboards and formulas | Noble Desktop, updated Apr 2026 |
+| 2026-11-10 | Facebook | Business Link Alberta (facebook.com/BusinessLinkAB) | Alberta small-business news and events to share | official, businesslink.ca |
+| 2026-11-10 | Facebook | Small Business BC (search the name) | BC small-business advice, webinars | official, smallbusinessbc.ca |
+| 2026-11-10 | Facebook | Digital Main Street (search the name) | Ontario program helping small businesses go digital | official, digitalmainstreet.ca |
+| 2026-11-10 | Pinterest | Search "freelance invoice template", "small business expense tracker", "Canadian tax deadlines 2027" → follow 3 active boards | No reputable source names Pinterest accounts | — |
