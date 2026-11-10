@@ -1,0 +1,42 @@
+{
+ "kicker": "Self-employed",
+ "title": [
+  "Can you claim",
+  "your home office?"
+ ],
+ "titleHi": 1,
+ "titleSize": 84,
+ "lead": "Yes, if it's your main place of business, or used only for business and to meet clients regularly.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Example: claim the business part by area",
+   "rows": [
+    [
+     "Workspace",
+     "150 sq ft"
+    ],
+    [
+     "Whole home",
+     "1,500 sq ft"
+    ],
+    [
+     "Claim this share of heat, power, insurance…",
+     "↓"
+    ]
+   ],
+   "total": [
+    "Business part (150 ÷ 1,500)",
+    "10%"
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "Can't create or increase a loss. Unused amounts carry forward to next year."
+  }
+ ],
+ "ctaLead": "Track home costs all year",
+ "cta": "Bookkeeping Tracker",
+ "source": "CRA, 2026"
+}
