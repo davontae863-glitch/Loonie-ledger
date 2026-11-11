@@ -97,3 +97,20 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-10 | Facebook | Small Business BC (search the name) | BC small-business advice, webinars | official, smallbusinessbc.ca |
 | 2026-11-10 | Facebook | Digital Main Street (search the name) | Ontario program helping small businesses go digital | official, digitalmainstreet.ca |
 | 2026-11-10 | Pinterest | Search "freelance invoice template", "small business expense tracker", "Canadian tax deadlines 2027" → follow 3 active boards | No reputable source names Pinterest accounts | — |
+| 2026-11-11 | Instagram | PARO Centre for Women's Enterprise (@paro.centre) | Ontario women-led small-business loans, peer lending, training | official, paro.ca |
+| 2026-11-11 | Instagram | Women Entrepreneurship Knowledge Hub, WEKH (@wekh_pcfe) | Research and resources for Canadian women entrepreneurs | official, wekh.ca |
+| 2026-11-11 | Instagram | Matt McKeever, CPA (mattmckeever85) | Canadian CPA, personal finance and tax basics | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | Instagram | Ed Rempel, CPA (edrempel_unconventionalwisdom) | CPA and tax professional | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | TikTok | Jordan Dawes (@wealthtokcanada) | Canadian personal finance with tax tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | TikTok | Matt McKeever, CPA (@mattmckeever85) | Same CPA as Instagram, short tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | TikTok | Ed Rempel, CPA (edrempel) | Tax and money tips from a CPA | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | TikTok | Jenn, Budget Like the Others (@budgetliketheothers) | Budgeting | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | YouTube | Matt McKeever, CPA (youtube.com/c/MattMcKeever) | Long-form CPA explainers | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | YouTube | Shihab El Dessouki (ShihabsBlog) | Canadian tax explainers | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | YouTube | WEKH (@wekhpcfe6302) | Webinars for women entrepreneurs | official, wekh.ca |
+| 2026-11-11 | YouTube | PARO Centre (youtube.com/user/parocentre1995) | Small-business workshops | official, paro.ca |
+| 2026-11-11 | Facebook | PARO Centre (facebook.com/PARO.Centre) | Women's small-business programs to share | official, paro.ca |
+| 2026-11-11 | Facebook | Matt McKeever, CPA (mattmckeever85) | CPA money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | Facebook | Ed Rempel, CPA (edrempel1) | Tax and planning posts from a CPA | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | Facebook | Budget Boss, Joseph James Francis (RealBudgetBoss) | Budgeting | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-11 | Pinterest | Search "zero-based budget spreadsheet", "self-employed mileage log", "sinking funds tracker" → follow 3 active boards | No reputable source names Pinterest accounts | — |
