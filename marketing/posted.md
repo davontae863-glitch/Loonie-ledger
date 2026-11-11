@@ -34,3 +34,5 @@ One line per published post. The auto-post task reads this to avoid posting twic
 | 2026-11-10 | Facebook photo | midday post: Your home office can't create a loss — Canadian money mistake #5 (dark) | go/fb-post-home-office-10?to=/products/sole-proprietor-bookkeeping-tracker/ | 1438638599327729_122106915387536568 |
 | 2026-11-10 | Instagram Reel | evening reel: Your home office can't create a loss — Canadian money mistake #5 (voiced) (dark) | link in bio (go/bio-ig) | 18647768035050534 |
 | 2026-11-10 | Facebook photo | evening reel: Your home office can't create a loss — Canadian money mistake #5 (voiced) (dark) | go/fb-vid-home-office-10?to=/products/sole-proprietor-bookkeeping-tracker/ | 1438638599327729_122107238133536568 |
+| 2026-11-11 | Instagram carousel | midday post: Claiming your car? Log every business trip — Canadian money mistake #6 (5 slides) (dark) | link in bio (go/bio-ig) | 18656010889052401 |
+| 2026-11-11 | Facebook photo | midday post: Claiming your car? Log every business trip — Canadian money mistake #6 (dark) | go/fb-post-km-log-11?to=/products/complete-bundle/ | 1438638599327729_122108067813536568 |
