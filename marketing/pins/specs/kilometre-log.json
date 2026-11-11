@@ -1,0 +1,29 @@
+{
+ "kicker": "Self-employed",
+ "title": [
+  "Claiming your car?",
+  "Log every business trip."
+ ],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "Your claim is the business share of your car costs. CRA says a full-year logbook is the best proof.",
+ "blocks": [
+  {
+   "type": "flow",
+   "steps": [
+    { "icon": "car", "big": "27,000", "label": "business km" },
+    { "icon": "calculator", "big": "÷ 30,000", "label": "total km" },
+    { "icon": "receipt", "big": "× $7,000", "label": "car costs" }
+   ],
+   "result": { "icon": "coins", "big": "$6,300", "label": "CRA's own example: the deductible part" }
+  },
+  {
+   "type": "note",
+   "icon": "check",
+   "text": "Log each trip: date, destination, purpose, km. Plus your odometer at the start and end of the year."
+  }
+ ],
+ "ctaLead": "Log trips, see your business-use %",
+ "cta": "Complete Bundle",
+ "source": "CRA, 2026"
+}
