@@ -1,0 +1,42 @@
+{
+ "kicker": "Quebec",
+ "title": [
+  "GST + QST",
+  "on one invoice"
+ ],
+ "titleHi": 1,
+ "titleSize": 84,
+ "lead": "Quebec has 5% GST plus 9.975% QST. Both go on the price before tax.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Example: a $1,000 invoice",
+   "rows": [
+    [
+     "Your fee",
+     "$1,000.00"
+    ],
+    [
+     "GST 5% (on $1,000)",
+     "$50.00"
+    ],
+    [
+     "QST 9.975% (on $1,000, not on the GST)",
+     "$99.75"
+    ]
+   ],
+   "total": [
+    "Invoice total",
+    "$1,149.75"
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "info",
+   "text": "QST is a separate provincial tax. Revenu Québec, not CRA, handles it."
+  }
+ ],
+ "ctaLead": "GST + QST preset built in",
+ "cta": "Freelancer Invoice Generator",
+ "source": "CRA, 2026"
+}
