@@ -114,3 +114,22 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-11 | Facebook | Ed Rempel, CPA (edrempel1) | Tax and planning posts from a CPA | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-11 | Facebook | Budget Boss, Joseph James Francis (RealBudgetBoss) | Budgeting | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-11 | Pinterest | Search "zero-based budget spreadsheet", "self-employed mileage log", "sinking funds tracker" → follow 3 active boards | No reputable source names Pinterest accounts | — |
+| 2026-11-12 | Instagram | Bridget Casey, Money After Graduation (moneyaftergrad) | Saving, debt payoff, investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Instagram | Tom Drake, MapleMoney (maplemoneycom) | Canadian saving, investing, credit cards | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Instagram | Kerry K. Taylor, Squawkfox (squawkfox) | Debt reduction, saving, investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Instagram | Preet Banerjee (preetbanerjee) | Canadian personal finance, More Money podcast | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | TikTok | Sam Lichtman, Millennial Money Canada (@millennialmoneycanada) | Investing principles, Canadian tools | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | TikTok | Cassandra Melo, Money with Cass (@moneywithcass) | Entertaining personal finance basics | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | TikTok | Ellen Roseman (@ellenroseman) | Consumer rights, personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | TikTok | Charlee Wayne (@charlee.wayne) | Personal finance fundamentals | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | YouTube | Money After Graduation, Bridget Casey (channel/UCmY7WPQ4653pTFxWkOeOmsQ) | Same creator as Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | YouTube | MapleMoney (c/maplemoney) | Same creator as Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | YouTube | Millennial Money Canada, Sam Lichtman (search the name) | Same creator as TikTok, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | YouTube | Squawkfox (user/squawkfox) | Same creator as Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Facebook | MapleMoney (maplemoneyblog) | Canadian money posts to share | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Facebook | Money After Graduation (MoneyAfterGraduation) | Saving and debt posts to share | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Facebook | Ellen Roseman (ellenonyourside) | Consumer-rights money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Facebook | Bruce Sellery (MoolalaMethod) | Personal finance, Credit Canada | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Pinterest | Money After Graduation (moneyaftergraduation) | Canadian saving and debt pins | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Pinterest | MapleMoney (maplemoney) | Canadian saving and investing pins | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-12 | Pinterest | Search "Canadian bookkeeping template", "HST return small business" → follow 2 active boards | Topic boards for your buyers | — |
