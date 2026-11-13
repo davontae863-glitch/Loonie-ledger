@@ -133,3 +133,20 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-12 | Pinterest | Money After Graduation (moneyaftergraduation) | Canadian saving and debt pins | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-12 | Pinterest | MapleMoney (maplemoney) | Canadian saving and investing pins | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-12 | Pinterest | Search "Canadian bookkeeping template", "HST return small business" → follow 2 active boards | Topic boards for your buyers | — |
+| 2026-11-13 | Instagram | Mark Taylor, Money with Mark (@moneywithmark) | Personal finance and financial independence | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Instagram | Chris Liew, Wealth Awesome (@wealthawesome) | Investing and financial independence basics | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Instagram | Robb Engen, Boomer & Echo (@BoomerandEcho) | Fee-only planner, retirement and FI | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Instagram | Arlene Dickinson (@arlenedickinson) | Canadian entrepreneur, small-business mindset | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | TikTok | Jessica Moorhouse (@jessicaimoorhouse) | Same creator as Instagram, short budgeting tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | TikTok | Mark Taylor, Money with Mark (@moneywithmark) | Same creator as Instagram, short tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | TikTok | Budget Boss, Joseph James Francis (@realbudgetboss) | Budgeting | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | TikTok | Kerry K. Taylor, Squawkfox (@squawkfox) | Saving and debt tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | YouTube | Preet Banerjee (youtube.com/preetbanerjee) | Canadian personal finance explainers | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | YouTube | Andrew Hallam (youtube.com/andrewhallam1) | Simple low-cost investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | YouTube | Chris Liew (@WealthAwesome) | Same creator as Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | YouTube | Money with Mark (c/MoneyWithMarkFinancialIndependence) | Same creator as Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Facebook | Boomer & Echo (facebook.com/BoomerEcho) | Retirement and planning posts to share | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Facebook | Jessica Moorhouse (facebook.com/jessicaimoorhouse) | Budgeting and money posts to share | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Facebook | Squawkfox (facebook.com/squawkfox) | Saving and debt posts to share | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Facebook | Barry Choi (facebook.com/moneywehave) | Money and travel-rewards posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-13 | Pinterest | Search "Canadian small business budget", "year-end bookkeeping checklist", "TFSA contribution room tracker" → follow 3 active boards | No new reputable source names Pinterest accounts | — |
