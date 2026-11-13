@@ -1,0 +1,29 @@
+{
+ "kicker": "Records",
+ "title": [
+  "Your 2025 receipts?",
+  "Keep them until 2031."
+ ],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "CRA says keep business records for six years from the end of the tax year they relate to.",
+ "blocks": [
+  {
+   "type": "flow",
+   "steps": [
+    { "icon": "receipt", "big": "2025", "label": "tax year" },
+    { "icon": "calendar", "big": "Dec 31", "label": "year ends" },
+    { "icon": "calculator", "big": "+ 6 years", "label": "CRA's minimum" }
+   ],
+   "result": { "icon": "check", "big": "Dec 31, 2031", "label": "Keep them at least until then (calendar year)" }
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "Filed late? Keep them six years from the date you filed. Tossing early needs CRA's written OK."
+  }
+ ],
+ "ctaLead": "Log expenses by T2125 line",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "CRA, 2026"
+}
