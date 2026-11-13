@@ -1,0 +1,10 @@
+[
+ {"t": 0.0, "text": "Don't charge QST on the GST."},
+ {"t": 3.0, "text": "Quebec has two sales taxes."},
+ {"t": 4.8, "text": "Say you bill a thousand dollars."},
+ {"t": 6.6, "text": "GST is fifty dollars."},
+ {"t": 8.4, "text": "QST, ninety-nine seventy-five."},
+ {"t": 10.2, "text": "Not on the fee plus GST."},
+ {"t": 12.0, "text": "Each tax on its own line."},
+ {"t": 13.6, "text": "Our invoice generator does it for you."}
+]
