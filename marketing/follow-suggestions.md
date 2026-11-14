@@ -150,3 +150,20 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-13 | Facebook | Squawkfox (facebook.com/squawkfox) | Saving and debt posts to share | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-13 | Facebook | Barry Choi (facebook.com/moneywehave) | Money and travel-rewards posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-13 | Pinterest | Search "Canadian small business budget", "year-end bookkeeping checklist", "TFSA contribution room tracker" → follow 3 active boards | No new reputable source names Pinterest accounts | — |
+| 2026-11-14 | Instagram | Rob Carrick (rcarrick) | Globe and Mail personal-finance columnist | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Instagram | Bruce Sellery (brucesellery) | Personal finance, Credit Canada (same as 2026-11-12 Facebook) | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Instagram | Michele Romanow (micheleromanow) | Canadian entrepreneur, Dragons' Den | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Instagram | Elijah Kirchmaier, Up Financial (elithemoneyguy) | Canadian money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | TikTok | Elijah Kirchmaier (@elithemoneyguy) | Same creator as Instagram, short tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | TikTok | Griffin Milks (@griffinmilks) | Same creator as 2026-11-08 YouTube, short tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | TikTok | Pattie Lovett-Reid (@pattielovettreid) | CTV financial commentator, short tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | TikTok | Joyee Yang (@joyeeyang0) | Same creator as 2026-11-08 Instagram | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | YouTube | Money with Cass, Cassandra Melo (channel/UCcs86PgUWEORxaTm_Bqi1Hw) | Same creator as 2026-11-12 TikTok, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | YouTube | How to Adult School, Corynn Fowler (channel/UC5I8eXvox7t9fGcLcYYfckw) | Same creator as 2026-11-06 TikTok; budgeting and tax basics | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | YouTube | Ellen Roseman (channel/UCWi_7qK0SwnHY7FQaA4V9CQ) | Consumer rights, personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | YouTube | Dale Roberts, Cut the Crap Investing (channel/UC35yz4Hh0WAYTjnSclM2vEg) | Simple low-cost investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Facebook | Andrew Hallam, Millionaire Teacher (millionaireteacher) | Simple investing posts to share | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Facebook | Chris Liew, Wealth Awesome (thewealthawesome) | Investing and FI basics | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Facebook | Griffin Milks (griffinmilksbusiness) | Canadian personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Facebook | Up Financial, Elijah Kirchmaier (upfinancial) | Canadian money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-14 | Pinterest | Search "holiday gift budget spreadsheet", "year-end tax checklist Canada self-employed", "home office expense tracker" → follow 3 active boards | No new reputable source names Pinterest accounts | — |
