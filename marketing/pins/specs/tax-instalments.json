@@ -1,0 +1,26 @@
+{
+ "kicker": "Tax-season prep",
+ "title": ["Owe CRA over $3,000?", "Instalments may be due"],
+ "titleHi": 1,
+ "titleSize": 76,
+ "lead": "If your net tax owing tops $3,000 this year and in one of the two years before, CRA may expect quarterly instalments.",
+ "blocks": [
+  {
+   "type": "flow",
+   "steps": [
+    {"icon": "calendar", "big": "Mar 15", "label": "1st"},
+    {"icon": "calendar", "big": "Jun 15", "label": "2nd"},
+    {"icon": "calendar", "big": "Sep 15", "label": "3rd"}
+   ],
+   "result": {"icon": "alert", "big": "Dec 15", "label": "Last 2026 instalment"}
+  },
+  {
+   "type": "note",
+   "icon": "info",
+   "text": "Quebec residents: the threshold is $1,800. Late or short payments can mean instalment interest."
+  }
+ ],
+ "ctaLead": "Track income as you earn it",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "CRA, 2026"
+}
