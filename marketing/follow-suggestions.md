@@ -167,3 +167,16 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-14 | Facebook | Griffin Milks (griffinmilksbusiness) | Canadian personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-14 | Facebook | Up Financial, Elijah Kirchmaier (upfinancial) | Canadian money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-14 | Pinterest | Search "holiday gift budget spreadsheet", "year-end tax checklist Canada self-employed", "home office expense tracker" → follow 3 active boards | No new reputable source names Pinterest accounts | — |
+| 2026-11-15 | Instagram | CPABC, Chartered Professional Accountants of BC (cpabc) | Official CPA body; money tips and tax-season reminders | official, bccpa.ca social media page |
+| 2026-11-15 | Instagram | CPA Québec (@cpaquebec) | Official CPA body (mostly French), good for Quebec customers | official, cpaquebec.ca social media page |
+| 2026-11-15 | Instagram | Canadian Foundation for Economic Education, CFEE (@cfee_) | Canadian non-profit financial literacy | official, cfee.org, Jul 2025 |
+| 2026-11-15 | TikTok | CPABC (@cpabc) | Official CPA body, short money/tax explainers | official, bccpa.ca social media page |
+| 2026-11-15 | TikTok | CPA Québec (@cpaquebec) | Official CPA body | official, cpaquebec.ca social media page |
+| 2026-11-15 | TikTok | CFEE (@cfeefoundation) | Canadian financial literacy non-profit | official, cfee.org, Jul 2025 |
+| 2026-11-15 | YouTube | CPABC (youtube.com/user/cpabritishcolumbia) | Official CPA body | official, bccpa.ca social media page |
+| 2026-11-15 | YouTube | CPA Québec (youtube.com/user/CPAquebec) | Official CPA body | official, cpaquebec.ca social media page |
+| 2026-11-15 | YouTube | CFEE (@cfeefoundation) | Canadian financial literacy non-profit | official, cfee.org, Jul 2025 |
+| 2026-11-15 | Facebook | CPABC (facebook.com/cpabc) | Official CPA body | official, bccpa.ca social media page |
+| 2026-11-15 | Facebook | CPA Québec (facebook.com/CPAquebec) | Official CPA body | official, cpaquebec.ca social media page |
+| 2026-11-15 | Facebook | CFEE (facebook.com/CanadianFoundationforEconomicEducation) | Canadian financial literacy non-profit | official, cfee.org, Jul 2025 |
+| 2026-11-15 | Pinterest | Search "GST HST filing checklist", "freelancer income and expense log", "family budget binder Canada" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
