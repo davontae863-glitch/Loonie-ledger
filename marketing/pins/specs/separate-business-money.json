@@ -1,0 +1,29 @@
+{
+ "kicker": "Bookkeeping",
+ "title": [
+  "Mixing business and",
+  "personal money?"
+ ],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "CRA requires records of all your business transactions. One shared account turns tax time into guesswork.",
+ "blocks": [
+  {
+   "type": "flow",
+   "steps": [
+    { "icon": "bank", "big": "1 account", "label": "business only" },
+    { "icon": "coins", "big": "In & out", "label": "only through it" },
+    { "icon": "receipt", "big": "Receipt", "label": "for every purchase" }
+   ],
+   "result": { "icon": "check", "big": "Clean records", "label": "Every expense easy to find and back up" }
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "If your records don't support your claims, CRA says they could be disallowed."
+  }
+ ],
+ "ctaLead": "Log expenses by T2125 line",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "CRA, 2026"
+}
