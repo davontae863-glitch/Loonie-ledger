@@ -180,3 +180,20 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-15 | Facebook | CPA Québec (facebook.com/CPAquebec) | Official CPA body | official, cpaquebec.ca social media page |
 | 2026-11-15 | Facebook | CFEE (facebook.com/CanadianFoundationforEconomicEducation) | Canadian financial literacy non-profit | official, cfee.org, Jul 2025 |
 | 2026-11-15 | Pinterest | Search "GST HST filing checklist", "freelancer income and expense log", "family budget binder Canada" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
+| 2026-11-16 | Instagram | CPA Alberta (cpa_ab) | Official CPA body for Alberta (your home province); tax-season reminders | official, CPA Alberta Digital Dividends blog (2019; check it's still active) |
+| 2026-11-16 | Instagram | Cassandra Melo, Money with Cass (moneywithcass) | Same creator as 2026-11-12 TikTok | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | Instagram | Cory Fowler, How to Adult School (howtoadultschool) | Same creator as 2026-11-06 TikTok; budgeting and tax basics | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | Instagram | Ellen Roseman (ellen_roseman) | Consumer rights, personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | TikTok | Nicole Victoria, No Budget Babe (@nobudgetbabe) | Same creator as 2026-11-06 Instagram; debt and spending | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | TikTok | Tom Drake, MapleMoney (@tomdrakecanada) | Same creator as 2026-11-12 Instagram; Canadian saving | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | TikTok | Two Sides of a Dime, Eduek Brooks (@twosidesofadime) | Same creator as 2026-11-05 Instagram; budgeting and debt | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | TikTok | Brandon Beavis (@brandonbeavisinvesting) | Same creator as 2026-11-09 Instagram; Canadian investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | YouTube | No Budget Babe (@NoBudgetBabe) | Long-form debt and spending videos | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | YouTube | Jim Chuong (c/JimChuong) | Canadian money explainers, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | YouTube | Budget Like the Others, Jenn (channel/UCpZqTSOQEBxJOnPm0LOvPpA) | Same creator as 2026-11-11 TikTok; budgeting | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | YouTube | Joyee Yang (channel/UCDa21MKyIA2wRdd-g55P5Jw) | Money tips for young Canadians | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | Facebook | CPA Alberta (facebook.com/CPAalberta) | Official CPA body for Alberta | official, CPA Alberta Digital Dividends blog (2019; check it's still active) |
+| 2026-11-16 | Facebook | Nathan Kennedy (facebook.com/newmoneynatebaby) | Canadian personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | Facebook | Brandon Beavis (facebook.com/brandonbeavisinvesting) | Canadian investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | Facebook | Jim Chuong (facebook.com/jim.chuong) | Canadian money explainers | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-16 | Pinterest | Search "business mileage log Canada", "invoice tracker spreadsheet", "RRSP deadline checklist" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
