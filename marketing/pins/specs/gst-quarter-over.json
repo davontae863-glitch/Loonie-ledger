@@ -1,0 +1,30 @@
+{
+ "kicker": "GST/HST",
+ "title": [
+  "Over $30,000 in one quarter?",
+  "Charge GST on that sale"
+ ],
+ "titleHi": 1,
+ "titleSize": 72,
+ "lead": "Pass $30,000 of taxable sales in a single calendar quarter and you stop being a small supplier right then.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "CRA's example: a new consulting business",
+   "rows": [
+    ["Q1 sales", "$2,000"],
+    ["Q2 sales", "$10,000"],
+    ["Q3 sales", "$38,000"]
+   ],
+   "total": ["Q3 sale that passes $30,000", "Charge GST/HST"]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "Register within 29 days. Over $30,000 across 4 quarters but not one? You stop at the end of the next month."
+  }
+ ],
+ "ctaLead": "Add up sales by quarter",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "CRA, 2026"
+}
