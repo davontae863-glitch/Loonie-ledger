@@ -1,0 +1,27 @@
+{
+ "kicker": "Registered accounts",
+ "title": ["TFSA vs RRSP vs FHSA", "Three accounts, three jobs"],
+ "titleHi": 1,
+ "titleSize": 72,
+ "lead": "The difference is when you get the tax break: going in, coming out, or both.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Tax break in → tax break out",
+   "rows": [
+    ["TFSA · any goal", "No deduction → tax-free"],
+    ["RRSP · retirement", "Deduction → taxed"],
+    ["FHSA · first home", "Deduction → tax-free"]
+   ],
+   "total": ["Only one gets both", "FHSA"]
+  },
+  {
+   "type": "note",
+   "icon": "piggy",
+   "text": "2026 limits: TFSA $7,000 · RRSP $33,810 max · FHSA $8,000 a year, $40,000 total."
+  }
+ ],
+ "ctaLead": "Track all three rooms",
+ "cta": "TFSA/RRSP/FHSA Room Tracker",
+ "source": "CRA, 2026"
+}
