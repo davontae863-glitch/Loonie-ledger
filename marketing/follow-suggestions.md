@@ -197,3 +197,18 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-16 | Facebook | Brandon Beavis (facebook.com/brandonbeavisinvesting) | Canadian investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-16 | Facebook | Jim Chuong (facebook.com/jim.chuong) | Canadian money explainers | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-16 | Pinterest | Search "business mileage log Canada", "invoice tracker spreadsheet", "RRSP deadline checklist" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
+| 2026-11-17 | Instagram | Credit Canada (@creditcanada) | Non-profit credit counselling; budgeting and debt tips (same org as 2026-11-07 TikTok/Facebook) | official, creditcanada.com blog footer |
+| 2026-11-17 | Instagram | Lyn Allure (lyn.allure) | Same creator as 2026-11-06 YouTube; budgeting, saving | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-17 | Instagram | Daniel Pronk (dpronk_) | Same creator as 2026-11-08 YouTube; Canadian investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-17 | Instagram | Miss Excel, Kat Norton (search the name) | Excel tips in short videos (same creator as 2026-11-06 TikTok) | Datarails "Top 10 Excel Influencers", updated Sep 2026 |
+| 2026-11-17 | TikTok | Mixed Up Money, Alyssa Davies (search the name) | Same creator as 2026-11-05 Instagram; budgeting, saving | BNN Bloomberg, Aug 2025 |
+| 2026-11-17 | TikTok | Ben Felix (@benjaminwfelix) | Same creator as 2026-11-05 YouTube; evidence-based investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-17 | TikTok | Lyn Allure (@lyn.allure) | Budgeting, saving, investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-17 | TikTok | Arlene Dickinson (@arlenedickinson) | Same creator as 2026-11-13 Instagram; small-business mindset | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-17 | YouTube | BDC (youtube.com/user/BDCBanx) | Small-business how-tos and webinars (same org as 2026-11-06 IG/FB) | official, ised-isde.canada.ca "Stay connected" |
+| 2026-11-17 | YouTube | Credit Canada (@creditcanada) | Budgeting and debt explainers | official, creditcanada.com blog footer |
+| 2026-11-17 | YouTube | MyExcelOnline, John Michaloudis (youtube.com/user/LearnExcelPivotTable) | Excel formulas, pivot tables, dashboards | Datarails "Top 10 Excel Influencers", updated Sep 2026 |
+| 2026-11-17 | Facebook | CPA Ontario (search the name) | Official CPA body for Ontario; tax-season reminders | official, cpaontario.ca/follow-us |
+| 2026-11-17 | Facebook | Statistics Canada (facebook.com/StatisticsCanada) | Official data (prices, small business, household spending) for post ideas | official, ised-isde.canada.ca "Stay connected" |
+| 2026-11-17 | Facebook | Competition Bureau Canada (facebook.com/competitionbureaucanada) | Scam and fair-pricing alerts useful to small sellers | official, ised-isde.canada.ca "Stay connected" |
+| 2026-11-17 | Pinterest | Search "Canadian tax year-end checklist", "Google Sheets invoice template", "FHSA savings tracker" → follow 3 active boards | No new named Pinterest accounts in today's sources (Hardbacon's two already suggested) | — |
