@@ -1,0 +1,27 @@
+{
+ "kicker": "Registered accounts",
+ "title": ["Your TFSA room on CRA?", "It's last year's"],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "CRA updates your TFSA info once a year, in spring, so it can miss this year's deposits.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Where CRA shows your room",
+   "rows": [
+    ["TFSA", "CRA account"],
+    ["RRSP", "Notice of assessment"],
+    ["FHSA", "Assessment or CRA account"]
+   ],
+   "total": ["This year's deposits", "Your own records"]
+  },
+  {
+   "type": "note",
+   "icon": "piggy",
+   "text": "Over your room? TFSA and FHSA excess: 1% a month. RRSP: 1% a month past a $2,000 buffer."
+  }
+ ],
+ "ctaLead": "Track all three rooms",
+ "cta": "TFSA/RRSP/FHSA Room Tracker",
+ "source": "CRA, 2026"
+}
