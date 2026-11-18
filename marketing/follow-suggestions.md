@@ -212,3 +212,21 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-17 | Facebook | Statistics Canada (facebook.com/StatisticsCanada) | Official data (prices, small business, household spending) for post ideas | official, ised-isde.canada.ca "Stay connected" |
 | 2026-11-17 | Facebook | Competition Bureau Canada (facebook.com/competitionbureaucanada) | Scam and fair-pricing alerts useful to small sellers | official, ised-isde.canada.ca "Stay connected" |
 | 2026-11-17 | Pinterest | Search "Canadian tax year-end checklist", "Google Sheets invoice template", "FHSA savings tracker" → follow 3 active boards | No new named Pinterest accounts in today's sources (Hardbacon's two already suggested) | — |
+| 2026-11-18 | Instagram | Manjit Minhas (manjit.minhas) | Canadian entrepreneur, Dragons' Den; small-business mindset | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | Instagram | Sam Lichtman, Millennial Money Canada (samlichtman) | Same creator as 2026-11-12 TikTok; investing principles, Canadian tools | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | Instagram | Charlee Wayne (charleewayne) | Same creator as 2026-11-12 TikTok; personal finance basics | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | Instagram | Melissa Leong (lisleong) | Same creator as 2026-11-09 Facebook; Canadian finance author and TV host | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | TikTok | MoneySense (@moneysensemag) | Canadian personal-finance magazine; tax and money explainers | official, moneysense.ca article footer, Mar 2025 |
+| 2026-11-18 | TikTok | Bridget Casey, Money After Graduation (@bridgiecasey) | Same creator as 2026-11-12 Instagram; saving and debt | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | TikTok | Michele Romanow (@micheleromanow) | Same creator as 2026-11-14 Instagram; entrepreneur tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | TikTok | Daniel Pronk (@danielpronk) | Same creator as 2026-11-08 YouTube; Canadian investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | YouTube | Zac Hartley (@zachartley) | Canadian investing and personal finance | MoneySense, Jul 2026 |
+| 2026-11-18 | YouTube | Arlene Dickinson (channel/UCGZJPdVT7k8wfsmHBhiSchg) | Same creator as 2026-11-13 Instagram; small-business advice | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | YouTube | Charlee Wayne (user/FlipC) | Same creator as TikTok/Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | YouTube | Wyn Hopkins, Access Analytic (search the name) | Excel and Power BI tips | Datarails "Top 10 Excel Influencers", updated Sep 2026 |
+| 2026-11-18 | Facebook | MoneySense (facebook.com/MoneySenseMagazine) | Canadian money articles to share | official, moneysense.ca article footer, Mar 2025 |
+| 2026-11-18 | Facebook | Sandy Yong, The Money Master (themoneymasterbook) | Canadian personal-finance author, MoneySense contributor | MoneySense, Mar 2025 |
+| 2026-11-18 | Facebook | Arlene Dickinson (dickinsonarlene) | Small-business mindset posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | Facebook | Michele Romanow (dragonmichele) | Entrepreneur posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-18 | Pinterest | MoneySense (moneysensemag) | Canadian money pins (TFSA, RRSP, budgeting) | official, moneysense.ca article footer, Mar 2025 |
+| 2026-11-18 | Pinterest | Search "self-employed tax tracker Canada", "Google Sheets budget dashboard" → follow 2 active boards | Topic boards for your buyers | — |
