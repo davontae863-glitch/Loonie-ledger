@@ -1,0 +1,28 @@
+{
+ "kicker": "Budget",
+ "title": ["Budget template has a 401(k)?", "Use a Canadian layout"],
+ "titleHi": 1,
+ "titleSize": 76,
+ "lead": "Plan income, bills, spending and savings in CAD, with savings lines for Canadian accounts.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Canadian savings lines and their jobs",
+   "rows": [
+    ["TFSA", "Any goal, any time"],
+    ["RRSP", "Retirement"],
+    ["FHSA", "Your first home"],
+    ["RESP", "A child's education"]
+   ],
+   "total": ["Plus", "Emergency fund"]
+  },
+  {
+   "type": "note",
+   "icon": "calendar",
+   "text": "Set the month: income → bills → spending → savings. Then compare 12 months side by side."
+  }
+ ],
+ "ctaLead": "A monthly budget built for Canada",
+ "cta": "Canadian Household Budget",
+ "source": "canada.ca, 2026"
+}
