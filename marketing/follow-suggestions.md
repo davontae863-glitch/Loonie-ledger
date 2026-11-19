@@ -230,3 +230,20 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-18 | Facebook | Michele Romanow (dragonmichele) | Entrepreneur posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-18 | Pinterest | MoneySense (moneysensemag) | Canadian money pins (TFSA, RRSP, budgeting) | official, moneysense.ca article footer, Mar 2025 |
 | 2026-11-18 | Pinterest | Search "self-employed tax tracker Canada", "Google Sheets budget dashboard" → follow 2 active boards | Topic boards for your buyers | — |
+| 2026-11-19 | Instagram | Adrian Bar (canadiantshirt) | Same creator as 2026-11-07 YouTube; independent Canadian money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Instagram | Griffin Milks (griffinmilks) | Same creator as 2026-11-08 YouTube; Canadian personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Instagram | Pattie Lovett-Reid (pattie_lovettreid) | Same creator as 2026-11-07 YouTube; CTV financial commentator | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Instagram | Sean Cooper (burnyourmortgage) | Canadian personal-finance author, mortgages and saving | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Instagram | CPA Ontario (search the name) | Official CPA body for Ontario; tax-season reminders (same org as 2026-11-17 Facebook) | official, cpaontario.ca/follow-us |
+| 2026-11-19 | TikTok | Ron Butler (@ronmortgageguy) | Canadian mortgage broker, plain-talk money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | TikTok | Dan Kent, Stocktrades.ca (@stocktrades_ca) | Canadian investing education | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | TikTok | Mike Gap (@mikegapofficial) | Canadian personal finance and investing | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | YouTube | Sean Cooper (youtube.com/seancooperwriter) | Same creator as today's Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | YouTube | Stocktrades, Dan Kent (@StocktradesLtd) | Same creator as today's TikTok, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | YouTube | Mike Gap (c/MikeGap) | Same creator as today's TikTok, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | YouTube | Learn Google Spreadsheets (c/LearnGoogleSpreadsheets) | Google Sheets formulas and templates | Geckoboard "5 experts to follow to learn Google Sheets", Aug 2020 (check it's still active) |
+| 2026-11-19 | Facebook | Adrian Bar (facebook.com/CanadianTShirt) | Independent Canadian money posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Facebook | Preet Banerjee (facebook.com/preetbanerjeefans) | Canadian personal finance explainers | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Facebook | Daniel Pronk (facebook.com/dpronk4) | Canadian investing and personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Facebook | Dale Roberts, Cut the Crap Investing (facebook.com/cuthecrapinvestingblog) | Simple low-cost investing posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-19 | Pinterest | Search "2027 budget planner", "receipt tracking spreadsheet", "self-employed CPP Canada" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
