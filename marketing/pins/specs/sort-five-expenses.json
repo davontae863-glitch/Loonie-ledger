@@ -1,0 +1,28 @@
+{
+ "kicker": "Self-employed",
+ "title": ["Your new desk?", "Not an office expense"],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "Sort these 5 business expenses into the right T2125 line.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Which T2125 line?",
+   "rows": [
+    ["Online ad", "8521 Advertising"],
+    ["Pens, paper, stamps", "8810 Office"],
+    ["Business cell airtime", "9220 Phone & utilities"],
+    ["Client lunch", "8523 Meals · 50%"]
+   ],
+   "total": ["Desk or chair", "CCA · 9936"]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "Desks and chairs are capital items: claim them over several years with CCA."
+  }
+ ],
+ "ctaLead": "Every expense tagged with its T2125 line",
+ "cta": "Bookkeeping Tracker",
+ "source": "CRA, 2026"
+}
