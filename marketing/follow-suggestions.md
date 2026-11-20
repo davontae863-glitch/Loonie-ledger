@@ -247,3 +247,18 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-19 | Facebook | Daniel Pronk (facebook.com/dpronk4) | Canadian investing and personal finance | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-19 | Facebook | Dale Roberts, Cut the Crap Investing (facebook.com/cuthecrapinvestingblog) | Simple low-cost investing posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-19 | Pinterest | Search "2027 budget planner", "receipt tracking spreadsheet", "self-employed CPP Canada" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
+| 2026-11-20 | Instagram | Jashan Mundi (@jashanmundi) | Brampton budgeting and income-growth coach (also sells coaching; follow for the tips) | Tangerine "Savings tips from three Canadian social media influencers", Apr 2023 |
+| 2026-11-20 | Instagram | Lesley-Anne Scorgie (@lesleyscorgie) | Same author as 2026-11 Facebook pick ("Rich by Thirty"); page doesn't name the platform, check it's her IG | money.ca "Top 25 Canadian financial influencers", Jul 2024 |
+| 2026-11-20 | Instagram | Robyn Thompson (@robynthompsonmoney) | Same creator as earlier TikTok pick; investing basics | money.ca "Top 25 Canadian financial influencers", Jul 2024 |
+| 2026-11-20 | Instagram | Canadian Chamber of Commerce (cdnchamberofcom) | National business voice; small-business policy and tax updates | official, chamber.ca (links checked 2026-11-20) |
+| 2026-11-20 | TikTok | Canadian Chamber of Commerce (@cdnchamber) | Same org as today's Instagram | official, chamber.ca (links checked 2026-11-20) |
+| 2026-11-20 | TikTok | Reni (@xoreni) | Budgeting and lifestyle; page doesn't name the platform, check it's her TikTok | money.ca "Top 25 Canadian financial influencers", Jul 2024 |
+| 2026-11-20 | TikTok | Jessica Rowat (search the name) | Canadian FinTok creator | CTV News "FinTok: How TikTok is changing financial literacy in Canada", Sep 2022 |
+| 2026-11-20 | TikTok | Colleen Kormos (search the name) | Canadian FinTok creator | CTV News "FinTok: How TikTok is changing financial literacy in Canada", Sep 2022 |
+| 2026-11-20 | YouTube | Steph & Den (c/StephDen) | Toronto couple; careers, budgeting, investing | Credit Canada "The 7 Finance YouTube Channels You Need to Be Watching", Sep 2021 |
+| 2026-11-20 | YouTube | Innovation, Science and Economic Development Canada (c/isedcanada) | Federal small-business programs and funding | official, ised-isde.canada.ca "Stay connected" (page updated 2022) |
+| 2026-11-20 | YouTube | Ontario Chamber of Commerce (user/OntarioChamber) | Small-business webinars and policy | official, occ.ca (links checked 2026-11-20) |
+| 2026-11-20 | Facebook | Canadian Chamber of Commerce (facebook.com/CdnChamberofCom) | Same org as today's Instagram/TikTok | official, chamber.ca (links checked 2026-11-20) |
+| 2026-11-20 | Facebook | Ontario Chamber of Commerce (facebook.com/ontchamberofcommerce) | Same org as today's YouTube | official, occ.ca (links checked 2026-11-20) |
+| 2026-11-20 | Facebook | Women's Enterprise Organizations of Canada, WEOC (search the name) | National network of women's business-support orgs, loan fund | BDC "woman entrepreneur partners" page; WeBC news |
+| 2026-11-20 | Pinterest | Search "Canadian freelancer tax checklist", "monthly expense tracker Google Sheets", "TFSA contribution tracker" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
