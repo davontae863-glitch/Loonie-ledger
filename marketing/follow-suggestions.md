@@ -262,3 +262,14 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-20 | Facebook | Ontario Chamber of Commerce (facebook.com/ontchamberofcommerce) | Same org as today's YouTube | official, occ.ca (links checked 2026-11-20) |
 | 2026-11-20 | Facebook | Women's Enterprise Organizations of Canada, WEOC (search the name) | National network of women's business-support orgs, loan fund | BDC "woman entrepreneur partners" page; WeBC news |
 | 2026-11-20 | Pinterest | Search "Canadian freelancer tax checklist", "monthly expense tracker Google Sheets", "TFSA contribution tracker" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
+| 2026-11-21 | Instagram | Adiba Ahmed (ceoadiba) | Canadian entrepreneur; small-business and money tips | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-21 | Instagram | Budget Boss, Joseph James Francis (realbudgetboss) | Same creator as earlier FB/TikTok picks; budgeting and debt | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-21 | Instagram | Ellyce Fulmore (ellyce.fulmore) | Same creator as 2026-11-06 TikTok; budgeting | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-21 | TikTok | Adiba Ahmed (@ceoadiba) | Same creator as today's Instagram | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-21 | TikTok | BNN Bloomberg (@bnnbloomberg) | Canadian business and personal-finance news clips | official, bnnbloomberg.ca footer |
+| 2026-11-21 | YouTube | MoneySense (channel/UChSpjKUHt7zUOFWyA3O3nqQ) | Canadian money explainers (same outlet as earlier FB/TikTok/Pinterest picks) | official, moneysense.ca footer |
+| 2026-11-21 | YouTube | Adiba Ahmed (channel/UCLxdLviSesgnJ-nTPa_RKRg) | Same creator as today's Instagram, long-form | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-21 | YouTube | BNN Bloomberg (search the name) | Same outlet as today's TikTok | official, bnnbloomberg.ca footer |
+| 2026-11-21 | Facebook | Manjit Minhas (manjitminhasdragon) | Same creator as 2026-11-18 Instagram; entrepreneur posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-21 | Facebook | Charlee Wayne (charleewayn) | Same creator as earlier IG/TikTok/YouTube picks | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-21 | Pinterest | Search "Canadian small business holiday sales tracker", "2027 GST HST calendar", "freelance quote template" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
