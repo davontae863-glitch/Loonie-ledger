@@ -1,0 +1,26 @@
+{
+ "kicker": "T2125 basics",
+ "title": ["Side hustle in Canada?", "Meet Form T2125"],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "Form T2125, Statement of Business or Professional Activities, is how sole proprietors report business income and expenses.",
+ "blocks": [
+  {
+   "type": "checks",
+   "items": [
+    "Sole proprietors fill it in",
+    "Report business income + expenses",
+    "File it with your income tax return",
+    "One separate T2125 for each business you run"
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "receipt",
+   "text": "Log income and expenses all year so filling it in is faster."
+  }
+ ],
+ "ctaLead": "Tagged by T2125 line",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "canada.ca, 2026"
+}
