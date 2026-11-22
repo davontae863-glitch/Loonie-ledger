@@ -1,0 +1,26 @@
+{
+ "kicker": "Selling online",
+ "title": ["Selling online?", "The platform tells CRA"],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "Digital platforms must report certain sellers' information to CRA every year.",
+ "blocks": [
+  {
+   "type": "flow",
+   "steps": [
+    {"icon": "receipt", "big": "Sales", "label": "You sell goods"},
+    {"icon": "bank", "big": "Platform", "label": "Totals by quarter"},
+    {"icon": "invoice", "big": "CRA", "label": "Report filed"}
+   ],
+   "result": {"icon": "calendar", "big": "Jan 31", "label": "Your copy of the report is due"}
+  },
+  {
+   "type": "note",
+   "icon": "info",
+   "text": "Under 30 sales of goods and $2,800 or less? Not reported, but business income still goes on your return."
+  }
+ ],
+ "ctaLead": "Log every sale yourself",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "canada.ca, 2026"
+}
