@@ -273,3 +273,18 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-21 | Facebook | Manjit Minhas (manjitminhasdragon) | Same creator as 2026-11-18 Instagram; entrepreneur posts | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-21 | Facebook | Charlee Wayne (charleewayn) | Same creator as earlier IG/TikTok/YouTube picks | Hardbacon (Canadian money app) "Top 65 Money Influencers in Canada", updated Aug 2026 |
 | 2026-11-21 | Pinterest | Search "Canadian small business holiday sales tracker", "2027 GST HST calendar", "freelance quote template" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
+| 2026-11-22 | Instagram | oh dear budget (@ohdearbudget) | Quebec budgeting account | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 (older source, check it's active) |
+| 2026-11-22 | Instagram | CPA Nova Scotia (search the name) | Provincial CPA body; tax-season and money tips | official, linktr.ee/cpans (updated Nov 2026) |
+| 2026-11-22 | Instagram | Reetu Maz, ree2mz (search the name) | Quebec budgeting creator; source names her TikTok, check she's on IG | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 |
+| 2026-11-22 | TikTok | Reetu Maz (@ree2mz) | Quebec budgeting creator | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 (older source, check it's active) |
+| 2026-11-22 | TikTok | oh dear budget (search the name) | Same creator as today's Instagram; check she's on TikTok | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 |
+| 2026-11-22 | TikTok | Gère-toi, National Bank (search the name) | French-language money-basics series with Émile Roy; check it's on TikTok | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 |
+| 2026-11-22 | YouTube | ExcelIsFun (channel/UCkndrGoNpUDV-uia6a9jwVg) | Huge free Excel tutorial library | Feedspot "25 Excel YouTubers in 2026", updated Jul 2026 |
+| 2026-11-22 | YouTube | Learn Excel from Chandoo (search the name) | Excel formulas and dashboards | Feedspot "25 Excel YouTubers in 2026", updated Jul 2026 |
+| 2026-11-22 | YouTube | Excel For Freelancers (search the name) | Excel apps/templates for freelancers | Feedspot "25 Excel YouTubers in 2026", updated Jul 2026 |
+| 2026-11-22 | YouTube | Indzara Excel Templates (search the name) | Spreadsheet template builder (similar niche to ours) | Feedspot "25 Excel YouTubers in 2026", updated Jul 2026 |
+| 2026-11-22 | YouTube | Gère-toi, National Bank (channel/UCEVKAZmpPkn4ABcjI9Si6xA) | French-language money basics | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 |
+| 2026-11-22 | Facebook | Miss Coupon (facebook.com/formationcoupon) | Quebec couponing and saving on groceries | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 (older source, check it's active) |
+| 2026-11-22 | Facebook | CPA Nova Scotia (search the name) | Same org as today's Instagram | official, linktr.ee/cpans (updated Nov 2026) |
+| 2026-11-22 | Facebook | Gère-toi, National Bank (search the name) | Same series as today's YouTube; check it's on Facebook | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 |
+| 2026-11-22 | Pinterest | Search "Black Friday budget tracker", "small business year-end inventory count", "Canada Child Benefit budget" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
