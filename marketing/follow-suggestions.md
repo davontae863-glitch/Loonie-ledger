@@ -288,3 +288,16 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-22 | Facebook | CPA Nova Scotia (search the name) | Same org as today's Instagram | official, linktr.ee/cpans (updated Nov 2026) |
 | 2026-11-22 | Facebook | Gère-toi, National Bank (search the name) | Same series as today's YouTube; check it's on Facebook | MTL Blog "6 Quebec Personal Finance Accounts To Follow", Apr 2021 |
 | 2026-11-22 | Pinterest | Search "Black Friday budget tracker", "small business year-end inventory count", "Canada Child Benefit budget" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
+| 2026-11-23 | Instagram | Kevin Stratvert (search the name) | Excel/Office and productivity how-tos | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | Instagram | Florian Beil (search the name) | Microsoft MVP, short Excel tips | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | Instagram | Excel Dictionary, Emma Chieppor (search the name) | Bite-size Excel formulas; source doesn't name the platform | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | TikTok | Excel Dictionary, Emma Chieppor (search the name) | Same creator as today's Instagram; huge spreadsheet-tip following | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | TikTok | Florian Beil (search the name) | Same creator as today's Instagram | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | TikTok | Kevin Stratvert (search the name) | Same creator as today's Instagram | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | YouTube | Kevin Stratvert (search the name) | Same creator as today's Instagram, long-form Excel/Office tutorials | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | YouTube | Jeff Su (search the name) | Productivity and Google Workspace tips | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | YouTube | Karine Lago (search the name) | Microsoft MVP, Excel and Power BI tutorials | Favikon "Top 20 Excel & office productivity influencers", 2025 |
+| 2026-11-23 | Facebook | Canadian Anti-Fraud Centre (search the name) | Official scam warnings worth sharing with your audience | MoneySense "How to find trustworthy finfluencers", Mar 2025 (named as where to report) |
+| 2026-11-23 | Facebook | GetSmarterAboutMoney.ca, Ontario Securities Commission (search the name) | Official investor-education site; check it has an active Page | official, getsmarteraboutmoney.ca / MoneySense Jul 2026 (OSC research) |
+| 2026-11-23 | Facebook | Financial Independence Hub, Jonathan Chevreau (search the name) | Long-time Canadian money writer; check it has an active Page | MoneySense "Online finfluencers grow up", Jul 2026 |
+| 2026-11-23 | Pinterest | Search "invoice checklist GST HST", "Excel formulas cheat sheet", "2027 RRSP contribution planner" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |

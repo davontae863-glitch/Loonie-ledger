@@ -5,6 +5,7 @@ Actions: replied (auto, simple friendly comment) · needs owner (suggested reply
 
 | Date | comment_id | Username | Comment | Action | Reply |
 |---|---|---|---|---|---|
+| 2026-11-23 | 18171343435433583 | eltwo.ai | On "Canadian money mistake #3: Over $100? Your invoice needs this number": "The over-$100 invoice rule is one of those details almost nobody knows until the CRA asks — and the threshold breakdown makes it actually usable. Handy one to flag." | replied | Thanks so much — that over-$100 line catches so many people off guard, glad the breakdown helped! 🙌 (reply id 18149991004599833) |
 
 Daily checks: 2026-11-06 — no comments on @loonieledgerofficial in the last 30 days (Windsor.ai returned 0 rows; 90-day check also 0).
 2026-11-07 — no comments in the last 30 days (Windsor.ai returned 0 rows).
@@ -23,3 +24,4 @@ Daily checks: 2026-11-06 — no comments on @loonieledgerofficial in the last 30
 2026-11-20 — no comments in the last 30 days (Windsor.ai returned 0 rows).
 2026-11-21 — no comments in the last 30 days (Windsor.ai returned 0 rows).
 2026-11-22 — no comments in the last 30 days (Windsor.ai returned 0 rows).
+2026-11-23 — 1 new comment (first one!), auto-replied.
