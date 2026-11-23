@@ -1,0 +1,30 @@
+{
+ "kicker": "Invoicing",
+ "title": [
+  "Stop numbering",
+  "invoices 1, 2, 3"
+ ],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "Put the year first, then count up. Invoices sort in order and never repeat.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "A numbering system that stays organized",
+   "rows": [
+    ["First invoice of 2026", "2026-001"],
+    ["Next one", "2026-002"],
+    ["Voided? Keep the number", "2026-003 · VOID"],
+    ["First invoice of 2027", "2027-001"]
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "CRA lists sales invoices as GST/HST records: keep them 6 years from the end of the year they relate to."
+  }
+ ],
+ "ctaLead": "Every invoice auto-numbered",
+ "cta": "Freelancer Invoice Generator",
+ "source": "CRA, 2026"
+}
