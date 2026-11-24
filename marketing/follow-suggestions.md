@@ -301,3 +301,18 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-23 | Facebook | GetSmarterAboutMoney.ca, Ontario Securities Commission (search the name) | Official investor-education site; check it has an active Page | official, getsmarteraboutmoney.ca / MoneySense Jul 2026 (OSC research) |
 | 2026-11-23 | Facebook | Financial Independence Hub, Jonathan Chevreau (search the name) | Long-time Canadian money writer; check it has an active Page | MoneySense "Online finfluencers grow up", Jul 2026 |
 | 2026-11-23 | Pinterest | Search "invoice checklist GST HST", "Excel formulas cheat sheet", "2027 RRSP contribution planner" → follow 3 active boards | No new named Pinterest accounts in today's sources | — |
+| 2026-11-24 | Instagram | Kelley Keehn (kelleykeehnbiz) | Financial literacy author of 11 books, founder of Money Wise Workplaces | Tangerine The Juice author page (handle as linked there) |
+| 2026-11-24 | Instagram | Young and Thrifty (@youngandthriftyca) | Long-running Canadian money blog for young adults | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 |
+| 2026-11-24 | Instagram | Shannon Lee Simmons (search the name) | Toronto planner, founder of The New School of Finance | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026; Neo Financial "The Get" profile, Mar 2026 |
+| 2026-11-24 | Instagram | Krystal Yee (search the name) | Canadian money coach | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 (named under money coaches) |
+| 2026-11-24 | TikTok | Kelley Keehn (search the name) | Same creator as today's Instagram; check she's on TikTok | Tangerine The Juice author page |
+| 2026-11-24 | TikTok | Shannon Lee Simmons (search the name) | Same as today's Instagram; check she's on TikTok | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 |
+| 2026-11-24 | TikTok | Young and Thrifty (search the name) | Same blog as today's Instagram; check it's on TikTok | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 |
+| 2026-11-24 | YouTube | Rational Reminder, Ben Felix & Cameron Passmore (search the name) | Canadian evidence-based investing/planning podcast | Globe and Mail, "Growing number of young Canadians relying on self-teaching" |
+| 2026-11-24 | YouTube | Gail Vaz-Oxlade (search the name) | Veteran Canadian budgeting/debt guru | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 (named under gurus) |
+| 2026-11-24 | YouTube | Kelley Keehn (search the name) | Same creator as today's Instagram; check for an active channel | Tangerine The Juice author page |
+| 2026-11-24 | Facebook | Young and Thrifty (search the name) | Same blog as today's Instagram | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 (says it's on major platforms) |
+| 2026-11-24 | Facebook | Canadian Budget Binder (search the name) | Canadian budgeting blog | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 (FAQ blogs list) |
+| 2026-11-24 | Facebook | Gail Vaz-Oxlade (search the name) | Same as today's YouTube | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 |
+| 2026-11-24 | Facebook | Kelley Keehn (search the name) | Same creator as today's Instagram | Tangerine The Juice author page |
+| 2026-11-24 | Pinterest | Search "self-employed tax instalments Canada", "Google Sheets savings goal tracker", "charitable donation receipts tracker" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
