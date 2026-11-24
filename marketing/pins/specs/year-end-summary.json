@@ -1,0 +1,47 @@
+{
+ "kicker": "Year-end",
+ "title": [
+  "Your year-end summary:",
+  "one total per T2125 line"
+ ],
+ "titleHi": 1,
+ "titleSize": 72,
+ "lead": "Self-employed? Your year generally ends December 31. Add up each expense line once, then subtract from your sales.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Example: a year of side-hustle books",
+   "rows": [
+    [
+     "Sales for the year",
+     "$18,400"
+    ],
+    [
+     "8521 Advertising",
+     "−$620"
+    ],
+    [
+     "8810 Office expenses",
+     "−$340"
+    ],
+    [
+     "9220 Utilities",
+     "−$480"
+    ]
+   ],
+   "total": [
+    "Net income (line 9369)",
+    "$16,960"
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "2026 return: file by June 15, 2027 — but pay any balance by April 30, 2027."
+  }
+ ],
+ "ctaLead": "Totals by T2125 line, built in",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "CRA, 2026",
+ "art": "year-end"
+}
