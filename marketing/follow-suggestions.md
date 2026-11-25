@@ -316,3 +316,17 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-24 | Facebook | Gail Vaz-Oxlade (search the name) | Same as today's YouTube | Straight.com "Top 10 Best Canadian Millennial Money Blogs in 2026", Oct 2026 |
 | 2026-11-24 | Facebook | Kelley Keehn (search the name) | Same creator as today's Instagram | Tangerine The Juice author page |
 | 2026-11-24 | Pinterest | Search "self-employed tax instalments Canada", "Google Sheets savings goal tracker", "charitable donation receipts tracker" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
+| 2026-11-25 | Instagram | Ratehub (ratehub) | Canadian rate-comparison site; mortgage, credit card and money explainers | official, ratehub.ca (social links on its site) |
+| 2026-11-25 | Instagram | Canadian Freelance Union (search the name) | Union for Canadian freelancers, rights and resources — your audience | official, canadianfreelanceunion.ca; CBC on gig-worker protections |
+| 2026-11-25 | Instagram | Kim G C Moody (search the name) | Calgary FCPA tax specialist; check he has an active account | "In the Mood With Kim G C Moody" podcast listing, Apple Podcasts |
+| 2026-11-25 | TikTok | Ratehub (@ratehub.ca) | Same company as today's Instagram | official, ratehub.ca (social links on its site) |
+| 2026-11-25 | TikTok | Canadian Freelance Union (search the name) | Same as today's Instagram; check it's on TikTok | official, canadianfreelanceunion.ca |
+| 2026-11-25 | TikTok | Dan Bortolotti, Canadian Couch Potato (search the name) | Canadian index-investing educator; check he's on TikTok | Ratehub "Best Canadian personal finance podcasts", 2019; money.ca finance podcasts list |
+| 2026-11-25 | YouTube | Ratehub (youtube.com/user/RateHub) | Same company as today's Instagram | official, ratehub.ca (social links on its site) |
+| 2026-11-25 | YouTube | Build Wealth Canada, Kornel Szrejber (search the name) | Long-running Canadian investing/money podcast | Ratehub "Best Canadian personal finance podcasts", 2019; money.ca finance podcasts list |
+| 2026-11-25 | YouTube | Debt Free in 30, Doug Hoyes (search the name) | Licensed insolvency trustee on Canadian debt | money.ca finance podcasts list |
+| 2026-11-25 | YouTube | Canadian Couch Potato, Dan Bortolotti (search the name) | Same as today's TikTok, podcast/long-form | Ratehub "Best Canadian personal finance podcasts", 2019 |
+| 2026-11-25 | Facebook | Ratehub (facebook.com/RateHub) | Same company as today's Instagram | official, ratehub.ca (social links on its site) |
+| 2026-11-25 | Facebook | Canadian Freelance Union (search the name) | Same as today's Instagram | official, canadianfreelanceunion.ca |
+| 2026-11-25 | Facebook | Build Wealth Canada (search the name) | Same as today's YouTube; check it has an active Page | Ratehub "Best Canadian personal finance podcasts", 2019 |
+| 2026-11-25 | Pinterest | Search "GST HST held in trust", "year-end bookkeeping checklist Canada", "holiday spending tracker spreadsheet" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
