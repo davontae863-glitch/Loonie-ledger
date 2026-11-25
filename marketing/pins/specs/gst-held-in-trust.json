@@ -1,0 +1,30 @@
+{
+ "kicker": "GST/HST",
+ "title": [
+  "The HST you charged",
+  "isn't your money"
+ ],
+ "titleHi": 1,
+ "titleSize": 78,
+ "lead": "Registered for GST/HST? CRA says you hold the tax you collect in trust. You can't use it as cash flow.",
+ "blocks": [
+  {
+   "type": "example",
+   "title": "Example: one invoice to an Ontario client",
+   "rows": [
+    ["Your fee", "$10,000"],
+    ["HST charged (Ontario, 13%)", "+$1,300"],
+    ["Client pays you", "$11,300"]
+   ],
+   "total": ["Held in trust for CRA", "$1,300"]
+  },
+  {
+   "type": "note",
+   "icon": "info",
+   "text": "You can deduct input tax credits from the GST/HST you collected, then send the rest to CRA each period."
+  }
+ ],
+ "ctaLead": "Track it per sale",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "CRA, 2026"
+}
