@@ -330,3 +330,18 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-25 | Facebook | Canadian Freelance Union (search the name) | Same as today's Instagram | official, canadianfreelanceunion.ca |
 | 2026-11-25 | Facebook | Build Wealth Canada (search the name) | Same as today's YouTube; check it has an active Page | Ratehub "Best Canadian personal finance podcasts", 2019 |
 | 2026-11-25 | Pinterest | Search "GST HST held in trust", "year-end bookkeeping checklist Canada", "holiday spending tracker spreadsheet" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
+| 2026-11-26 | Instagram | Steph & Den (@stephandden) | Toronto couple sharing their money journey (YouTube picked 2026-11-20) | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | Instagram | Parween Mander (@parween.mander) | Money coach for women of colour (TikTok picked 2026-11-07) | money.ca "Top 25 Canadian financial influencers", Jul 2024 |
+| 2026-11-26 | Instagram | Life With Jayde (lifewithjayde) | Canadian cash-stuffing/saving for a house | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | Instagram | Innovation Factory (innovationfactory_if) | Hamilton-Halton business/innovation support org | official, innovationfactory.ca |
+| 2026-11-26 | TikTok | Steph & Den (@stephandden) | Same couple as today's Instagram | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | TikTok | Life With Jayde (search the name) | Same creator as today's Instagram; check she's on TikTok | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | TikTok | Gabrielle Talks Money (search the name) | CPA, money goals for young professionals; check she's on TikTok | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | YouTube | Gabrielle Talks Money (search the name) | CPA, money goals for young professionals | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | YouTube | Debt Free Life Canada (search the name) | Winnipeg family budgeting | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | YouTube | The Cash Stuffing Canuck (search the name) | Debt payoff with cash stuffing | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | YouTube | Planning Redhead (search the name) | Budgeting as a Vancouver parent | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | Facebook | Life With Jayde (facebook.com/lifewithjayde1) | Same creator as today's Instagram | Feedspot "30 Canada Frugal YouTubers in 2026", updated Jul 2026 |
+| 2026-11-26 | Facebook | Innovation Factory (facebook.com/innovationfactory.ca) | Same org as today's Instagram | official, innovationfactory.ca |
+| 2026-11-26 | Facebook | Canadian Women's Chamber of Commerce (search the name) | Chamber for women-identified business owners; check it has an active Page | Innovation Factory resource page (canwcc.ca), Feb 2025 |
+| 2026-11-26 | Pinterest | Search "cash stuffing Canada", "small business December checklist", "Google Sheets invoice tracker" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
