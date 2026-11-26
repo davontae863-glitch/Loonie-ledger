@@ -1,0 +1,50 @@
+{
+ "kicker": "Free GST/HST checker",
+ "title": [
+  "Do you charge GST?",
+  "Type 4 numbers"
+ ],
+ "titleHi": 1,
+ "titleSize": 84,
+ "lead": "Enter your taxable sales for each of your last four calendar quarters. The checker adds them up and checks each one.",
+ "blocks": [
+  {
+   "type": "flow",
+   "steps": [
+    {
+     "icon": "calendar",
+     "big": "$6,200",
+     "label": "Latest"
+    },
+    {
+     "icon": "calendar",
+     "big": "$7,400",
+     "label": "Before"
+    },
+    {
+     "icon": "calendar",
+     "big": "$8,100",
+     "label": "2 back"
+    },
+    {
+     "icon": "calendar",
+     "big": "$5,900",
+     "label": "3 back"
+    }
+   ],
+   "result": {
+    "icon": "check",
+    "big": "$27,600",
+    "label": "Example: under $30,000, $2,400 to go"
+   }
+  },
+  {
+   "type": "note",
+   "icon": "info",
+   "text": "Nothing you type leaves the page. It doesn't cover which sales count, so check CRA too."
+  }
+ ],
+ "ctaLead": "Try it with your numbers",
+ "cta": "Free checker",
+ "source": "CRA, 2026"
+}
