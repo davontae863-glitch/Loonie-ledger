@@ -345,3 +345,17 @@ The daily comment-and-follow task adds new rows here and never suggests an accou
 | 2026-11-26 | Facebook | Innovation Factory (facebook.com/innovationfactory.ca) | Same org as today's Instagram | official, innovationfactory.ca |
 | 2026-11-26 | Facebook | Canadian Women's Chamber of Commerce (search the name) | Chamber for women-identified business owners; check it has an active Page | Innovation Factory resource page (canwcc.ca), Feb 2025 |
 | 2026-11-26 | Pinterest | Search "cash stuffing Canada", "small business December checklist", "Google Sheets invoice tracker" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
+| 2026-11-27 | Instagram | Credit Canada (creditcanada) | Canadian non-profit credit counselling; debt and budgeting tips | official, creditcanada.com (social links on its site) |
+| 2026-11-27 | Instagram | Katrice Justice (search the name) | Personal finance for young Canadians | Feedspot "15 Canada Personal Finance YouTubers in 2026", updated Jul 2026 (lists her Instagram) |
+| 2026-11-27 | Instagram | Romana King (search the name) | Canadian personal-finance and homeowner journalist; check the account is active | Hardbacon "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-27 | TikTok | Credit Canada (@getouttadebt) | Same non-profit as today's Instagram | official, creditcanada.com (social links on its site) |
+| 2026-11-27 | TikTok | Katrice Justice (search the name) | Same creator as today's Instagram; check she's on TikTok | Feedspot "15 Canada Personal Finance YouTubers in 2026", updated Jul 2026 |
+| 2026-11-27 | TikTok | Anita Bruinsma, Clarity Personal Finance (search the name) | Canadian personal finance and DIY investing; check she's on TikTok | Feedspot "15 Canada Personal Finance YouTubers in 2026", updated Jul 2026 |
+| 2026-11-27 | YouTube | Credit Canada (youtube.com/creditcanada) | Same non-profit as today's Instagram | official, creditcanada.com (social links on its site) |
+| 2026-11-27 | YouTube | Katrice Justice (search the name) | Same creator as today's Instagram | Feedspot "15 Canada Personal Finance YouTubers in 2026", updated Jul 2026 |
+| 2026-11-27 | YouTube | Anita Bruinsma - Clarity Personal Finance Canada | Canadian personal finance and DIY investing (small channel) | Feedspot "15 Canada Personal Finance YouTubers in 2026", updated Jul 2026 |
+| 2026-11-27 | YouTube | Finance Whiz (Ebuka) | Income, saving, debt, retirement basics | Feedspot "15 Canada Personal Finance YouTubers in 2026", updated Jul 2026 |
+| 2026-11-27 | Facebook | Credit Canada (facebook.com/creditcanada) | Same non-profit as today's Instagram | official, creditcanada.com (social links on its site) |
+| 2026-11-27 | Facebook | Alan Whitton, Big Cajun Man (search the name) | Long-running Canadian personal-finance blogger; check the Page is active | Hardbacon "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-27 | Facebook | Romana King (search the name) | Same as today's Instagram | Hardbacon "Top 65 Money Influencers in Canada", updated Aug 2026 |
+| 2026-11-27 | Pinterest | Search "debt payoff snowball spreadsheet", "Canadian self-employed receipts organizer", "2027 monthly budget Google Sheets" → follow 3 active boards | No named Pinterest accounts in today's sources | — |
