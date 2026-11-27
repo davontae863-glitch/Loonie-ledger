@@ -1,0 +1,30 @@
+{
+ "kicker": "Records",
+ "title": [
+  "Snapped the receipt?",
+  "Keep the paper too."
+ ],
+ "titleHi": 1,
+ "titleSize": 80,
+ "lead": "CRA says you generally must keep paper originals. A photo can help, but it has to be a good one.",
+ "blocks": [
+  {
+   "type": "checks",
+   "items": [
+    "An accurate copy of the whole receipt",
+    "Shows the same info as the paper",
+    "Details not blurry, faded or too dark",
+    "Emailed receipt? Keep the digital file",
+    "Back up your receipt files"
+   ]
+  },
+  {
+   "type": "note",
+   "icon": "alert",
+   "text": "Paper can go only if imaged to the CGSB standard. Unsure? CRA says get legal advice first."
+  }
+ ],
+ "ctaLead": "Then log the expense",
+ "cta": "Bookkeeping & GST/HST Tracker",
+ "source": "CRA, 2026"
+}
